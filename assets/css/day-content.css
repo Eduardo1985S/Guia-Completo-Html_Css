@@ -59,7 +59,8 @@
 }
 
 /* Seções de conteúdo */
-.content-section {
+.content-section,
+.concept-section {
     background: white;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
