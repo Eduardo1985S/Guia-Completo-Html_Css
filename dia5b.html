@@ -1,35 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dia 5B - Box Model e Estilização Geral</title>
+    <title>Dia 5B - Box Model e Estilização Geral | Formação HTML e CSS</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/day-content.css">
 </head>
+
 <body>
-    <header>
-        <h1><i class="fab fa-css3-alt"></i> Box Model e Estilização Geral</h1>
-        <p>Compreendendo o modelo de caixa CSS e técnicas de estilização</p>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🔹 Dia 5B</h1>
+            <p class="header__subtitle">Box Model e Estilização Geral</p>
+            <nav class="header__nav">
+                <a href="index.html" class="nav-link">← Voltar ao curso</a>
+                <a href="dia5.html" class="nav-link">← Dia 5A</a>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-btn">
-                <i class="fas fa-home"></i> Início
-            </a>
-            <a href="dia5.html" class="nav-btn">
-                <i class="fas fa-arrow-left"></i> Dia 5A
-            </a>
-            <a href="#" class="nav-btn current">
-                <i class="fas fa-cube"></i> Dia 5B
-            </a>
-        </div>
-    </nav>
-
-    <main>
+    <main class="main">
+        <div class="container">
+            <!-- Navegação da aula -->
+            <nav class="lesson-nav">
+                <ul>
+                    <li><a href="#box-model">📦 Box Model</a></li>
+                    <li><a href="#box-sizing">📏 Box Sizing</a></li>
+                    <li><a href="#spacing">📐 Margin e Padding</a></li>
+                    <li><a href="#borders">🖼️ Bordas</a></li>
+                    <li><a href="#styling">🎨 Estilização</a></li>
+                    <li><a href="#containers">📋 Containers</a></li>
+                </ul>
+            </nav>
         <!-- Box Model Fundamentals -->
-        <section class="concept-section">
+        <section id="box-model" class="concept-section">
             <h2><i class="fas fa-cube"></i> O Box Model do CSS</h2>
             <p>O Box Model é um dos conceitos mais importantes do CSS. Todo elemento HTML é tratado como uma "caixa" retangular com 4 componentes principais:</p>
 
@@ -86,7 +92,7 @@
         </section>
 
         <!-- Box Sizing -->
-        <section class="concept-section">
+        <section id="box-sizing" class="concept-section">
             <h2><i class="fas fa-ruler-combined"></i> Box-Sizing: Como o Tamanho é Calculado</h2>
             
             <div class="box-sizing-comparison">
@@ -165,7 +171,7 @@ html {
         </section>
 
         <!-- Margin and Padding Deep Dive -->
-        <section class="concept-section">
+        <section id="spacing" class="concept-section">
             <h2><i class="fas fa-expand"></i> Margin e Padding em Detalhes</h2>
             
             <div class="spacing-techniques">
@@ -281,7 +287,7 @@ html {
         </section>
 
         <!-- Border Styling -->
-        <section class="concept-section">
+        <section id="borders" class="concept-section">
             <h2><i class="fas fa-border-style"></i> Estilização de Bordas</h2>
             
             <div class="border-properties">
@@ -397,7 +403,7 @@ border-left: 4px double orange;
         </section>
 
         <!-- Basic Element Styling -->
-        <section class="concept-section">
+        <section id="styling" class="concept-section">
             <h2><i class="fas fa-palette"></i> Estilização Básica de Elementos</h2>
             
             <div class="element-styling">
@@ -643,7 +649,7 @@ ol {
         </section>
 
         <!-- Containers and Layout Basics -->
-        <section class="concept-section">
+        <section id="containers" class="concept-section">
             <h2><i class="fas fa-th-large"></i> Containers e Layout com DIV</h2>
             
             <div class="container-concepts">
@@ -1047,24 +1053,14 @@ ol {
             </div>
         </section>
 
-        <!-- Navigation -->
-        <section class="navigation-section">
-            <div class="nav-container">
-                <a href="dia5.html" class="nav-btn secondary">
-                    <i class="fas fa-arrow-left"></i> Dia 5A - Seletores
-                </a>
-                <a href="index.html" class="nav-btn">
-                    <i class="fas fa-home"></i> Início
-                </a>
-                <a href="#" class="nav-btn primary disabled">
-                    <i class="fas fa-arrow-right"></i> Dia 6 - Em Breve
-                </a>
-            </div>
         </section>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Formação HTML e CSS. Desenvolvido para facilitar o aprendizado.</p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Formação HTML e CSS. Todos os direitos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>

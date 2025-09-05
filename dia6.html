@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 6 - Flexbox | Formação HTML e CSS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/day-content.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🔹 Dia 6</h1>
+            <p class="header__subtitle">Flexbox - Layout Flexível e Responsivo</p>
+            <nav class="header__nav">
+                <a href="index.html" class="nav-link">← Voltar ao curso</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Navegação da aula -->
+            <nav class="lesson-nav">
+                <ul>
+                    <li><a href="#intro-flexbox">🎯 Introdução ao Flexbox</a></li>
+                    <li><a href="#display-flex">📦 Display Flex</a></li>
+                    <li><a href="#flex-direction">↔️ Flex Direction</a></li>
+                    <li><a href="#justify-content">📐 Justify Content</a></li>
+                    <li><a href="#align-items">⬆️ Align Items</a></li>
+                    <li><a href="#gap">📏 Gap</a></li>
+                    <li><a href="#flex-wrap">🔄 Flex Wrap</a></li>
+                    <li><a href="#pratica">💻 Prática</a></li>
+                </ul>
+            </nav>
+
+            <!-- Introdução ao Flexbox -->
+            <section id="intro-flexbox" class="concept-section">
+                <h2><i class="fas fa-expand-arrows-alt"></i> Introdução ao Flexbox</h2>
+                
+                <div class="intro-content">
+                    <div class="flexbox-overview">
+                        <h3>O que é Flexbox?</h3>
+                        <p>O <strong>Flexbox</strong> (Flexible Box Layout) é um método de layout CSS que permite organizar elementos de forma flexível e eficiente, especialmente útil para criar layouts responsivos.</p>
+                        
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <i class="fas fa-magic"></i>
+                                <h4>Alinhamento Fácil</h4>
+                                <p>Centralize elementos horizontal e verticalmente com simplicidade</p>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h4>Responsivo</h4>
+                                <p>Adapta automaticamente a diferentes tamanhos de tela</p>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <i class="fas fa-puzzle-piece"></i>
+                                <h4>Flexível</h4>
+                                <p>Elementos crescem e encolhem conforme necessário</p>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <i class="fas fa-code"></i>
+                                <h4>Menos Código</h4>
+                                <p>Substitui soluções complexas com float e position</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flexbox-terminology">
+                        <h3>Terminologia do Flexbox</h3>
+                        <div class="terminology-visual">
+                            <div class="flex-container-demo">
+                                <div class="main-axis-label">Main Axis (Eixo Principal)</div>
+                                <div class="flex-container-box">
+                                    <span class="container-label">Flex Container (Pai)</span>
+                                    <div class="flex-item-demo">Item 1</div>
+                                    <div class="flex-item-demo">Item 2</div>
+                                    <div class="flex-item-demo">Item 3</div>
+                                </div>
+                                <div class="cross-axis-label">Cross Axis (Eixo Transversal)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="terminology-explanation">
+                            <div class="term-item">
+                                <h5><i class="fas fa-square"></i> Flex Container</h5>
+                                <p>Elemento pai com <code>display: flex</code></p>
+                            </div>
+                            
+                            <div class="term-item">
+                                <h5><i class="fas fa-cube"></i> Flex Items</h5>
+                                <p>Elementos filhos diretos do container</p>
+                            </div>
+                            
+                            <div class="term-item">
+                                <h5><i class="fas fa-arrows-alt-h"></i> Main Axis</h5>
+                                <p>Eixo principal (horizontal por padrão)</p>
+                            </div>
+                            
+                            <div class="term-item">
+                                <h5><i class="fas fa-arrows-alt-v"></i> Cross Axis</h5>
+                                <p>Eixo transversal (perpendicular ao principal)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Display Flex -->
+            <section id="display-flex" class="concept-section">
+                <h2><i class="fas fa-magic"></i> Display: Flex</h2>
+                
+                <div class="display-flex-content">
+                    <div class="comparison-demo">
+                        <h3>Antes e Depois do Flexbox</h3>
+                        
+                        <div class="before-after-grid">
+                            <div class="comparison-item">
+                                <h4>❌ Sem Flexbox (Block)</h4>
+                                <div class="code-container">
+                                    <code>
+.container {
+    /* comportamento padrão */
+}
+                                    </code>
+                                </div>
+                                <div class="demo-container no-flex">
+                                    <div class="demo-item">Item 1</div>
+                                    <div class="demo-item">Item 2</div>
+                                    <div class="demo-item">Item 3</div>
+                                </div>
+                                <p><small>Elementos empilhados verticalmente</small></p>
+                            </div>
+                            
+                            <div class="comparison-item">
+                                <h4>✅ Com Flexbox</h4>
+                                <div class="code-container">
+                                    <code>
+.container {
+    display: flex;
+}
+                                    </code>
+                                </div>
+                                <div class="demo-container with-flex">
+                                    <div class="demo-item">Item 1</div>
+                                    <div class="demo-item">Item 2</div>
+                                    <div class="demo-item">Item 3</div>
+                                </div>
+                                <p><small>Elementos alinhados horizontalmente</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-types">
+                        <h3>Tipos de Display Flex</h3>
+                        
+                        <div class="types-grid">
+                            <div class="type-demo">
+                                <h4>display: flex</h4>
+                                <div class="code-container">
+                                    <code>
+.container {
+    display: flex; /* comporta-se como block externamente */
+}
+                                    </code>
+                                </div>
+                                <div class="flex-example block-flex">
+                                    <div class="flex-container">
+                                        <span>Item</span>
+                                        <span>Item</span>
+                                        <span>Item</span>
+                                    </div>
+                                    <div class="other-content">Outro conteúdo abaixo</div>
+                                </div>
+                            </div>
+                            
+                            <div class="type-demo">
+                                <h4>display: inline-flex</h4>
+                                <div class="code-container">
+                                    <code>
+.container {
+    display: inline-flex; /* comporta-se como inline externamente */
+}
+                                    </code>
+                                </div>
+                                <div class="flex-example inline-flex">
+                                    <div class="inline-flex-container">
+                                        <span>Item</span>
+                                        <span>Item</span>
+                                    </div>
+                                    <span class="other-content">Conteúdo ao lado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Flex Direction -->
+            <section id="flex-direction" class="concept-section">
+                <h2><i class="fas fa-exchange-alt"></i> Flex Direction - Direção dos Elementos</h2>
+                
+                <div class="direction-content">
+                    <div class="direction-intro">
+                        <h3>Controlando a Direção</h3>
+                        <p>A propriedade <code>flex-direction</code> define a direção principal do layout flexível.</p>
+                    </div>
+
+                    <div class="direction-demos">
+                        <div class="direction-demo">
+                            <h4>flex-direction: row (padrão)</h4>
+                            <div class="code-container">
+                                <code>
+.container {
+    display: flex;
+    flex-direction: row; /* horizontal, da esquerda para direita */
+}
+                                </code>
+                            </div>
+                            <div class="flex-demo-container row-demo">
+                                <div class="flex-demo-item">1</div>
+                                <div class="flex-demo-item">2</div>
+                                <div class="flex-demo-item">3</div>
+                                <div class="flex-demo-item">4</div>
+                            </div>
+                            <div class="axis-indicator">
+                                <span class="main-axis">→ Main Axis</span>
+                                <span class="cross-axis">↓ Cross Axis</span>
+                            </div>
+                        </div>
+
+                        <div class="direction-demo">
+                            <h4>flex-direction: row-reverse</h4>
+                            <div class="code-container">
+                                <code>
+.container {
+    display: flex;
+    flex-direction: row-reverse; /* horizontal, da direita para esquerda */
+}
+                                </code>
+                            </div>
+                            <div class="flex-demo-container row-reverse-demo">
+                                <div class="flex-demo-item">1</div>
+                                <div class="flex-demo-item">2</div>
+                                <div class="flex-demo-item">3</div>
+                                <div class="flex-demo-item">4</div>
+                            </div>
+                            <div class="axis-indicator">
+                                <span class="main-axis">← Main Axis</span>
+                                <span class="cross-axis">↓ Cross Axis</span>
+                            </div>
+                        </div>
+
+                        <div class="direction-demo">
+                            <h4>flex-direction: column</h4>
+                            <div class="code-container">
+                                <code>
+.container {
+    display: flex;
+                direction: column; /* vertical, de cima para baixo */
+}
+                                </code>
+                            </div>
+                            <div class="flex-demo-container column-demo">
+                                <div class="flex-demo-item">1</div>
+                                <div class="flex-demo-item">2</div>
+                                <div class="flex-demo-item">3</div>
+                                <div class="flex-demo-item">4</div>
+                            </div>
+                            <div class="axis-indicator column-axis">
+                                <span class="main-axis">↓ Main Axis</span>
+                                <span class="cross-axis">→ Cross Axis</span>
+                            </div>
+                        </div>
+
+                        <div class="direction-demo">
+                            <h4>flex-direction: column-reverse</h4>
+                            <div class="code-container">
+                                <code>
+.container {
+    display: flex;
+    flex-direction: column-reverse; /* vertical, de baixo para cima */
+}
+                                </code>
+                            </div>
+                            <div class="flex-demo-container column-reverse-demo">
+                                <div class="flex-demo-item">1</div>
+                                <div class="flex-demo-item">2</div>
+                                <div class="flex-demo-item">3</div>
+                                <div class="flex-demo-item">4</div>
+                            </div>
+                            <div class="axis-indicator column-axis">
+                                <span class="main-axis">↑ Main Axis</span>
+                                <span class="cross-axis">→ Cross Axis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="direction-tips">
+                        <div class="tip-card">
+                            <h5><i class="fas fa-lightbulb"></i> Dica Importante</h5>
+                            <p>Quando você muda o <code>flex-direction</code>, os eixos Main e Cross se invertem! Isso afeta como <code>justify-content</code> e <code>align-items</code> funcionam.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Justify Content -->
+            <section id="justify-content" class="concept-section">
+                <h2><i class="fas fa-align-center"></i> Justify Content - Alinhamento no Eixo Principal</h2>
+                
+                <div class="justify-content">
+                    <div class="justify-intro">
+                        <h3>Controlando o Alinhamento Horizontal</h3>
+                        <p>A propriedade <code>justify-content</code> alinha os itens ao longo do eixo principal (main axis).</p>
+                    </div>
+
+                    <div class="justify-demos">
+                        <div class="justify-demo">
+                            <h4>justify-content: flex-start (padrão)</h4>
+                            <div class="code-container small">
+                                <code>justify-content: flex-start;</code>
+                            </div>
+                            <div class="justify-container flex-start">
+                                <div class="justify-item">1</div>
+                                <div class="justify-item">2</div>
+                                <div class="justify-item">3</div>
+                            </div>
+                            <p><small>Itens alinhados ao início</small></p>
+                        </div>
+
+                        <div class="justify-demo">
+                            <h4>justify-content: flex-end</h4>
+                            <div class="code-container small">
+                                <code>justify-content: flex-end;</code>
+                            </div>
+                            <div class="justify-container flex-end">
+                                <div class="justify-item">1</div>
+                                <div class="justify-item">2</div>
+                                <div class="justify-item">3</div>
+                            </div>
+                            <p><small>Itens alinhados ao final</small></p>
+                        </div>
+
+                        <div class="justify-demo">
+                            <h4>justify-content: center</h4>
+                            <div class="code-container small">
+                                <code>justify-content: center;</code>
+                            </div>
+                            <div class="justify-container center">
+                                <div class="justify-item">1</div>
+                                <div class="justify-item">2</div>
+                                <div class="justify-item">3</div>
+                            </div>
+                            <p><small>Itens centralizados</small></p>
+                        </div>
+
+                        <div class="justify-demo">
+                            <h4>justify-content: space-between</h4>
+                            <div class="code-container small">
+                                <code>justify-content: space-between;</code>
+                            </div>
+                            <div class="justify-container space-between">
+                                <div class="justify-item">1</div>
+                                <div class="justify-item">2</div>
+                                <div class="justify-item">3</div>
+                            </div>
+                            <p><small>Espaço igual entre itens</small></p>
+                        </div>
+
+                        <div class="justify-demo">
+                            <h4>justify-content: space-around</h4>
+                            <div class="code-container small">
+                                <code>justify-content: space-around;</code>
+                            </div>
+                            <div class="justify-container space-around">
+                                <div class="justify-item">1</div>
+                                <div class="justify-item">2</div>
+                                <div class="justify-item">3</div>
+                            </div>
+                            <p><small>Espaço igual ao redor dos itens</small></p>
+                        </div>
+
+                        <div class="justify-demo">
+                            <h4>justify-content: space-evenly</h4>
+                            <div class="code-container small">
+                                <code>justify-content: space-evenly;</code>
+                            </div>
+                            <div class="justify-container space-evenly">
+                                <div class="justify-item">1</div>
+                                <div class="justify-item">2</div>
+                                <div class="justify-item">3</div>
+                            </div>
+                            <p><small>Espaçamento uniforme</small></p>
+                        </div>
+                    </div>
+
+                    <div class="justify-comparison">
+                        <h3>Comparação Visual dos Espaçamentos</h3>
+                        <div class="spacing-comparison">
+                            <div class="spacing-demo">
+                                <h5>space-between</h5>
+                                <div class="spacing-visual between"></div>
+                                <p>Sem espaço nas bordas</p>
+                            </div>
+                            
+                            <div class="spacing-demo">
+                                <h5>space-around</h5>
+                                <div class="spacing-visual around"></div>
+                                <p>Metade do espaço nas bordas</p>
+                            </div>
+                            
+                            <div class="spacing-demo">
+                                <h5>space-evenly</h5>
+                                <div class="spacing-visual evenly"></div>
+                                <p>Espaço igual em todos os lugares</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Align Items -->
+            <section id="align-items" class="concept-section">
+                <h2><i class="fas fa-arrows-alt-v"></i> Align Items - Alinhamento no Eixo Transversal</h2>
+                
+                <div class="align-items-content">
+                    <div class="align-intro">
+                        <h3>Controlando o Alinhamento Vertical</h3>
+                        <p>A propriedade <code>align-items</code> alinha os itens ao longo do eixo transversal (cross axis).</p>
+                    </div>
+
+                    <div class="align-demos">
+                        <div class="align-demo">
+                            <h4>align-items: stretch (padrão)</h4>
+                            <div class="code-container small">
+                                <code>align-items: stretch;</code>
+                            </div>
+                            <div class="align-container stretch">
+                                <div class="align-item">Item 1</div>
+                                <div class="align-item tall">Item 2<br>Mais alto</div>
+                                <div class="align-item">Item 3</div>
+                            </div>
+                            <p><small>Itens esticam para ocupar toda altura</small></p>
+                        </div>
+
+                        <div class="align-demo">
+                            <h4>align-items: flex-start</h4>
+                            <div class="code-container small">
+                                <code>align-items: flex-start;</code>
+                            </div>
+                            <div class="align-container flex-start">
+                                <div class="align-item">Item 1</div>
+                                <div class="align-item tall">Item 2<br>Mais alto</div>
+                                <div class="align-item">Item 3</div>
+                            </div>
+                            <p><small>Itens alinhados ao topo</small></p>
+                        </div>
+
+                        <div class="align-demo">
+                            <h4>align-items: flex-end</h4>
+                            <div class="code-container small">
+                                <code>align-items: flex-end;</code>
+                            </div>
+                            <div class="align-container flex-end">
+                                <div class="align-item">Item 1</div>
+                                <div class="align-item tall">Item 2<br>Mais alto</div>
+                                <div class="align-item">Item 3</div>
+                            </div>
+                            <p><small>Itens alinhados na base</small></p>
+                        </div>
+
+                        <div class="align-demo">
+                            <h4>align-items: center</h4>
+                            <div class="code-container small">
+                                <code>align-items: center;</code>
+                            </div>
+                            <div class="align-container center">
+                                <div class="align-item">Item 1</div>
+                                <div class="align-item tall">Item 2<br>Mais alto</div>
+                                <div class="align-item">Item 3</div>
+                            </div>
+                            <p><small>Itens centralizados verticalmente</small></p>
+                        </div>
+
+                        <div class="align-demo">
+                            <h4>align-items: baseline</h4>
+                            <div class="code-container small">
+                                <code>align-items: baseline;</code>
+                            </div>
+                            <div class="align-container baseline">
+                                <div class="align-item">Item 1</div>
+                                <div class="align-item tall">Item 2<br>Mais alto</div>
+                                <div class="align-item">Item 3</div>
+                            </div>
+                            <p><small>Itens alinhados pela linha de base do texto</small></p>
+                        </div>
+                    </div>
+
+                    <div class="perfect-center">
+                        <h3><i class="fas fa-bullseye"></i> Centralização Perfeita</h3>
+                        <p>Combine <code>justify-content: center</code> e <code>align-items: center</code> para centralização perfeita:</p>
+                        
+                        <div class="center-demo">
+                            <div class="code-container">
+                                <code>
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+                                </code>
+                            </div>
+                            <div class="perfect-center-container">
+                                <div class="centered-content">
+                                    <i class="fas fa-star"></i>
+                                    <p>Perfeitamente<br>Centralizado!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gap -->
+            <section id="gap" class="concept-section">
+                <h2><i class="fas fa-ruler-horizontal"></i> Gap - Espaçamento Entre Elementos</h2>
+                
+                <div class="gap-content">
+                    <div class="gap-intro">
+                        <h3>Espaçamento Simplificado</h3>
+                        <p>A propriedade <code>gap</code> define o espaçamento entre itens flex de forma simples e consistente.</p>
+                    </div>
+
+                    <div class="gap-comparison">
+                        <h3>Antes e Depois do Gap</h3>
+                        
+                        <div class="gap-before-after">
+                            <div class="gap-method">
+                                <h4>❌ Método Antigo (Margin)</h4>
+                                <div class="code-container">
+                                    <code>
+.item {
+    margin-right: 20px;
+}
+
+.item:last-child {
+    margin-right: 0; /* remover margin do último */
+}
+                                    </code>
+                                </div>
+                                <div class="gap-demo-container old-method">
+                                    <div class="gap-item">Item 1</div>
+                                    <div class="gap-item">Item 2</div>
+                                    <div class="gap-item">Item 3</div>
+                                </div>
+                                <p><small>Complexo e propenso a erros</small></p>
+                            </div>
+                            
+                            <div class="gap-method">
+                                <h4>✅ Método Moderno (Gap)</h4>
+                                <div class="code-container">
+                                    <code>
+.container {
+    display: flex;
+    gap: 20px; /* espaçamento automático */
+}
+                                    </code>
+                                </div>
+                                <div class="gap-demo-container new-method">
+                                    <div class="gap-item">Item 1</div>
+                                    <div class="gap-item">Item 2</div>
+                                    <div class="gap-item">Item 3</div>
+                                </div>
+                                <p><small>Simples e consistente</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gap-types">
+                        <h3>Tipos de Gap</h3>
+                        
+                        <div class="gap-demos">
+                            <div class="gap-demo">
+                                <h4>gap: 10px</h4>
+                                <div class="code-container small">
+                                    <code>gap: 10px;</code>
+                                </div>
+                                <div class="gap-container small-gap">
+                                    <div class="gap-demo-item">1</div>
+                                    <div class="gap-demo-item">2</div>
+                                    <div class="gap-demo-item">3</div>
+                                    <div class="gap-demo-item">4</div>
+                                </div>
+                                <p><small>Gap pequeno</small></p>
+                            </div>
+
+                            <div class="gap-demo">
+                                <h4>gap: 30px</h4>
+                                <div class="code-container small">
+                                    <code>gap: 30px;</code>
+                                </div>
+                                <div class="gap-container large-gap">
+                                    <div class="gap-demo-item">1</div>
+                                    <div class="gap-demo-item">2</div>
+                                    <div class="gap-demo-item">3</div>
+                                    <div class="gap-demo-item">4</div>
+                                </div>
+                                <p><small>Gap grande</small></p>
+                            </div>
+
+                            <div class="gap-demo">
+                                <h4>row-gap: 15px<br>column-gap: 25px</h4>
+                                <div class="code-container small">
+                                    <code>row-gap: 15px; column-gap: 25px;</code>
+                                </div>
+                                <div class="gap-container different-gaps">
+                                    <div class="gap-demo-item">1</div>
+                                    <div class="gap-demo-item">2</div>
+                                    <div class="gap-demo-item">3</div>
+                                    <div class="gap-demo-item">4</div>
+                                    <div class="gap-demo-item">5</div>
+                                    <div class="gap-demo-item">6</div>
+                                </div>
+                                <p><small>Gaps diferentes para linhas e colunas</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gap-benefits">
+                        <h3>Vantagens do Gap</h3>
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h5>Simplicidade</h5>
+                                    <p>Uma propriedade para controlar todo o espaçamento</p>
+                                </div>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h5>Consistência</h5>
+                                    <p>Espaçamento uniforme entre todos os elementos</p>
+                                </div>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h5>Flexibilidade</h5>
+                                    <p>Funciona automaticamente com flex-wrap</p>
+                                </div>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h5>Menos CSS</h5>
+                                    <p>Elimina a necessidade de margins complexas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Flex Wrap -->
+            <section id="flex-wrap" class="concept-section">
+                <h2><i class="fas fa-layer-group"></i> Flex Wrap - Controle Responsivo</h2>
+                
+                <div class="flex-wrap-content">
+                    <div class="wrap-intro">
+                        <h3>Quebrando Linhas Automaticamente</h3>
+                        <p>A propriedade <code>flex-wrap</code> controla se os itens devem quebrar para a próxima linha quando não há espaço suficiente.</p>
+                    </div>
+
+                    <div class="wrap-demos">
+                        <div class="wrap-demo">
+                            <h4>flex-wrap: nowrap (padrão)</h4>
+                            <div class="code-container">
+                                <code>
+.container {
+    display: flex;
+    flex-wrap: nowrap; /* todos os itens ficam em uma linha */
+}
+                                </code>
+                            </div>
+                            <div class="wrap-container nowrap">
+                                <div class="wrap-item">Item Longo 1</div>
+                                <div class="wrap-item">Item Longo 2</div>
+                                <div class="wrap-item">Item Longo 3</div>
+                                <div class="wrap-item">Item Longo 4</div>
+                                <div class="wrap-item">Item Longo 5</div>
+                            </div>
+                            <p><small>Itens podem ficar espremidos ou transbordar</small></p>
+                        </div>
+
+                        <div class="wrap-demo">
+                            <h4>flex-wrap: wrap</h4>
+                            <div class="code-container">
+                                <code>
+.container {
+    display: flex;
+                    wrap: wrap; /* itens quebram para próxima linha */
+}
+                                </code>
+                            </div>
+                            <div class="wrap-container wrap">
+                                <div class="wrap-item">Item Longo 1</div>
+                                <div class="wrap-item">Item Longo 2</div>
+                                <div class="wrap-item">Item Longo 3</div>
+                                <div class="wrap-item">Item Longo 4</div>
+                                <div class="wrap-item">Item Longo 5</div>
+                            </div>
+                            <p><small>Itens quebram para próxima linha quando necessário</small></p>
+                        </div>
+
+                        <div class="wrap-demo">
+                            <h4>flex-wrap: wrap-reverse</h4>
+                            <div class="code-container">
+                                <code>
+.container {
+    display: flex;
+    flex-wrap: wrap-reverse; /* quebra em ordem reversa */
+}
+                                </code>
+                            </div>
+                            <div class="wrap-container wrap-reverse">
+                                <div class="wrap-item">Item Longo 1</div>
+                                <div class="wrap-item">Item Longo 2</div>
+                                <div class="wrap-item">Item Longo 3</div>
+                                <div class="wrap-item">Item Longo 4</div>
+                                <div class="wrap-item">Item Longo 5</div>
+                            </div>
+                            <p><small>Novas linhas aparecem acima da linha principal</small></p>
+                        </div>
+                    </div>
+
+                    <div class="flex-flow">
+                        <h3>Flex-Flow: Atalho Prático</h3>
+                        <p>A propriedade <code>flex-flow</code> combina <code>flex-direction</code> e <code>flex-wrap</code>:</p>
+                        
+                        <div class="flow-examples">
+                            <div class="flow-example">
+                                <h4>Método Separado</h4>
+                                <div class="code-container">
+                                    <code>
+.container {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+                                    </code>
+                                </div>
+                            </div>
+                            
+                            <div class="flow-example">
+                                <h4>Método Combinado</h4>
+                                <div class="code-container">
+                                    <code>
+.container {
+    flex-flow: row wrap; /* direction wrap */
+}
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-demo">
+                            <h5>Exemplo: flex-flow: column wrap</h5>
+                            <div class="flow-container">
+                                <div class="flow-item">Item 1</div>
+                                <div class="flow-item">Item 2</div>
+                                <div class="flow-item">Item 3</div>
+                                <div class="flow-item">Item 4</div>
+                                <div class="flow-item">Item 5</div>
+                                <div class="flow-item">Item 6</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="responsive-design">
+                        <h3><i class="fas fa-mobile-alt"></i> Design Responsivo com Flexbox</h3>
+                        <p>Combine flex-wrap com media queries para layouts verdadeiramente responsivos:</p>
+                        
+                        <div class="code-container">
+                            <code>
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.item {
+    flex: 1 1 300px; /* grow shrink basis */
+    min-width: 250px;
+}
+
+@media (max-width: 768px) {
+    .item {
+        flex: 1 1 100%; /* ocupa linha inteira */
+    }
+}
+                            </code>
+                        </div>
+                        
+                        <div class="responsive-demo">
+                            <div class="responsive-container">
+                                <div class="responsive-item">Card 1</div>
+                                <div class="responsive-item">Card 2</div>
+                                <div class="responsive-item">Card 3</div>
+                            </div>
+                            <p><small>Redimensione a janela para ver o efeito responsivo</small></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercícios Práticos -->
+            <section id="pratica" class="practice-section">
+                <h2><i class="fas fa-laptop-code"></i> Exercícios Práticos</h2>
+                
+                <div class="practice-content">
+                    <div class="practice-intro">
+                        <h3>Vamos Praticar!</h3>
+                        <p>Agora vamos aplicar o Flexbox em exemplos práticos comuns no desenvolvimento web.</p>
+                    </div>
+
+                    <!-- Menu de Navegação -->
+                    <div class="practice-exercise">
+                        <h3><i class="fas fa-bars"></i> 1. Menu de Navegação</h3>
+                        
+                        <div class="exercise-demo">
+                            <h4>Resultado Final</h4>
+                            <div class="navbar-demo">
+                                <div class="nav-logo">
+                                    <i class="fas fa-code"></i>
+                                    <span>MeuSite</span>
+                                </div>
+                                <nav class="nav-links">
+                                    <a href="#">Início</a>
+                                    <a href="#">Sobre</a>
+                                    <a href="#">Serviços</a>
+                                    <a href="#">Contato</a>
+                                </nav>
+                                <div class="nav-actions">
+                                    <button class="btn-login">Login</button>
+                                    <button class="btn-signup">Cadastrar</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-code">
+                            <h4>HTML</h4>
+                            <div class="code-container">
+                                <code>
+&lt;header class="navbar"&gt;
+    &lt;div class="nav-logo"&gt;
+        &lt;i class="fas fa-code"&gt;&lt;/i&gt;
+        &lt;span&gt;MeuSite&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;nav class="nav-links"&gt;
+        &lt;a href="#"&gt;Início&lt;/a&gt;
+        &lt;a href="#"&gt;Sobre&lt;/a&gt;
+        &lt;a href="#"&gt;Serviços&lt;/a&gt;
+        &lt;a href="#"&gt;Contato&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;div class="nav-actions"&gt;
+        &lt;button class="btn-login"&gt;Login&lt;/button&gt;
+        &lt;button class="btn-signup"&gt;Cadastrar&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+                                </code>
+                            </div>
+                            
+                            <h4>CSS</h4>
+                            <div class="code-container">
+                                <code>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #2c3e50;
+    color: white;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-login, .btn-signup {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-login {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.btn-signup {
+    background: #3498db;
+    color: white;
+}
+
+.btn-login:hover {
+    background: white;
+    color: #2c3e50;
+}
+
+.btn-signup:hover {
+    background: #2980b9;
+}
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid de Cards -->
+                    <div class="practice-exercise">
+                        <h3><i class="fas fa-th-large"></i> 2. Grid de Cards Responsivo</h3>
+                        
+                        <div class="exercise-demo">
+                            <h4>Resultado Final</h4>
+                            <div class="cards-grid-demo">
+                                <div class="card-demo">
+                                    <div class="card-image">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <h5>Desenvolvimento Web</h5>
+                                        <p>Criação de sites modernos e responsivos</p>
+                                        <button class="card-btn">Saiba Mais</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="card-demo">
+                                    <div class="card-image">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <h5>Apps Mobile</h5>
+                                        <p>Desenvolvimento de aplicativos móveis</p>
+                                        <button class="card-btn">Saiba Mais</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="card-demo">
+                                    <div class="card-image">
+                                        <i class="fas fa-paint-brush"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <h5>Design UI/UX</h5>
+                                        <p>Interface e experiência do usuário</p>
+                                        <button class="card-btn">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-code">
+                            <h4>HTML</h4>
+                            <div class="code-container">
+                                <code>
+&lt;section class="services"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-image"&gt;
+            &lt;i class="fas fa-laptop-code"&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        &lt;div class="card-content"&gt;
+            &lt;h3&gt;Desenvolvimento Web&lt;/h3&gt;
+            &lt;p&gt;Criação de sites modernos e responsivos&lt;/p&gt;
+            &lt;button&gt;Saiba Mais&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="card"&gt;
+        &lt;div class="card-image"&gt;
+            &lt;i class="fas fa-mobile-alt"&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        &lt;div class="card-content"&gt;
+            &lt;h3&gt;Apps Mobile&lt;/h3&gt;
+            &lt;p&gt;Desenvolvimento de aplicativos móveis&lt;/p&gt;
+            &lt;button&gt;Saiba Mais&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="card"&gt;
+        &lt;div class="card-image"&gt;
+            &lt;i class="fas fa-paint-brush"&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        &lt;div class="card-content"&gt;
+            &lt;h3&gt;Design UI/UX&lt;/h3&gt;
+            &lt;p&gt;Interface e experiência do usuário&lt;/p&gt;
+            &lt;button&gt;Saiba Mais&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+                                </code>
+                            </div>
+                            
+                            <h4>CSS</h4>
+                            <div class="code-container">
+                                <code>
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 300px; /* grow shrink basis */
+    max-width: 350px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 3rem;
+    text-align: center;
+    color: white;
+}
+
+.card-image i {
+    font-size: 3rem;
+}
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-content h3 {
+    margin: 0;
+    color: #333;
+}
+
+.card-content p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.card-content button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.card-content button:hover {
+    background: #2980b9;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Layout de Página -->
+                    <div class="practice-exercise">
+                        <h3><i class="fas fa-columns"></i> 3. Layout de Página Completo</h3>
+                        
+                        <div class="exercise-demo">
+                            <h4>Resultado Final</h4>
+                            <div class="page-layout-demo">
+                                <header class="page-header">Header</header>
+                                <div class="page-main">
+                                    <aside class="page-sidebar">Sidebar</aside>
+                                    <main class="page-content">
+                                        <h3>Conteúdo Principal</h3>
+                                        <p>Este é o conteúdo principal da página...</p>
+                                    </main>
+                                </div>
+                                <footer class="page-footer">Footer</footer>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-code">
+                            <h4>HTML</h4>
+                            <div class="code-container">
+                                <code>
+&lt;div class="page-layout"&gt;
+    &lt;header class="header"&gt;Header&lt;/header&gt;
+    
+    &lt;div class="main-container"&gt;
+        &lt;aside class="sidebar"&gt;Sidebar&lt;/aside&gt;
+        &lt;main class="content"&gt;
+            &lt;h1&gt;Conteúdo Principal&lt;/h1&gt;
+            &lt;p&gt;Este é o conteúdo principal da página...&lt;/p&gt;
+        &lt;/main&gt;
+    &lt;/div&gt;
+    
+    &lt;footer class="footer"&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;
+                                </code>
+                            </div>
+                            
+                            <h4>CSS</h4>
+                            <div class="code-container">
+                                <code>
+.page-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.main-container {
+    flex: 1; /* ocupa espaço restante */
+    display: flex;
+}
+
+.sidebar {
+    flex: 0 0 250px; /* não cresce, não encolhe, 250px */
+    background: #ecf0f1;
+    padding: 1rem;
+}
+
+.content {
+    flex: 1; /* ocupa espaço restante */
+    padding: 2rem;
+    background: white;
+}
+
+.footer {
+    background: #34495e;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        flex: none;
+        order: 2; /* sidebar depois do conteúdo */
+    }
+    
+    .content {
+        order: 1;
+    }
+}
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-tips">
+                        <h3><i class="fas fa-lightbulb"></i> Dicas para Praticar</h3>
+                        <div class="tips-grid">
+                            <div class="tip-item">
+                                <h5>1. Comece Simples</h5>
+                                <p>Pratique primeiro com elementos básicos antes de partir para layouts complexos</p>
+                            </div>
+                            
+                            <div class="tip-item">
+                                <h5>2. Use DevTools</h5>
+                                <p>Inspecione elementos e teste propriedades diretamente no navegador</p>
+                            </div>
+                            
+                            <div class="tip-item">
+                                <h5>3. Teste Responsividade</h5>
+                                <p>Sempre teste seus layouts em diferentes tamanhos de tela</p>
+                            </div>
+                            
+                            <div class="tip-item">
+                                <h5>4. Combine Propriedades</h5>
+                                <p>Experimente diferentes combinações de justify-content e align-items</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resumo -->
+            <section class="summary-section">
+                <h2><i class="fas fa-check-circle"></i> Resumo do Dia 6</h2>
+                
+                <div class="summary-content">
+                    <div class="learned-concepts">
+                        <h3>Conceitos Aprendidos</h3>
+                        <div class="concept-grid">
+                            <div class="concept-item">
+                                <i class="fas fa-magic"></i>
+                                <h5>Display Flex</h5>
+                                <p>Ativando o layout flexível</p>
+                            </div>
+                            
+                            <div class="concept-item">
+                                <i class="fas fa-exchange-alt"></i>
+                                <h5>Flex Direction</h5>
+                                <p>Controlando a direção dos elementos</p>
+                            </div>
+                            
+                            <div class="concept-item">
+                                <i class="fas fa-align-center"></i>
+                                <h5>Justify Content</h5>
+                                <p>Alinhamento no eixo principal</p>
+                            </div>
+                            
+                            <div class="concept-item">
+                                <i class="fas fa-arrows-alt-v"></i>
+                                <h5>Align Items</h5>
+                                <p>Alinhamento no eixo transversal</p>
+                            </div>
+                            
+                            <div class="concept-item">
+                                <i class="fas fa-ruler-horizontal"></i>
+                                <h5>Gap</h5>
+                                <p>Espaçamento entre elementos</p>
+                            </div>
+                            
+                            <div class="concept-item">
+                                <i class="fas fa-layer-group"></i>
+                                <h5>Flex Wrap</h5>
+                                <p>Quebra automática de linha</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-takeaways">
+                        <h3>Pontos Importantes</h3>
+                        <ul>
+                            <li><strong>Flexbox:</strong> Método moderno para layouts flexíveis</li>
+                            <li><strong>Eixos:</strong> Main Axis e Cross Axis determinam o comportamento</li>
+                            <li><strong>Centralização:</strong> justify-content: center + align-items: center</li>
+                            <li><strong>Gap:</strong> Substitui margins complexas para espaçamento</li>
+                            <li><strong>Flex-wrap:</strong> Essencial para layouts responsivos</li>
+                            <li><strong>Flex:</strong> grow, shrink e basis controlam o comportamento dos itens</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="next-steps">
+                        <h3>Próximos Passos</h3>
+                        <p>No <strong>Dia 7</strong>, vamos aprofundar em:</p>
+                        <ul>
+                            <li>Media queries para responsividade</li>
+                            <li>Design mobile-first</li>
+                            <li>Medidas relativas (%, em, rem, vw, vh)</li>
+                            <li>Breakpoints estratégicos</li>
+                            <li>Layouts adaptativos completos</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Formação HTML e CSS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
