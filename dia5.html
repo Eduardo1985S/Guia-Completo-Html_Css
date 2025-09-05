@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 5 - CSS Seletores, Box Model e Estilo Geral | Formação HTML e CSS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/day-content.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🔹 Dia 5</h1>
+            <p class="header__subtitle">CSS Seletores, Box Model e Estilo Geral</p>
+            <nav class="header__nav">
+                <a href="index.html" class="nav-link">← Voltar ao curso</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Navegação da aula -->
+            <nav class="lesson-nav">
+                <ul>
+                    <li><a href="#css-externo">🔗 CSS Externo</a></li>
+                    <li><a href="#seletores">🎯 Seletores CSS</a></li>
+                    <li><a href="#estilizacao">🎨 Estilização Geral</a></li>
+                    <li><a href="#box-model">📦 Box Model</a></li>
+                    <li><a href="#containers">🏗️ Containers e Layout</a></li>
+                </ul>
+            </nav>
+
+            <!-- Seção 1: CSS Externo - Revisão -->
+            <section id="css-externo" class="content-section">
+                <div class="section-header">
+                    <h2>🔗 Revisão: CSS Externo (link)</h2>
+                    <p class="section-intro">Reforce a base: como conectar e organizar folhas de estilo</p>
+                </div>
+
+                <!-- Por que CSS externo? -->
+                <div class="definition-box">
+                    <h3>🤔 Por que usar CSS externo?</h3>
+                    <p>O CSS externo separa <strong>conteúdo (HTML)</strong> de <strong>apresentação (CSS)</strong>, facilitando manutenção, reutilização e organização do código.</p>
+                </div>
+
+                <!-- Métodos de CSS -->
+                <div class="css-methods">
+                    <h4>📋 3 Formas de Aplicar CSS:</h4>
+                    
+                    <div class="methods-grid">
+                        <div class="method-card bad">
+                            <h5>❌ CSS Inline (Não recomendado)</h5>
+                            <div class="method-example">
+                                <div class="code-container">
+                                    <pre class="code dracula-theme"><code>&lt;p style="color: blue; font-size: 18px;"&gt;
+    Texto com CSS inline
+&lt;/p&gt;</code></pre>
+                                </div>
+                                <div class="problems">
+                                    <strong>Problemas:</strong>
+                                    <ul>
+                                        <li>Dificulta manutenção</li>
+                                        <li>Não reutilizável</li>
+                                        <li>Código HTML poluído</li>
+                                        <li>Dificulta trabalho em equipe</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="method-card neutral">
+                            <h5>⚠️ CSS Interno (Uso limitado)</h5>
+                            <div class="method-example">
+                                <div class="code-container">
+                                    <pre class="code dracula-theme"><code>&lt;head&gt;
+    &lt;style&gt;
+        p {
+            color: blue;
+            font-size: 18px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+                                </div>
+                                <div class="uses">
+                                    <strong>Quando usar:</strong>
+                                    <ul>
+                                        <li>Páginas únicas</li>
+                                        <li>Testes rápidos</li>
+                                        <li>Estilos muito específicos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="method-card good">
+                            <h5>✅ CSS Externo (Recomendado)</h5>
+                            <div class="method-example">
+                                <div class="code-container">
+                                    <pre class="code dracula-theme"><code>&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</code></pre>
+                                </div>
+                                <div class="benefits">
+                                    <strong>Vantagens:</strong>
+                                    <ul>
+                                        <li>Reutilizável em múltiplas páginas</li>
+                                        <li>Fácil manutenção</li>
+                                        <li>Melhor organização</li>
+                                        <li>Cache do navegador</li>
+                                        <li>Trabalho em equipe facilitado</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organização de arquivos -->
+                <div class="file-organization">
+                    <h4>📁 Organização Recomendada:</h4>
+                    <div class="folder-structure">
+                        <div class="folder-demo">
+                            <div class="folder-tree">
+                                <div class="tree-item">
+                                    📁 projeto/
+                                    <div class="tree-item indent-1">
+                                        📄 index.html
+                                    </div>
+                                    <div class="tree-item indent-1">
+                                        📄 sobre.html
+                                    </div>
+                                    <div class="tree-item indent-1">
+                                        📄 contato.html
+                                    </div>
+                                    <div class="tree-item indent-1">
+                                        📁 assets/
+                                        <div class="tree-item indent-2">
+                                            📁 css/
+                                            <div class="tree-item indent-3">
+                                                📄 style.css
+                                            </div>
+                                            <div class="tree-item indent-3">
+                                                📄 responsive.css
+                                            </div>
+                                        </div>
+                                        <div class="tree-item indent-2">
+                                            📁 images/
+                                        </div>
+                                        <div class="tree-item indent-2">
+                                            📁 js/
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="organization-tips">
+                            <h5>💡 Dicas de Organização:</h5>
+                            <ul>
+                                <li><strong>assets/</strong> - todos os recursos (CSS, imagens, JS)</li>
+                                <li><strong>css/</strong> - apenas arquivos de estilo</li>
+                                <li><strong>style.css</strong> - estilos principais</li>
+                                <li><strong>responsive.css</strong> - media queries</li>
+                                <li>Use nomes descritivos para os arquivos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Múltiplos arquivos CSS -->
+                <div class="multiple-css">
+                    <h4>🔗 Conectando Múltiplos Arquivos CSS:</h4>
+                    <div class="code-example">
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">index.html</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Meu Site&lt;/title&gt;
+    
+    &lt;!-- CSS Reset/Normalize --&gt;
+    &lt;link rel="stylesheet" href="assets/css/reset.css"&gt;
+    
+    &lt;!-- CSS Principal --&gt;
+    &lt;link rel="stylesheet" href="assets/css/style.css"&gt;
+    
+    &lt;!-- CSS Responsivo --&gt;
+    &lt;link rel="stylesheet" href="assets/css/responsive.css"&gt;
+    
+    &lt;!-- CSS de Componentes --&gt;
+    &lt;link rel="stylesheet" href="assets/css/components.css"&gt;
+&lt;/head&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="order-importance">
+                        <h5>⚠️ Ordem Importa!</h5>
+                        <p>Os arquivos CSS são aplicados na ordem que aparecem. O último arquivo pode sobrescrever regras dos anteriores.</p>
+                        
+                        <div class="order-example">
+                            <div class="order-step">
+                                <span class="step-number">1</span>
+                                <span>reset.css - Remove estilos padrão</span>
+                            </div>
+                            <div class="order-step">
+                                <span class="step-number">2</span>
+                                <span>style.css - Estilos principais</span>
+                            </div>
+                            <div class="order-step">
+                                <span class="step-number">3</span>
+                                <span>responsive.css - Adaptações mobile</span>
+                            </div>
+                            <div class="order-step">
+                                <span class="step-number">4</span>
+                                <span>components.css - Componentes específicos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 2: Seletores CSS -->
+            <section id="seletores" class="content-section">
+                <div class="section-header">
+                    <h2>🎯 Seletores CSS: tag, classe, id, universal</h2>
+                    <p class="section-intro">Domine as formas de selecionar e estilizar elementos HTML</p>
+                </div>
+
+                <!-- Conceito de seletores -->
+                <div class="definition-box">
+                    <h3>🎯 O que são Seletores?</h3>
+                    <p>Seletores são <strong>padrões que identificam</strong> quais elementos HTML devem receber determinado estilo. É como dizer ao CSS: "aplique esta formatação nestes elementos específicos".</p>
+                </div>
+
+                <!-- Hierarquia de seletores -->
+                <div class="selector-hierarchy">
+                    <h4>🏆 Hierarquia de Especificidade:</h4>
+                    <div class="hierarchy-visual">
+                        <div class="hierarchy-item strongest">
+                            <div class="hierarchy-icon">👑</div>
+                            <div class="hierarchy-info">
+                                <h5>Estilo Inline</h5>
+                                <p>style="color: red;"</p>
+                                <span class="specificity">Especificidade: 1000</span>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item strong">
+                            <div class="hierarchy-icon">🆔</div>
+                            <div class="hierarchy-info">
+                                <h5>ID (#)</h5>
+                                <p>#meuId</p>
+                                <span class="specificity">Especificidade: 100</span>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item medium">
+                            <div class="hierarchy-icon">🏷️</div>
+                            <div class="hierarchy-info">
+                                <h5>Classe (.)</h5>
+                                <p>.minhaClasse</p>
+                                <span class="specificity">Especificidade: 10</span>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item weak">
+                            <div class="hierarchy-icon">🏷️</div>
+                            <div class="hierarchy-info">
+                                <h5>Tag</h5>
+                                <p>p, div, h1</p>
+                                <span class="specificity">Especificidade: 1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seletor de Tag -->
+                <div class="selector-type">
+                    <h4>🏷️ Seletor de Tag (Elemento):</h4>
+                    <div class="selector-explanation">
+                        <p>Seleciona <strong>todos os elementos</strong> de um tipo específico</p>
+                        
+                        <div class="selector-demo">
+                            <div class="demo-grid">
+                                <div class="code-side">
+                                    <h5>CSS:</h5>
+                                    <div class="code-container">
+                                        <pre class="code dracula-theme"><code>p {
+    color: #2c3e50;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1 {
+    color: #e74c3c;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}</code></pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="html-side">
+                                    <h5>HTML:</h5>
+                                    <div class="code-container">
+                                        <pre class="code dracula-theme"><code>&lt;h1&gt;Título Principal&lt;/h1&gt;
+&lt;p&gt;Este parágrafo será estilizado.&lt;/p&gt;
+&lt;p&gt;Este também será estilizado.&lt;/p&gt;
+&lt;a href="#"&gt;Link estilizado&lt;/a&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="result-preview">
+                                <h5>📋 Resultado:</h5>
+                                <div class="preview-box">
+                                    <h1 style="color: #e74c3c; font-size: 32px; font-weight: bold; margin: 0;">Título Principal</h1>
+                                    <p style="color: #2c3e50; font-size: 16px; line-height: 1.5; margin: 0.5rem 0;">Este parágrafo será estilizado.</p>
+                                    <p style="color: #2c3e50; font-size: 16px; line-height: 1.5; margin: 0.5rem 0;">Este também será estilizado.</p>
+                                    <a href="#" style="color: #3498db; text-decoration: none;">Link estilizado</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="selector-notes">
+                            <h6>📝 Características:</h6>
+                            <ul>
+                                <li>Afeta <strong>todos</strong> os elementos da tag</li>
+                                <li>Baixa especificidade (1)</li>
+                                <li>Ideal para estilos base/globais</li>
+                                <li>Fácil de sobrescrever</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seletor de Classe -->
+                <div class="selector-type">
+                    <h4>🏷️ Seletor de Classe (.):</h4>
+                    <div class="selector-explanation">
+                        <p>Seleciona elementos que possuem o atributo <code>class</code> especificado</p>
+                        
+                        <div class="selector-demo">
+                            <div class="demo-grid">
+                                <div class="code-side">
+                                    <h5>CSS:</h5>
+                                    <div class="code-container">
+                                        <pre class="code dracula-theme"><code>.destaque {
+    background: #f1c40f;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.botao {
+    background: #3498db;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.texto-pequeno {
+    font-size: 12px;
+    color: #7f8c8d;
+}</code></pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="html-side">
+                                    <h5>HTML:</h5>
+                                    <div class="code-container">
+                                        <pre class="code dracula-theme"><code>&lt;p&gt;Parágrafo normal&lt;/p&gt;
+&lt;p class="destaque"&gt;Parágrafo destacado&lt;/p&gt;
+&lt;button class="botao"&gt;Meu Botão&lt;/button&gt;
+&lt;span class="texto-pequeno"&gt;Texto pequeno&lt;/span&gt;
+&lt;p class="destaque"&gt;Outro destaque&lt;/p&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="result-preview">
+                                <h5>📋 Resultado:</h5>
+                                <div class="preview-box">
+                                    <p style="margin: 0.5rem 0;">Parágrafo normal</p>
+                                    <p style="background: #f1c40f; padding: 10px; border-radius: 5px; font-weight: bold; margin: 0.5rem 0;">Parágrafo destacado</p>
+                                    <button style="background: #3498db; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; margin: 0.5rem 0;">Meu Botão</button><br>
+                                    <span style="font-size: 12px; color: #7f8c8d;">Texto pequeno</span>
+                                    <p style="background: #f1c40f; padding: 10px; border-radius: 5px; font-weight: bold; margin: 0.5rem 0;">Outro destaque</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="selector-notes">
+                            <h6>📝 Características:</h6>
+                            <ul>
+                                <li>Reutilizável em múltiplos elementos</li>
+                                <li>Especificidade média (10)</li>
+                                <li>Mais usado no desenvolvimento</li>
+                                <li>Permite múltiplas classes no mesmo elemento</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seletor de ID -->
+                <div class="selector-type">
+                    <h4>🆔 Seletor de ID (#):</h4>
+                    <div class="selector-explanation">
+                        <p>Seleciona o elemento com o atributo <code>id</code> específico. <strong>Deve ser único</strong> na página</p>
+                        
+                        <div class="selector-demo">
+                            <div class="demo-grid">
+                                <div class="code-side">
+                                    <h5>CSS:</h5>
+                                    <div class="code-container">
+                                        <pre class="code dracula-theme"><code>#cabecalho {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#rodape {
+    background: #34495e;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#menu-principal {
+    background: #3498db;
+    padding: 10px;
+}</code></pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="html-side">
+                                    <h5>HTML:</h5>
+                                    <div class="code-container">
+                                        <pre class="code dracula-theme"><code>&lt;header id="cabecalho"&gt;
+    &lt;h1&gt;Meu Site&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav id="menu-principal"&gt;
+    Menu de navegação
+&lt;/nav&gt;
+
+&lt;main&gt;
+    Conteúdo principal
+&lt;/main&gt;
+
+&lt;footer id="rodape"&gt;
+    © 2024 Meu Site
+&lt;/footer&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="result-preview">
+                                <h5>📋 Resultado:</h5>
+                                <div class="preview-box">
+                                    <div style="background: #2c3e50; color: white; padding: 20px; text-align: center; margin-bottom: 5px;">
+                                        <h1 style="margin: 0;">Meu Site</h1>
+                                    </div>
+                                    <div style="background: #3498db; padding: 10px; color: white; margin-bottom: 10px;">
+                                        Menu de navegação
+                                    </div>
+                                    <div style="padding: 20px;">
+                                        Conteúdo principal
+                                    </div>
+                                    <div style="background: #34495e; color: white; padding: 15px; text-align: center;">
+                                        © 2024 Meu Site
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="selector-notes">
+                            <h6>📝 Características:</h6>
+                            <ul>
+                                <li><strong>Único</strong> por página</li>
+                                <li>Alta especificidade (100)</li>
+                                <li>Usado para elementos únicos</li>
+                                <li>Ideal para JavaScript também</li>
+                                <li>Difícil de sobrescrever</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seletor Universal -->
+                <div class="selector-type">
+                    <h4>🌍 Seletor Universal (*):</h4>
+                    <div class="selector-explanation">
+                        <p>Seleciona <strong>todos os elementos</strong> da página</p>
+                        
+                        <div class="selector-demo">
+                            <div class="demo-grid">
+                                <div class="code-side">
+                                    <h5>CSS:</h5>
+                                    <div class="code-container">
+                                        <pre class="code dracula-theme"><code>/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ou fonte padrão */
+* {
+    font-family: Arial, sans-serif;
+}
+
+/* Debug - ver todos elementos */
+* {
+    border: 1px solid red;
+}</code></pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="html-side">
+                                    <h5>HTML:</h5>
+                                    <div class="code-container">
+                                        <pre class="code dracula-theme"><code>&lt;h1&gt;Título&lt;/h1&gt;
+&lt;p&gt;Parágrafo&lt;/p&gt;
+&lt;div&gt;
+    &lt;span&gt;Texto&lt;/span&gt;
+    &lt;a href="#"&gt;Link&lt;/a&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="usage-examples">
+                                <h5>🎯 Usos Comuns:</h5>
+                                <div class="usage-grid">
+                                    <div class="usage-card">
+                                        <h6>🔄 CSS Reset</h6>
+                                        <div class="code-container small">
+                                            <pre class="code dracula-theme"><code>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}</code></pre>
+                                        </div>
+                                        <p>Remove margens e paddings padrão</p>
+                                    </div>
+                                    
+                                    <div class="usage-card">
+                                        <h6>🔤 Fonte Global</h6>
+                                        <div class="code-container small">
+                                            <pre class="code dracula-theme"><code>* {
+    font-family: 'Roboto', Arial, sans-serif;
+}</code></pre>
+                                        </div>
+                                        <p>Define fonte para todos elementos</p>
+                                    </div>
+                                    
+                                    <div class="usage-card">
+                                        <h6>🐛 Debug</h6>
+                                        <div class="code-container small">
+                                            <pre class="code dracula-theme"><code>* {
+    border: 1px solid red;
+    background: rgba(255,0,0,0.1);
+}</code></pre>
+                                        </div>
+                                        <p>Visualizar layout durante desenvolvimento</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="selector-notes warning">
+                            <h6>⚠️ Cuidados:</h6>
+                            <ul>
+                                <li>Pode impactar performance</li>
+                                <li>Use com moderação</li>
+                                <li>Ideal apenas para reset ou configurações globais</li>
+                                <li>Especificidade muito baixa (0)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Primeira metade termina aqui - placeholder para segunda metade -->
+            <div class="continue-message">
+                <h3>🚧 Continuação do Dia 5</h3>
+                <p>A segunda metade abordará:</p>
+                <ul>
+                    <li>🎨 Estilização de textos, links, listas, imagens e tabelas</li>
+                    <li>📦 Box Model completo</li>
+                    <li>🏗️ Containers e Layout com div</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Formação HTML e CSS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

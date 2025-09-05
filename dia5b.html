@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 5B - Box Model e Estilização Geral</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/day-content.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fab fa-css3-alt"></i> Box Model e Estilização Geral</h1>
+        <p>Compreendendo o modelo de caixa CSS e técnicas de estilização</p>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-btn">
+                <i class="fas fa-home"></i> Início
+            </a>
+            <a href="dia5.html" class="nav-btn">
+                <i class="fas fa-arrow-left"></i> Dia 5A
+            </a>
+            <a href="#" class="nav-btn current">
+                <i class="fas fa-cube"></i> Dia 5B
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Box Model Fundamentals -->
+        <section class="concept-section">
+            <h2><i class="fas fa-cube"></i> O Box Model do CSS</h2>
+            <p>O Box Model é um dos conceitos mais importantes do CSS. Todo elemento HTML é tratado como uma "caixa" retangular com 4 componentes principais:</p>
+
+            <div class="box-model-visual">
+                <h3>Visualização Interativa do Box Model</h3>
+                
+                <div class="box-model-container">
+                    <div class="box-layer margin-layer">
+                        <label class="layer-label margin-label">MARGIN</label>
+                        <div class="box-layer border-layer">
+                            <label class="layer-label border-label">BORDER</label>
+                            <div class="box-layer padding-layer">
+                                <label class="layer-label padding-label">PADDING</label>
+                                <div class="box-layer content-layer">
+                                    <div class="content-demo">
+                                        <h4>CONTENT</h4>
+                                        <p>Conteúdo do elemento</p>
+                                        <p>150px × 100px</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-model-explanation">
+                    <div class="explanation-grid">
+                        <div class="explanation-item content-exp">
+                            <h5><i class="fas fa-file-text"></i> CONTENT</h5>
+                            <p>O conteúdo real: texto, imagens, etc.</p>
+                            <p><strong>Propriedades:</strong> width, height</p>
+                        </div>
+                        
+                        <div class="explanation-item padding-exp">
+                            <h5><i class="fas fa-expand-arrows-alt"></i> PADDING</h5>
+                            <p>Espaço interno entre conteúdo e borda</p>
+                            <p><strong>Propriedades:</strong> padding, padding-top, padding-right, padding-bottom, padding-left</p>
+                        </div>
+                        
+                        <div class="explanation-item border-exp">
+                            <h5><i class="fas fa-border-style"></i> BORDER</h5>
+                            <p>Linha ao redor do padding e conteúdo</p>
+                            <p><strong>Propriedades:</strong> border, border-width, border-style, border-color</p>
+                        </div>
+                        
+                        <div class="explanation-item margin-exp">
+                            <h5><i class="fas fa-arrows-alt"></i> MARGIN</h5>
+                            <p>Espaço externo entre elementos</p>
+                            <p><strong>Propriedades:</strong> margin, margin-top, margin-right, margin-bottom, margin-left</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Box Sizing -->
+        <section class="concept-section">
+            <h2><i class="fas fa-ruler-combined"></i> Box-Sizing: Como o Tamanho é Calculado</h2>
+            
+            <div class="box-sizing-comparison">
+                <div class="sizing-demo">
+                    <h3>content-box (padrão)</h3>
+                    <p>width/height = apenas o conteúdo</p>
+                    
+                    <div class="code-container">
+                        <code>
+.elemento {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid #333;
+    /* Tamanho final: 250px × 150px */
+}
+                        </code>
+                    </div>
+                    
+                    <div class="content-box-demo">
+                        <div class="demo-box content-box">
+                            <span>200px × 100px</span>
+                            <small>+ padding + border = 250px × 150px</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sizing-demo">
+                    <h3>border-box (recomendado)</h3>
+                    <p>width/height = total (incluindo padding e border)</p>
+                    
+                    <div class="code-container">
+                        <code>
+.elemento {
+    box-sizing: border-box;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid #333;
+    /* Tamanho final: 200px × 100px */
+}
+                        </code>
+                    </div>
+                    
+                    <div class="border-box-demo">
+                        <div class="demo-box border-box">
+                            <span>200px × 100px</span>
+                            <small>tamanho total fixo</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="best-practice">
+                <h4><i class="fas fa-star"></i> Melhor Prática</h4>
+                <p>É recomendado usar <code>box-sizing: border-box</code> em todos os elementos:</p>
+                
+                <div class="code-container">
+                    <code>
+/* No início do seu CSS */
+* {
+    box-sizing: border-box;
+}
+
+/* Ou mais específico */
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+                    </code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Margin and Padding Deep Dive -->
+        <section class="concept-section">
+            <h2><i class="fas fa-expand"></i> Margin e Padding em Detalhes</h2>
+            
+            <div class="spacing-techniques">
+                <div class="technique-section">
+                    <h3>Sintaxes de Margin e Padding</h3>
+                    
+                    <div class="syntax-grid">
+                        <div class="syntax-card">
+                            <h5>1 Valor</h5>
+                            <div class="code-container small">
+                                <code>margin: 20px;</code>
+                            </div>
+                            <p>Aplica 20px em todos os lados</p>
+                            <div class="visual-demo one-value"></div>
+                        </div>
+                        
+                        <div class="syntax-card">
+                            <h5>2 Valores</h5>
+                            <div class="code-container small">
+                                <code>margin: 20px 10px;</code>
+                            </div>
+                            <p>20px (vertical) / 10px (horizontal)</p>
+                            <div class="visual-demo two-values"></div>
+                        </div>
+                        
+                        <div class="syntax-card">
+                            <h5>3 Valores</h5>
+                            <div class="code-container small">
+                                <code>margin: 20px 10px 5px;</code>
+                            </div>
+                            <p>20px (top) / 10px (horizontal) / 5px (bottom)</p>
+                            <div class="visual-demo three-values"></div>
+                        </div>
+                        
+                        <div class="syntax-card">
+                            <h5>4 Valores</h5>
+                            <div class="code-container small">
+                                <code>margin: 20px 15px 10px 5px;</code>
+                            </div>
+                            <p>Sentido horário: top, right, bottom, left</p>
+                            <div class="visual-demo four-values"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="technique-section">
+                    <h3>Margin Collapse (Colapso de Margens)</h3>
+                    <p>Quando duas margens verticais se encontram, elas "colapsam" em uma única margem:</p>
+                    
+                    <div class="collapse-demo">
+                        <div class="demo-container">
+                            <div class="collapse-box">
+                                <p>Elemento 1</p>
+                                <small>margin-bottom: 30px</small>
+                            </div>
+                            <div class="collapse-space">
+                                <span>Espaço resultante: 30px</span>
+                                <small>(não 50px!)</small>
+                            </div>
+                            <div class="collapse-box">
+                                <p>Elemento 2</p>
+                                <small>margin-top: 20px</small>
+                            </div>
+                        </div>
+                        
+                        <div class="code-container">
+                            <code>
+.elemento1 { margin-bottom: 30px; }
+.elemento2 { margin-top: 20px; }
+
+/* Resultado: apenas 30px de espaço entre eles */
+/* (a maior margem prevalece) */
+                            </code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="technique-section">
+                    <h3>Centralizando Elementos</h3>
+                    
+                    <div class="centering-examples">
+                        <div class="centering-method">
+                            <h5>Centralização Horizontal</h5>
+                            <div class="code-container">
+                                <code>
+.elemento {
+    width: 300px;
+    margin: 0 auto; /* top/bottom: 0, left/right: auto */
+}
+                                </code>
+                            </div>
+                            <div class="center-demo horizontal">
+                                <div class="centered-element">Centralizado</div>
+                            </div>
+                        </div>
+                        
+                        <div class="centering-method">
+                            <h5>Margin Negativa (Técnica Avançada)</h5>
+                            <div class="code-container">
+                                <code>
+.elemento {
+    position: relative;
+    left: 50%;
+    margin-left: -150px; /* metade da largura */
+}
+                                </code>
+                            </div>
+                            <p><small>💡 Útil para elementos com posição absoluta</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Border Styling -->
+        <section class="concept-section">
+            <h2><i class="fas fa-border-style"></i> Estilização de Bordas</h2>
+            
+            <div class="border-properties">
+                <div class="property-section">
+                    <h3>Propriedades Individuais</h3>
+                    
+                    <div class="border-grid">
+                        <div class="border-demo-card">
+                            <h5>border-width</h5>
+                            <div class="code-container small">
+                                <code>border-width: 1px 2px 3px 4px;</code>
+                            </div>
+                            <div class="border-example width-demo"></div>
+                        </div>
+                        
+                        <div class="border-demo-card">
+                            <h5>border-style</h5>
+                            <div class="style-examples">
+                                <div class="style-demo solid">solid</div>
+                                <div class="style-demo dashed">dashed</div>
+                                <div class="style-demo dotted">dotted</div>
+                                <div class="style-demo double">double</div>
+                                <div class="style-demo groove">groove</div>
+                                <div class="style-demo ridge">ridge</div>
+                                <div class="style-demo inset">inset</div>
+                                <div class="style-demo outset">outset</div>
+                            </div>
+                        </div>
+                        
+                        <div class="border-demo-card">
+                            <h5>border-color</h5>
+                            <div class="code-container small">
+                                <code>border-color: red blue green orange;</code>
+                            </div>
+                            <div class="border-example color-demo"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-section">
+                    <h3>Sintaxe Shorthand</h3>
+                    
+                    <div class="shorthand-examples">
+                        <div class="shorthand-demo">
+                            <h5>Border Completo</h5>
+                            <div class="code-container">
+                                <code>
+/* Sintaxe: width style color */
+border: 2px solid #3498db;
+
+/* Equivale a: */
+border-width: 2px;
+border-style: solid;
+border-color: #3498db;
+                                </code>
+                            </div>
+                            <div class="shorthand-result complete-border">Resultado</div>
+                        </div>
+                        
+                        <div class="shorthand-demo">
+                            <h5>Bordas Específicas</h5>
+                            <div class="code-container">
+                                <code>
+border-top: 3px solid red;
+border-right: 1px dashed blue;
+border-bottom: 2px dotted green;
+border-left: 4px double orange;
+                                </code>
+                            </div>
+                            <div class="shorthand-result specific-borders">Resultado</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="property-section">
+                    <h3>Border Radius (Cantos Arredondados)</h3>
+                    
+                    <div class="radius-examples">
+                        <div class="radius-demo">
+                            <h5>Todos os Cantos</h5>
+                            <div class="code-container small">
+                                <code>border-radius: 10px;</code>
+                            </div>
+                            <div class="radius-result all-corners"></div>
+                        </div>
+                        
+                        <div class="radius-demo">
+                            <h5>Cantos Individuais</h5>
+                            <div class="code-container small">
+                                <code>border-radius: 5px 10px 15px 20px;</code>
+                            </div>
+                            <div class="radius-result individual-corners"></div>
+                        </div>
+                        
+                        <div class="radius-demo">
+                            <h5>Círculo Perfeito</h5>
+                            <div class="code-container small">
+                                <code>border-radius: 50%;</code>
+                            </div>
+                            <div class="radius-result circle"></div>
+                        </div>
+                        
+                        <div class="radius-demo">
+                            <h5>Elíptico</h5>
+                            <div class="code-container small">
+                                <code>border-radius: 50px / 25px;</code>
+                            </div>
+                            <div class="radius-result elliptic"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basic Element Styling -->
+        <section class="concept-section">
+            <h2><i class="fas fa-palette"></i> Estilização Básica de Elementos</h2>
+            
+            <div class="element-styling">
+                <div class="styling-category">
+                    <h3><i class="fas fa-font"></i> Estilização de Textos</h3>
+                    
+                    <div class="text-styling-demo">
+                        <div class="text-properties">
+                            <h5>Propriedades Fundamentais</h5>
+                            <div class="property-list">
+                                <div class="property-item">
+                                    <span class="property-name">color</span>
+                                    <div class="code-container small">
+                                        <code>color: #333;</code>
+                                    </div>
+                                    <div class="text-example" style="color: #333;">Cor do texto</div>
+                                </div>
+                                
+                                <div class="property-item">
+                                    <span class="property-name">font-size</span>
+                                    <div class="code-container small">
+                                        <code>font-size: 18px;</code>
+                                    </div>
+                                    <div class="text-example" style="font-size: 18px;">Tamanho da fonte</div>
+                                </div>
+                                
+                                <div class="property-item">
+                                    <span class="property-name">font-weight</span>
+                                    <div class="code-container small">
+                                        <code>font-weight: bold;</code>
+                                    </div>
+                                    <div class="text-example" style="font-weight: bold;">Peso da fonte</div>
+                                </div>
+                                
+                                <div class="property-item">
+                                    <span class="property-name">text-align</span>
+                                    <div class="code-container small">
+                                        <code>text-align: center;</code>
+                                    </div>
+                                    <div class="text-example" style="text-align: center;">Alinhamento do texto</div>
+                                </div>
+                                
+                                <div class="property-item">
+                                    <span class="property-name">line-height</span>
+                                    <div class="code-container small">
+                                        <code>line-height: 1.5;</code>
+                                    </div>
+                                    <div class="text-example" style="line-height: 1.5;">Altura da linha<br>Segunda linha para exemplo</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="advanced-text">
+                            <h5>Propriedades Avançadas</h5>
+                            <div class="advanced-grid">
+                                <div class="advanced-item">
+                                    <h6>text-decoration</h6>
+                                    <div class="decoration-examples">
+                                        <span class="underline">underline</span>
+                                        <span class="overline">overline</span>
+                                        <span class="line-through">line-through</span>
+                                        <span class="none">none</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="advanced-item">
+                                    <h6>text-transform</h6>
+                                    <div class="transform-examples">
+                                        <span class="uppercase">uppercase</span>
+                                        <span class="lowercase">LOWERCASE</span>
+                                        <span class="capitalize">capitalize words</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="advanced-item">
+                                    <h6>letter-spacing</h6>
+                                    <div class="spacing-examples">
+                                        <span class="normal">normal</span>
+                                        <span class="wide">w i d e</span>
+                                        <span class="narrow">narrow</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="styling-category">
+                    <h3><i class="fas fa-link"></i> Estilização de Links</h3>
+                    
+                    <div class="link-styling-demo">
+                        <h5>Estados dos Links (Pseudo-classes)</h5>
+                        
+                        <div class="code-container">
+                            <code>
+/* Ordem importante! L-V-H-A (LoVe HAte) */
+a:link    { color: blue; }       /* Link não visitado */
+a:visited { color: purple; }     /* Link visitado */
+a:hover   { color: red; }        /* Mouse sobre o link */
+a:active  { color: orange; }     /* Link sendo clicado */
+                            </code>
+                        </div>
+                        
+                        <div class="link-examples">
+                            <div class="link-state">
+                                <a href="#" class="link-normal">Link Normal</a>
+                                <p>Estado padrão do link</p>
+                            </div>
+                            
+                            <div class="link-state">
+                                <a href="#" class="link-hover">Link Hover</a>
+                                <p>Quando o mouse passa por cima</p>
+                            </div>
+                            
+                            <div class="link-state">
+                                <a href="#" class="link-visited">Link Visitado</a>
+                                <p>Depois de clicado uma vez</p>
+                            </div>
+                        </div>
+                        
+                        <div class="link-techniques">
+                            <h6>Técnicas Comuns</h6>
+                            <div class="technique-grid">
+                                <div class="technique">
+                                    <h7>Remover Sublinhado</h7>
+                                    <div class="code-container small">
+                                        <code>a { text-decoration: none; }</code>
+                                    </div>
+                                    <a href="#" class="no-underline">Link sem sublinhado</a>
+                                </div>
+                                
+                                <div class="technique">
+                                    <h7>Efeito Hover</h7>
+                                    <div class="code-container small">
+                                        <code>a:hover { text-decoration: underline; }</code>
+                                    </div>
+                                    <a href="#" class="hover-effect">Link com efeito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="styling-category">
+                    <h3><i class="fas fa-list"></i> Estilização de Listas</h3>
+                    
+                    <div class="list-styling-demo">
+                        <div class="list-types">
+                            <div class="list-example">
+                                <h5>Lista Não Ordenada (UL)</h5>
+                                <div class="code-container">
+                                    <code>
+ul {
+    list-style-type: disc;    /* disc, circle, square, none */
+    list-style-position: inside; /* inside, outside */
+    padding-left: 20px;
+}
+                                    </code>
+                                </div>
+                                
+                                <div class="list-variations">
+                                    <ul class="disc-list">
+                                        <li>Item com disc (padrão)</li>
+                                        <li>Segundo item</li>
+                                    </ul>
+                                    
+                                    <ul class="circle-list">
+                                        <li>Item com circle</li>
+                                        <li>Segundo item</li>
+                                    </ul>
+                                    
+                                    <ul class="square-list">
+                                        <li>Item com square</li>
+                                        <li>Segundo item</li>
+                                    </ul>
+                                    
+                                    <ul class="none-list">
+                                        <li>Item sem marcador</li>
+                                        <li>Segundo item</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="list-example">
+                                <h5>Lista Ordenada (OL)</h5>
+                                <div class="code-container">
+                                    <code>
+ol {
+    list-style-type: decimal;  /* decimal, upper-roman, lower-alpha */
+    counter-reset: item;
+}
+                                    </code>
+                                </div>
+                                
+                                <div class="list-variations">
+                                    <ol class="decimal-list">
+                                        <li>Primeiro item</li>
+                                        <li>Segundo item</li>
+                                        <li>Terceiro item</li>
+                                    </ol>
+                                    
+                                    <ol class="roman-list">
+                                        <li>Primeiro item</li>
+                                        <li>Segundo item</li>
+                                        <li>Terceiro item</li>
+                                    </ol>
+                                    
+                                    <ol class="alpha-list">
+                                        <li>Primeiro item</li>
+                                        <li>Segundo item</li>
+                                        <li>Terceiro item</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="custom-lists">
+                            <h5>Listas Personalizadas</h5>
+                            <div class="code-container">
+                                <code>
+.lista-customizada {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-customizada li::before {
+    content: "→ ";
+    color: #3498db;
+    font-weight: bold;
+}
+                                </code>
+                            </div>
+                            
+                            <ul class="custom-list">
+                                <li>Item com seta personalizada</li>
+                                <li>Segundo item</li>
+                                <li>Terceiro item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Containers and Layout Basics -->
+        <section class="concept-section">
+            <h2><i class="fas fa-th-large"></i> Containers e Layout com DIV</h2>
+            
+            <div class="container-concepts">
+                <div class="div-explanation">
+                    <h3>O Elemento DIV - Container Universal</h3>
+                    <p>O elemento <code>&lt;div&gt;</code> é um container genérico usado para agrupar outros elementos e criar layouts.</p>
+                    
+                    <div class="div-features">
+                        <div class="feature-card">
+                            <h5><i class="fas fa-cube"></i> Sem Semântica</h5>
+                            <p>Não possui significado específico, apenas agrupa conteúdo</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h5><i class="fas fa-layer-group"></i> Block-level</h5>
+                            <p>Ocupa toda a largura disponível por padrão</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h5><i class="fas fa-paint-brush"></i> Totalmente Estilizável</h5>
+                            <p>Pode receber qualquer estilo CSS</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h5><i class="fas fa-boxes"></i> Aninhável</h5>
+                            <p>Pode conter outros divs e elementos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layout-examples">
+                    <h3>Exemplos de Layout Simples</h3>
+                    
+                    <div class="layout-demo">
+                        <h5>Layout de Caixas Básico</h5>
+                        <div class="code-container">
+                            <code>
+&lt;div class="container"&gt;
+    &lt;div class="header"&gt;Cabeçalho&lt;/div&gt;
+    &lt;div class="content"&gt;
+        &lt;div class="sidebar"&gt;Sidebar&lt;/div&gt;
+        &lt;div class="main"&gt;Conteúdo Principal&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="footer"&gt;Rodapé&lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </div>
+                        
+                        <div class="layout-visual">
+                            <div class="demo-container">
+                                <div class="demo-header">Cabeçalho</div>
+                                <div class="demo-content">
+                                    <div class="demo-sidebar">Sidebar</div>
+                                    <div class="demo-main">Conteúdo Principal</div>
+                                </div>
+                                <div class="demo-footer">Rodapé</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layout-demo">
+                        <h5>Grid de Cards</h5>
+                        <div class="code-container">
+                            <code>
+&lt;div class="cards-container"&gt;
+    &lt;div class="card"&gt;Card 1&lt;/div&gt;
+    &lt;div class="card"&gt;Card 2&lt;/div&gt;
+    &lt;div class="card"&gt;Card 3&lt;/div&gt;
+    &lt;div class="card"&gt;Card 4&lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </div>
+                        
+                        <div class="cards-visual">
+                            <div class="demo-cards-container">
+                                <div class="demo-card">Card 1</div>
+                                <div class="demo-card">Card 2</div>
+                                <div class="demo-card">Card 3</div>
+                                <div class="demo-card">Card 4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="styling-containers">
+                    <h3>Estilização de Containers</h3>
+                    
+                    <div class="container-properties">
+                        <div class="property-demo">
+                            <h5>Width e Height</h5>
+                            <div class="code-container">
+                                <code>
+.container {
+    width: 300px;      /* Largura fixa */
+    height: 200px;     /* Altura fixa */
+    max-width: 100%;   /* Largura máxima responsiva */
+    min-height: 150px; /* Altura mínima */
+}
+                                </code>
+                            </div>
+                            <div class="demo-sizes">
+                                <div class="size-demo fixed">300px × 200px</div>
+                                <div class="size-demo percent">100% width</div>
+                                <div class="size-demo auto">auto height</div>
+                            </div>
+                        </div>
+                        
+                        <div class="property-demo">
+                            <h5>Background e Cores</h5>
+                            <div class="code-container">
+                                <code>
+.container {
+    background-color: #f8f9fa;
+    background-image: url('pattern.png');
+    background-size: cover;
+    color: #333;
+}
+                                </code>
+                            </div>
+                            <div class="demo-backgrounds">
+                                <div class="bg-demo color">Background Color</div>
+                                <div class="bg-demo gradient">Background Gradient</div>
+                                <div class="bg-demo pattern">Background Pattern</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="semantic-alternatives">
+                    <h3>Quando NÃO Usar DIV</h3>
+                    <p>Prefira elementos semânticos quando apropriado:</p>
+                    
+                    <div class="alternatives-grid">
+                        <div class="alternative">
+                            <div class="wrong">
+                                <h6>❌ Evite</h6>
+                                <code>&lt;div class="header"&gt;</code>
+                            </div>
+                            <div class="right">
+                                <h6>✅ Prefira</h6>
+                                <code>&lt;header&gt;</code>
+                            </div>
+                        </div>
+                        
+                        <div class="alternative">
+                            <div class="wrong">
+                                <h6>❌ Evite</h6>
+                                <code>&lt;div class="navigation"&gt;</code>
+                            </div>
+                            <div class="right">
+                                <h6>✅ Prefira</h6>
+                                <code>&lt;nav&gt;</code>
+                            </div>
+                        </div>
+                        
+                        <div class="alternative">
+                            <div class="wrong">
+                                <h6>❌ Evite</h6>
+                                <code>&lt;div class="article"&gt;</code>
+                            </div>
+                            <div class="right">
+                                <h6>✅ Prefira</h6>
+                                <code>&lt;article&gt;</code>
+                            </div>
+                        </div>
+                        
+                        <div class="alternative">
+                            <div class="wrong">
+                                <h6>❌ Evite</h6>
+                                <code>&lt;div class="footer"&gt;</code>
+                            </div>
+                            <div class="right">
+                                <h6>✅ Prefira</h6>
+                                <code>&lt;footer&gt;</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practical Exercise -->
+        <section class="practice-section">
+            <h2><i class="fas fa-laptop-code"></i> Exercício Prático</h2>
+            <p>Agora vamos aplicar tudo que aprendemos criando um card de produto completo:</p>
+            
+            <div class="exercise-container">
+                <div class="exercise-demo">
+                    <h3>Resultado Final</h3>
+                    <div class="product-card-demo">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-image"></i>
+                                <p>Imagem do Produto</p>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h4>Nome do Produto</h4>
+                            <p class="product-description">Descrição detalhada do produto com informações importantes para o cliente.</p>
+                            <div class="product-price">
+                                <span class="old-price">R$ 199,99</span>
+                                <span class="new-price">R$ 149,99</span>
+                            </div>
+                            <button class="product-button">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-code">
+                    <h3>HTML Estrutura</h3>
+                    <div class="code-container">
+                        <code>
+&lt;div class="product-card"&gt;
+    &lt;div class="product-image"&gt;
+        &lt;img src="produto.jpg" alt="Nome do Produto"&gt;
+    &lt;/div&gt;
+    &lt;div class="product-info"&gt;
+        &lt;h3&gt;Nome do Produto&lt;/h3&gt;
+        &lt;p class="description"&gt;Descrição do produto...&lt;/p&gt;
+        &lt;div class="price-container"&gt;
+            &lt;span class="old-price"&gt;R$ 199,99&lt;/span&gt;
+            &lt;span class="new-price"&gt;R$ 149,99&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;button class="add-to-cart"&gt;Adicionar ao Carrinho&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </code>
+                    </div>
+                    
+                    <h3>CSS Estilização</h3>
+                    <div class="code-container">
+                        <code>
+.product-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.description {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.price-container {
+    margin-bottom: 1.5rem;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 0.5rem;
+}
+
+.new-price {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 0.75rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.add-to-cart:hover {
+    background: #2980b9;
+}
+                        </code>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-tasks">
+                <h3>Tarefas para Praticar</h3>
+                <div class="task-list">
+                    <div class="task-item">
+                        <h5>1. Experimentar Box-Sizing</h5>
+                        <p>Altere o <code>box-sizing</code> do card e observe as diferenças no tamanho</p>
+                    </div>
+                    
+                    <div class="task-item">
+                        <h5>2. Modificar Borders</h5>
+                        <p>Teste diferentes estilos de borda e border-radius</p>
+                    </div>
+                    
+                    <div class="task-item">
+                        <h5>3. Ajustar Spacing</h5>
+                        <p>Modifique margins e paddings para ver o impacto no layout</p>
+                    </div>
+                    
+                    <div class="task-item">
+                        <h5>4. Criar Variações</h5>
+                        <p>Crie cards com diferentes cores e tamanhos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="summary-section">
+            <h2><i class="fas fa-check-circle"></i> Resumo do Dia 5B</h2>
+            
+            <div class="summary-content">
+                <div class="learned-concepts">
+                    <h3>Conceitos Aprendidos</h3>
+                    <div class="concept-grid">
+                        <div class="concept-item">
+                            <i class="fas fa-cube"></i>
+                            <h5>Box Model</h5>
+                            <p>Content, Padding, Border, Margin</p>
+                        </div>
+                        
+                        <div class="concept-item">
+                            <i class="fas fa-ruler-combined"></i>
+                            <h5>Box-Sizing</h5>
+                            <p>content-box vs border-box</p>
+                        </div>
+                        
+                        <div class="concept-item">
+                            <i class="fas fa-expand"></i>
+                            <h5>Spacing</h5>
+                            <p>Margin, Padding, Collapse</p>
+                        </div>
+                        
+                        <div class="concept-item">
+                            <i class="fas fa-border-style"></i>
+                            <h5>Borders</h5>
+                            <p>Width, Style, Color, Radius</p>
+                        </div>
+                        
+                        <div class="concept-item">
+                            <i class="fas fa-palette"></i>
+                            <h5>Styling</h5>
+                            <p>Texts, Links, Lists</p>
+                        </div>
+                        
+                        <div class="concept-item">
+                            <i class="fas fa-th-large"></i>
+                            <h5>Containers</h5>
+                            <p>DIV, Layout Básico</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="key-takeaways">
+                    <h3>Pontos Importantes</h3>
+                    <ul>
+                        <li><strong>Box Model:</strong> Todo elemento é uma caixa com 4 componentes</li>
+                        <li><strong>box-sizing: border-box:</strong> Facilita cálculos de tamanho</li>
+                        <li><strong>Margin Collapse:</strong> Margens verticais se combinam</li>
+                        <li><strong>Pseudo-classes:</strong> :hover, :active para interatividade</li>
+                        <li><strong>Semântica:</strong> Use DIV apenas quando necessário</li>
+                        <li><strong>Responsividade:</strong> max-width: 100% para flexibilidade</li>
+                    </ul>
+                </div>
+                
+                <div class="next-steps">
+                    <h3>Próximos Passos</h3>
+                    <p>No <strong>Dia 6</strong>, vamos aprofundar em:</p>
+                    <ul>
+                        <li>Flexbox para layouts avançados</li>
+                        <li>CSS Grid para layouts complexos</li>
+                        <li>Posicionamento (relative, absolute, fixed)</li>
+                        <li>Técnicas de centralização</li>
+                        <li>Layouts responsivos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section class="navigation-section">
+            <div class="nav-container">
+                <a href="dia5.html" class="nav-btn secondary">
+                    <i class="fas fa-arrow-left"></i> Dia 5A - Seletores
+                </a>
+                <a href="index.html" class="nav-btn">
+                    <i class="fas fa-home"></i> Início
+                </a>
+                <a href="#" class="nav-btn primary disabled">
+                    <i class="fas fa-arrow-right"></i> Dia 6 - Em Breve
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Formação HTML e CSS. Desenvolvido para facilitar o aprendizado.</p>
+    </footer>
+</body>
+</html>
