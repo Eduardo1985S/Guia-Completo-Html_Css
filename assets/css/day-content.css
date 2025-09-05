@@ -1215,3 +1215,666 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Estilos específicos para o Dia 3 */
+
+/* Cores e formatos */
+.color-formats {
+    margin: 2rem 0;
+}
+
+.color-format-card {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.color-format-card h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.color-examples, .rgb-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.color-example {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #dee2e6;
+    transition: var(--transition);
+}
+
+.color-example:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.color-swatch {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.color-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.color-info code {
+    background: #282a36;
+    color: #f8f8f2;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.color-info span {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Explicação hexadecimal */
+.hex-explanation {
+    background: linear-gradient(135deg, #e8f4fd, #f3e5f5);
+    border: 1px solid #b3d9f7;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.hex-explanation h6 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.hex-breakdown {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.hex-demo {
+    background: #282a36;
+    color: #f8f8f2;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    font-size: 1.5rem;
+    font-family: 'Monaco', 'Menlo', monospace;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.hex-parts {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hex-parts .part {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.hex-parts .part.red {
+    background: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.hex-parts .part.green {
+    background: #e8f5e8;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.hex-parts .part.blue {
+    background: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #90caf9;
+}
+
+/* Tabela de conversão */
+.conversion-table {
+    margin: 2rem 0;
+}
+
+.conversion-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.conversion-table th,
+.conversion-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.conversion-table th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.conversion-table code {
+    background: #f8f9fa;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.85rem;
+}
+
+.mini-swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Psicologia das cores */
+.psychology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.psychology-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid transparent;
+}
+
+.psychology-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.psychology-card.red { border-top-color: #e74c3c; }
+.psychology-card.blue { border-top-color: #3498db; }
+.psychology-card.green { border-top-color: #27ae60; }
+.psychology-card.yellow { border-top-color: #f1c40f; }
+.psychology-card.orange { border-top-color: #e67e22; }
+.psychology-card.purple { border-top-color: #9b59b6; }
+.psychology-card.black { border-top-color: #2c3e50; }
+.psychology-card.white { border-top-color: #ecf0f1; }
+
+.color-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.color-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.color-header h5 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.psychology-card .emotions,
+.psychology-card .uses,
+.psychology-card .examples {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.psychology-card strong {
+    color: var(--primary-color);
+}
+
+/* Combinações de cores */
+.color-combinations {
+    background: linear-gradient(135deg, #fff3e0, #ffeaa7);
+    border: 1px solid #ffcc02;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.color-combinations h4 {
+    color: #e67e22;
+    margin-bottom: 1.5rem;
+}
+
+.combination-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.tip-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tip-card h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.rule-example {
+    display: flex;
+    height: 60px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.rule-part {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.rule-part.sixty { flex: 6; }
+.rule-part.thirty { flex: 3; }
+.rule-part.ten { flex: 1; }
+
+.complement-examples {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.complement-pair {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Propriedades CSS */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.property-card {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.property-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.property-card h5 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.property-example {
+    margin: 1rem 0;
+}
+
+.property-example code {
+    background: #282a36;
+    color: #f8f8f2;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.property-example .result {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Exemplo prático de cores */
+.practical-color-example {
+    margin: 2rem 0;
+}
+
+.browser-preview.color-demo {
+    background: #ecf0f1;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Links */
+.link-types {
+    margin: 2rem 0;
+}
+
+.link-type-card {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.link-type-card h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.link-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.link-example {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+}
+
+.link-example h6 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.link-example code {
+    background: #282a36;
+    color: #f8f8f2;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    display: block;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.link-example .result {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 1rem;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+}
+
+/* Formatação de links */
+.link-styling {
+    margin: 2rem 0;
+}
+
+.link-styles-demo {
+    margin: 1.5rem 0;
+}
+
+.styles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.style-demo {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.style-demo h6 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.style-demo code {
+    background: #f8f9fa;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    display: block;
+}
+
+.btn-simple {
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-simple:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.link-underline {
+    color: #2c3e50;
+    text-decoration: none;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 2px;
+}
+
+.btn-icon {
+    background: #27ae60;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-icon:hover {
+    background: #229954;
+    transform: translateY(-2px);
+}
+
+/* Estrutura semântica */
+.semantic-comparison {
+    margin: 2rem 0;
+}
+
+.code-container.small {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.elements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.element-card {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: var(--transition);
+    border-top: 4px solid var(--secondary-color);
+}
+
+.element-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.element-card h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Monaco', 'Menlo', monospace;
+    background: #e9ecef;
+    padding: 0.5rem;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.element-use {
+    background: #e8f4fd;
+    border: 1px solid #b3d9f7;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.element-use strong {
+    color: var(--secondary-color);
+}
+
+.element-example {
+    background: #282a36;
+    color: #f8f8f2;
+    padding: 1rem;
+    border-radius: 5px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.85rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+/* Estrutura completa */
+.complete-structure {
+    margin: 2rem 0;
+}
+
+/* Benefícios semânticos */
+.semantic-benefits {
+    background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+    border: 1px solid #c8e6c9;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.semantic-benefits h4 {
+    color: var(--success-color);
+    margin-bottom: 1.5rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.benefit-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.benefit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-card h5 {
+    color: var(--success-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Responsividade para Dia 3 */
+@media (max-width: 768px) {
+    .color-examples, .rgb-examples {
+        grid-template-columns: 1fr;
+    }
+    
+    .hex-parts {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .psychology-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .combination-tips {
+        grid-template-columns: 1fr;
+    }
+    
+    .complement-examples {
+        justify-content: center;
+    }
+    
+    .properties-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .styles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .elements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
