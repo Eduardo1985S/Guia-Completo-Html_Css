@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 4 - Tabelas, Formulários e Semântica | Formação HTML e CSS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/day-content.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🔹 Dia 4</h1>
+            <p class="header__subtitle">Tabelas, Formulários e Semântica</p>
+            <nav class="header__nav">
+                <a href="index.html" class="nav-link">← Voltar ao curso</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Navegação da aula -->
+            <nav class="lesson-nav">
+                <ul>
+                    <li><a href="#tabelas">📊 Tabelas</a></li>
+                    <li><a href="#formularios">📝 Formulários</a></li>
+                    <li><a href="#atributos-form">⚙️ Atributos de Formulário</a></li>
+                    <li><a href="#validacao">✅ Validação</a></li>
+                    <li><a href="#elementos-semanticos">🏗️ Elementos Semânticos</a></li>
+                </ul>
+            </nav>
+
+            <!-- Seção 1: Tabelas -->
+            <section id="tabelas" class="content-section">
+                <div class="section-header">
+                    <h2>📊 Tabelas: table, tr, td, th e Atributos</h2>
+                    <p class="section-intro">Organize dados de forma estruturada com tabelas HTML</p>
+                </div>
+
+                <!-- Conceito básico -->
+                <div class="definition-box">
+                    <h3>🤔 Quando usar tabelas?</h3>
+                    <p>Use tabelas apenas para <strong>dados tabulares</strong> (informações organizadas em linhas e
+                        colunas), nunca para layout de página. Exemplos: planilhas, relatórios, comparações.</p>
+                </div>
+
+                <!-- Estrutura básica -->
+                <div class="table-structure">
+                    <h4>🏗️ Estrutura Básica da Tabela:</h4>
+
+                    <div class="table-anatomy">
+                        <div class="anatomy-visual">
+                            <table class="demo-table">
+                                <thead>
+                                    <tr>
+                                        <th>Cabeçalho 1</th>
+                                        <th>Cabeçalho 2</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Dado 1</td>
+                                        <td>Dado 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dado 3</td>
+                                        <td>Dado 4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="anatomy-labels">
+                            <div class="label-item">
+                                <span class="label-color table-color"></span>
+                                <code>&lt;table&gt;</code> - Container da tabela
+                            </div>
+                            <div class="label-item">
+                                <span class="label-color thead-color"></span>
+                                <code>&lt;thead&gt;</code> - Cabeçalho da tabela
+                            </div>
+                            <div class="label-item">
+                                <span class="label-color tbody-color"></span>
+                                <code>&lt;tbody&gt;</code> - Corpo da tabela
+                            </div>
+                            <div class="label-item">
+                                <span class="label-color tr-color"></span>
+                                <code>&lt;tr&gt;</code> - Linha da tabela
+                            </div>
+                            <div class="label-item">
+                                <span class="label-color th-color"></span>
+                                <code>&lt;th&gt;</code> - Célula de cabeçalho
+                            </div>
+                            <div class="label-item">
+                                <span class="label-color td-color"></span>
+                                <code>&lt;td&gt;</code> - Célula de dados
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemplo básico -->
+                <div class="code-example">
+                    <h4>💻 Tabela Básica:</h4>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="file-name">tabela-basica.html</span>
+                            <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                        </div>
+                        <pre class="code dracula-theme"><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Nome&lt;/th&gt;
+            &lt;th&gt;Idade&lt;/th&gt;
+            &lt;th&gt;Cidade&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;João&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;São Paulo&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Maria&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+            &lt;td&gt;Rio de Janeiro&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+
+                    <div class="visual-result">
+                        <h5>📋 Resultado:</h5>
+                        <table class="result-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Idade</th>
+                                    <th>Cidade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>João</td>
+                                    <td>25</td>
+                                    <td>São Paulo</td>
+                                </tr>
+                                <tr>
+                                    <td>Maria</td>
+                                    <td>30</td>
+                                    <td>Rio de Janeiro</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Atributos colspan e rowspan -->
+                <div class="table-attributes">
+                    <h4>🔗 Atributos Especiais: colspan e rowspan</h4>
+
+                    <div class="attributes-explanation">
+                        <div class="attribute-demo">
+                            <h5>📏 colspan - Mesclar Colunas</h5>
+                            <p>O atributo <code>colspan</code> faz uma célula ocupar múltiplas colunas</p>
+
+                            <div class="demo-grid">
+                                <div class="code-demo">
+                                    <div class="code-container small">
+                                        <pre class="code dracula-theme"><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th colspan="2"&gt;Vendas 2024&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Janeiro&lt;/td&gt;
+        &lt;td&gt;R$ 10.000&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div class="table-demo">
+                                    <table class="demo-table">
+                                        <tr>
+                                            <th colspan="2" style="background: #3498db; color: white;">Vendas 2024</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Janeiro</td>
+                                            <td>R$ 10.000</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="attribute-demo">
+                            <h5>📐 rowspan - Mesclar Linhas</h5>
+                            <p>O atributo <code>rowspan</code> faz uma célula ocupar múltiplas linhas</p>
+
+                            <div class="demo-grid">
+                                <div class="code-demo">
+                                    <div class="code-container small">
+                                        <pre class="code dracula-theme"><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;Produto A&lt;/td&gt;
+        &lt;td&gt;Cor: Azul&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Tamanho: M&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div class="table-demo">
+                                    <table class="demo-table">
+                                        <tr>
+                                            <td rowspan="2"
+                                                style="background: #e74c3c; color: white; vertical-align: middle;">
+                                                Produto A</td>
+                                            <td>Cor: Azul</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tamanho: M</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemplo complexo -->
+                <div class="complex-table-example">
+                    <h4>🎯 Exemplo Complexo - Relatório de Vendas:</h4>
+                    <div class="code-example">
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">tabela-complexa.html</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th rowspan="2"&gt;Produto&lt;/th&gt;
+            &lt;th colspan="2"&gt;1º Trimestre&lt;/th&gt;
+            &lt;th rowspan="2"&gt;Total&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Janeiro&lt;/th&gt;
+            &lt;th&gt;Fevereiro&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Notebook&lt;/td&gt;
+            &lt;td&gt;15&lt;/td&gt;
+            &lt;td&gt;23&lt;/td&gt;
+            &lt;td&gt;38&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Mouse&lt;/td&gt;
+            &lt;td&gt;45&lt;/td&gt;
+            &lt;td&gt;52&lt;/td&gt;
+            &lt;td&gt;97&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3"&gt;&lt;strong&gt;Total Geral&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;strong&gt;135&lt;/strong&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+
+                        <div class="visual-result">
+                            <h5>📋 Resultado:</h5>
+                            <table class="result-table complex">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Produto</th>
+                                        <th colspan="2">1º Trimestre</th>
+                                        <th rowspan="2">Total</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Janeiro</th>
+                                        <th>Fevereiro</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Notebook</td>
+                                        <td>15</td>
+                                        <td>23</td>
+                                        <td>38</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mouse</td>
+                                        <td>45</td>
+                                        <td>52</td>
+                                        <td>97</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"><strong>Total Geral</strong></td>
+                                        <td><strong>135</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS para tabelas -->
+                <div class="table-styling">
+                    <h4>🎨 Estilização de Tabelas com CSS:</h4>
+                    <div class="code-container">
+                        <pre class="code dracula-theme"><code>table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e8f4fd;
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 2: Formulários -->
+            <section id="formularios" class="content-section">
+                <div class="section-header">
+                    <h2>📝 Formulários: Coletando Dados dos Usuários</h2>
+                    <p class="section-intro">Crie interfaces interativas para capturar informações dos usuários</p>
+                </div>
+
+                <!-- Conceito -->
+                <div class="definition-box">
+                    <h3>🤔 O que são formulários?</h3>
+                    <p>Formulários são <strong>interfaces que permitem aos usuários enviar dados</strong> para o
+                        servidor. São essenciais para login, cadastro, contato, pesquisas, etc.</p>
+                </div>
+
+                <!-- Estrutura básica -->
+                <div class="form-structure">
+                    <h4>🏗️ Estrutura Básica do Formulário:</h4>
+                    <div class="code-example">
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">formulario-basico.html</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>&lt;form action="/processar" method="POST"&gt;
+    &lt;!-- Campos do formulário --&gt;
+    &lt;input type="text" name="nome"&gt;
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tipos de input -->
+                <div class="input-types">
+                    <h4>📋 Tipos de Campos (input):</h4>
+
+                    <div class="inputs-grid">
+                        <div class="input-demo">
+                            <h5>✏️ Text - Texto simples</h5>
+                            <div class="input-example">
+                                <code>&lt;input type="text" name="nome" placeholder="Digite seu nome"&gt;</code>
+                                <input type="text" placeholder="Digite seu nome" class="demo-input">
+                            </div>
+                        </div>
+
+                        <div class="input-demo">
+                            <h5>📧 Email - Email válido</h5>
+                            <div class="input-example">
+                                <code>&lt;input type="email" name="email" placeholder="seu@email.com"&gt;</code>
+                                <input type="email" placeholder="seu@email.com" class="demo-input">
+                            </div>
+                        </div>
+
+                        <div class="input-demo">
+                            <h5>🔒 Password - Senha</h5>
+                            <div class="input-example">
+                                <code>&lt;input type="password" name="senha" placeholder="Sua senha"&gt;</code>
+                                <input type="password" placeholder="Sua senha" class="demo-input">
+                            </div>
+                        </div>
+
+                        <div class="input-demo">
+                            <h5>🔢 Number - Números</h5>
+                            <div class="input-example">
+                                <code>&lt;input type="number" name="idade" min="0" max="120"&gt;</code>
+                                <input type="number" min="0" max="120" placeholder="Idade" class="demo-input">
+                            </div>
+                        </div>
+
+                        <div class="input-demo">
+                            <h5>📅 Date - Data</h5>
+                            <div class="input-example">
+                                <code>&lt;input type="date" name="nascimento"&gt;</code>
+                                <input type="date" class="demo-input">
+                            </div>
+                        </div>
+
+                        <div class="input-demo">
+                            <h5>📁 File - Arquivo</h5>
+                            <div class="input-example">
+                                <code>&lt;input type="file" name="arquivo" accept=".pdf,.jpg"&gt;</code>
+                                <input type="file" accept=".pdf,.jpg" class="demo-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outros elementos -->
+                <div class="other-form-elements">
+                    <h4>🎛️ Outros Elementos de Formulário:</h4>
+
+                    <div class="elements-grid">
+                        <!-- Textarea -->
+                        <div class="element-demo">
+                            <h5>📝 Textarea - Texto longo</h5>
+                            <div class="element-example">
+                                <code>&lt;textarea name="mensagem" rows="4" cols="50" placeholder="Sua mensagem..."&gt;&lt;/textarea&gt;</code>
+                                <textarea rows="4" cols="50" placeholder="Sua mensagem..."
+                                    class="demo-textarea"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Select -->
+                        <div class="element-demo">
+                            <h5>📋 Select - Lista suspensa</h5>
+                            <div class="element-example">
+                                <code>&lt;select name="cidade"&gt;
+    &lt;option value=""&gt;Escolha uma cidade&lt;/option&gt;
+    &lt;option value="sp"&gt;São Paulo&lt;/option&gt;
+    &lt;option value="rj"&gt;Rio de Janeiro&lt;/option&gt;
+&lt;/select&gt;</code>
+                                <select class="demo-select">
+                                    <option value="">Escolha uma cidade</option>
+                                    <option value="sp">São Paulo</option>
+                                    <option value="rj">Rio de Janeiro</option>
+                                    <option value="mg">Belo Horizonte</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Radio -->
+                        <div class="element-demo">
+                            <h5>🔘 Radio - Escolha única</h5>
+                            <div class="element-example">
+                                <code>&lt;input type="radio" name="genero" value="m" id="masc"&gt;
+&lt;label for="masc"&gt;Masculino&lt;/label&gt;
+&lt;input type="radio" name="genero" value="f" id="fem"&gt;
+&lt;label for="fem"&gt;Feminino&lt;/label&gt;</code>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="genero" value="m"> Masculino</label>
+                                    <label><input type="radio" name="genero" value="f"> Feminino</label>
+                                    <label><input type="radio" name="genero" value="o"> Outro</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Checkbox -->
+                        <div class="element-demo">
+                            <h5>☑️ Checkbox - Múltiplas escolhas</h5>
+                            <div class="element-example">
+                                <code>&lt;input type="checkbox" name="hobbies[]" value="leitura" id="leitura"&gt;
+&lt;label for="leitura"&gt;Leitura&lt;/label&gt;
+&lt;input type="checkbox" name="hobbies[]" value="musica" id="musica"&gt;
+&lt;label for="musica"&gt;Música&lt;/label&gt;</code>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="hobbies[]" value="leitura"> Leitura</label>
+                                    <label><input type="checkbox" name="hobbies[]" value="musica"> Música</label>
+                                    <label><input type="checkbox" name="hobbies[]" value="esportes"> Esportes</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="element-demo">
+                            <h5>🔲 Button - Botões</h5>
+                            <div class="element-example">
+                                <code>&lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;button type="reset"&gt;Limpar&lt;/button&gt;
+&lt;button type="button"&gt;Personalizado&lt;/button&gt;</code>
+                                <div class="button-group">
+                                    <button type="submit" class="demo-button primary">Enviar</button>
+                                    <button type="reset" class="demo-button secondary">Limpar</button>
+                                    <button type="button" class="demo-button">Personalizado</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário completo -->
+                <div class="complete-form-example">
+                    <h4>🎯 Exemplo de Formulário Completo:</h4>
+                    <div class="code-example">
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">formulario-completo.html</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>&lt;form action="/cadastro" method="POST" enctype="multipart/form-data"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Dados Pessoais&lt;/legend&gt;
+        
+        &lt;label for="nome"&gt;Nome Completo:&lt;/label&gt;
+        &lt;input type="text" id="nome" name="nome" required&gt;
+        
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+        
+        &lt;label for="telefone"&gt;Telefone:&lt;/label&gt;
+        &lt;input type="tel" id="telefone" name="telefone"&gt;
+        
+        &lt;label for="nascimento"&gt;Data de Nascimento:&lt;/label&gt;
+        &lt;input type="date" id="nascimento" name="nascimento"&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;fieldset&gt;
+        &lt;legend&gt;Preferências&lt;/legend&gt;
+        
+        &lt;label for="cidade"&gt;Cidade:&lt;/label&gt;
+        &lt;select id="cidade" name="cidade"&gt;
+            &lt;option value=""&gt;Selecione uma cidade&lt;/option&gt;
+            &lt;option value="sp"&gt;São Paulo&lt;/option&gt;
+            &lt;option value="rj"&gt;Rio de Janeiro&lt;/option&gt;
+            &lt;option value="mg"&gt;Belo Horizonte&lt;/option&gt;
+        &lt;/select&gt;
+        
+        &lt;fieldset&gt;
+            &lt;legend&gt;Gênero:&lt;/legend&gt;
+            &lt;input type="radio" id="masc" name="genero" value="masculino"&gt;
+            &lt;label for="masc"&gt;Masculino&lt;/label&gt;
+            
+            &lt;input type="radio" id="fem" name="genero" value="feminino"&gt;
+            &lt;label for="fem"&gt;Feminino&lt;/label&gt;
+            
+            &lt;input type="radio" id="outro" name="genero" value="outro"&gt;
+            &lt;label for="outro"&gt;Outro&lt;/label&gt;
+        &lt;/fieldset&gt;
+        
+        &lt;fieldset&gt;
+            &lt;legend&gt;Interesses:&lt;/legend&gt;
+            &lt;input type="checkbox" id="tech" name="interesses[]" value="tecnologia"&gt;
+            &lt;label for="tech"&gt;Tecnologia&lt;/label&gt;
+            
+            &lt;input type="checkbox" id="sports" name="interesses[]" value="esportes"&gt;
+            &lt;label for="sports"&gt;Esportes&lt;/label&gt;
+            
+            &lt;input type="checkbox" id="music" name="interesses[]" value="musica"&gt;
+            &lt;label for="music"&gt;Música&lt;/label&gt;
+        &lt;/fieldset&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;fieldset&gt;
+        &lt;legend&gt;Adicional&lt;/legend&gt;
+        
+        &lt;label for="foto"&gt;Foto de Perfil:&lt;/label&gt;
+        &lt;input type="file" id="foto" name="foto" accept="image/*"&gt;
+        
+        &lt;label for="biografia"&gt;Biografia:&lt;/label&gt;
+        &lt;textarea id="biografia" name="biografia" rows="4" 
+                  placeholder="Conte um pouco sobre você..."&gt;&lt;/textarea&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;div class="form-actions"&gt;
+        &lt;button type="submit"&gt;Cadastrar&lt;/button&gt;
+        &lt;button type="reset"&gt;Limpar Formulário&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 3: Atributos de Formulário -->
+            <section id="atributos-form" class="content-section">
+                <div class="section-header">
+                    <h2>⚙️ Atributos de Formulário: method, action, required, placeholder</h2>
+                    <p class="section-intro">Configure o comportamento e validação dos formulários</p>
+                </div>
+
+                <!-- Atributos principais -->
+                <div class="form-attributes">
+                    <h4>🏷️ Atributos Principais:</h4>
+
+                    <div class="attributes-grid">
+                        <!-- Action -->
+                        <div class="attribute-card">
+                            <h5>🎯 action</h5>
+                            <p>Define para onde os dados serão enviados</p>
+                            <div class="attribute-example">
+                                <code>&lt;form action="/processar-dados"&gt;</code>
+                                <div class="explanation">
+                                    <ul>
+                                        <li><code>action="/login"</code> - Página específica</li>
+                                        <li><code>action="mailto:email@site.com"</code> - Email</li>
+                                        <li><code>action="#"</code> - Mesma página</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Method -->
+                        <div class="attribute-card">
+                            <h5>📮 method</h5>
+                            <p>Define como os dados serão enviados</p>
+                            <div class="attribute-example">
+                                <code>&lt;form method="POST"&gt;</code>
+                                <div class="explanation">
+                                    <ul>
+                                        <li><code>GET</code> - Dados na URL (busca, filtros)</li>
+                                        <li><code>POST</code> - Dados ocultos (login, cadastro)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Required -->
+                        <div class="attribute-card">
+                            <h5>❗ required</h5>
+                            <p>Torna o campo obrigatório</p>
+                            <div class="attribute-example">
+                                <code>&lt;input type="email" required&gt;</code>
+                                <div class="explanation">
+                                    <p>Impede o envio se o campo estiver vazio</p>
+                                    <input type="email" required placeholder="Campo obrigatório" class="demo-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Placeholder -->
+                        <div class="attribute-card">
+                            <h5>💬 placeholder</h5>
+                            <p>Texto de exemplo no campo</p>
+                            <div class="attribute-example">
+                                <code>&lt;input placeholder="Digite seu nome"&gt;</code>
+                                <div class="explanation">
+                                    <p>Orientação visual para o usuário</p>
+                                    <input type="text" placeholder="Digite seu nome aqui..." class="demo-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Maxlength -->
+                        <div class="attribute-card">
+                            <h5>📏 maxlength</h5>
+                            <p>Limite máximo de caracteres</p>
+                            <div class="attribute-example">
+                                <code>&lt;input maxlength="50"&gt;</code>
+                                <div class="explanation">
+                                    <p>Limita a quantidade de caracteres</p>
+                                    <input type="text" maxlength="20" placeholder="Máx. 20 caracteres"
+                                        class="demo-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pattern -->
+                        <div class="attribute-card">
+                            <h5>🔍 pattern</h5>
+                            <p>Validação com expressão regular</p>
+                            <div class="attribute-example">
+                                <code>&lt;input pattern="[0-9]{5}-[0-9]{3}"&gt;</code>
+                                <div class="explanation">
+                                    <p>Valida formato específico (ex: CEP)</p>
+                                    <input type="text" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000"
+                                        class="demo-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outros atributos úteis -->
+                <div class="other-attributes">
+                    <h4>🔧 Outros Atributos Úteis:</h4>
+
+                    <div class="attributes-list">
+                        <div class="attr-item">
+                            <code>disabled</code>
+                            <span>Desabilita o campo</span>
+                            <input type="text" disabled value="Campo desabilitado" class="demo-input small">
+                        </div>
+
+                        <div class="attr-item">
+                            <code>readonly</code>
+                            <span>Campo apenas para leitura</span>
+                            <input type="text" readonly value="Apenas leitura" class="demo-input small">
+                        </div>
+
+                        <div class="attr-item">
+                            <code>autofocus</code>
+                            <span>Foco automático no campo</span>
+                            <span class="note">Campo recebe foco ao carregar a página</span>
+                        </div>
+
+                        <div class="attr-item">
+                            <code>autocomplete="off"</code>
+                            <span>Desabilita preenchimento automático</span>
+                            <span class="note">Útil para campos sensíveis</span>
+                        </div>
+
+                        <div class="attr-item">
+                            <code>enctype="multipart/form-data"</code>
+                            <span>Para upload de arquivos</span>
+                            <span class="note">Obrigatório quando há campo file</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 4: Validação -->
+            <section id="validacao" class="content-section">
+                <div class="section-header">
+                    <h2>✅ Validação Básica e Expressões Regulares</h2>
+                    <p class="section-intro">Garanta que os dados estejam no formato correto</p>
+                </div>
+
+                <!-- Tipos de validação -->
+                <div class="validation-types">
+                    <h4>🔍 Tipos de Validação HTML5:</h4>
+
+                    <div class="validation-grid">
+                        <div class="validation-card">
+                            <h5>📧 Email</h5>
+                            <div class="validation-example">
+                                <code>&lt;input type="email" required&gt;</code>
+                                <p>Valida formato de email automaticamente</p>
+                                <input type="email" placeholder="teste@exemplo.com" class="demo-input" required>
+                                <span class="validation-note">Tente digitar um email inválido</span>
+                            </div>
+                        </div>
+
+                        <div class="validation-card">
+                            <h5>🔢 Number</h5>
+                            <div class="validation-example">
+                                <code>&lt;input type="number" min="1" max="100"&gt;</code>
+                                <p>Aceita apenas números no intervalo</p>
+                                <input type="number" min="1" max="100" placeholder="1-100" class="demo-input">
+                            </div>
+                        </div>
+
+                        <div class="validation-card">
+                            <h5>📏 Length</h5>
+                            <div class="validation-example">
+                                <code>&lt;input minlength="8" maxlength="20"&gt;</code>
+                                <p>Controla tamanho mínimo e máximo</p>
+                                <input type="text" minlength="8" maxlength="20" placeholder="8-20 caracteres"
+                                    class="demo-input">
+                            </div>
+                        </div>
+
+                        <div class="validation-card">
+                            <h5>📅 Date</h5>
+                            <div class="validation-example">
+                                <code>&lt;input type="date" min="2024-01-01"&gt;</code>
+                                <p>Valida datas e intervalos</p>
+                                <input type="date" min="2024-01-01" class="demo-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expressões Regulares -->
+                <div class="regex-section">
+                    <h4>🔍 Expressões Regulares (RegEx):</h4>
+                    <p>Use o atributo <code>pattern</code> para validações personalizadas</p>
+
+                    <div class="regex-examples">
+                        <div class="regex-card">
+                            <h5>📱 Telefone</h5>
+                            <div class="regex-demo">
+                                <code>pattern="\([0-9]{2}\)[0-9]{4,5}-[0-9]{4}"</code>
+                                <p>Formato: (11)99999-9999</p>
+                                <input type="text" pattern="\([0-9]{2}\)[0-9]{4,5}-[0-9]{4}"
+                                    placeholder="(11)99999-9999" class="demo-input">
+                            </div>
+                        </div>
+
+                        <div class="regex-card">
+                            <h5>📮 CEP</h5>
+                            <div class="regex-demo">
+                                <code>pattern="[0-9]{5}-[0-9]{3}"</code>
+                                <p>Formato: 12345-678</p>
+                                <input type="text" pattern="[0-9]{5}-[0-9]{3}" placeholder="12345-678"
+                                    class="demo-input">
+                            </div>
+                        </div>
+
+                        <div class="regex-card">
+                            <h5>🆔 CPF</h5>
+                            <div class="regex-demo">
+                                <code>pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"</code>
+                                <p>Formato: 123.456.789-00</p>
+                                <input type="text" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                                    placeholder="123.456.789-00" class="demo-input">
+                            </div>
+                        </div>
+
+                        <div class="regex-card">
+                            <h5>🔒 Senha Forte</h5>
+                            <div class="regex-demo">
+                                <code>pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}"</code>
+                                <p>Mín. 8 caracteres, maiúscula, minúscula e número</p>
+                                <input type="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}"
+                                    placeholder="MinhaSenh@123" class="demo-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regex patterns comuns -->
+                <div class="common-patterns">
+                    <h4>📋 Padrões Comuns de RegEx:</h4>
+                    <table class="patterns-table">
+                        <thead>
+                            <tr>
+                                <th>Uso</th>
+                                <th>Pattern</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Só letras</td>
+                                <td><code>[A-Za-z]+</code></td>
+                                <td>Apenas letras maiúsculas e minúsculas</td>
+                            </tr>
+                            <tr>
+                                <td>Só números</td>
+                                <td><code>[0-9]+</code></td>
+                                <td>Apenas dígitos de 0 a 9</td>
+                            </tr>
+                            <tr>
+                                <td>Código Postal</td>
+                                <td><code>[0-9]{5}-?[0-9]{3}</code></td>
+                                <td>CEP com ou sem hífen</td>
+                            </tr>
+                            <tr>
+                                <td>Usuário</td>
+                                <td><code>[A-Za-z0-9_]{3,20}</code></td>
+                                <td>3-20 caracteres alfanuméricos</td>
+                            </tr>
+                            <tr>
+                                <td>Hexadecimal</td>
+                                <td><code>#[0-9A-Fa-f]{6}</code></td>
+                                <td>Cor hexadecimal (#FF0000)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- CSS para validação -->
+                <div class="validation-styling">
+                    <h4>🎨 Estilização de Validação com CSS:</h4>
+                    <div class="code-container">
+                        <pre class="code dracula-theme"><code>/* Estado válido */
+input:valid {
+    border: 2px solid #27ae60;
+    background-color: #e8f5e8;
+}
+
+/* Estado inválido */
+input:invalid {
+    border: 2px solid #e74c3c;
+    background-color: #ffebee;
+}
+
+/* Campo obrigatório */
+input:required {
+    border-left: 3px solid #f39c12;
+}
+
+/* Placeholder personalizado */
+input::placeholder {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Mensagem de erro personalizada */
+.error-message {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+input:invalid + .error-message {
+    display: block;
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 5: Elementos Semânticos -->
+            <section id="elementos-semanticos" class="content-section">
+                <div class="section-header">
+                    <h2>🏗️ Elementos Semânticos: main, aside, figure, figcaption</h2>
+                    <p class="section-intro">Complete sua estrutura semântica com elementos avançados</p>
+                </div>
+
+                <!-- Elementos principais -->
+                <div class="semantic-elements-advanced">
+                    <h4>🎯 Elementos Semânticos Avançados:</h4>
+
+                    <div class="semantic-grid">
+                        <!-- Main -->
+                        <div class="semantic-card">
+                            <h5>&lt;main&gt;</h5>
+                            <p><strong>Conteúdo principal</strong> único da página</p>
+                            <div class="semantic-info">
+                                <div class="usage">
+                                    <strong>Use para:</strong>
+                                    <ul>
+                                        <li>Conteúdo principal da página</li>
+                                        <li>Área central única</li>
+                                        <li>Conteúdo não repetido em outras páginas</li>
+                                    </ul>
+                                </div>
+                                <div class="example-code">
+                                    <code>&lt;main&gt;
+  &lt;article&gt;
+    &lt;h1&gt;Título Principal&lt;/h1&gt;
+    &lt;p&gt;Conteúdo único da página...&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;</code>
+                                </div>
+                                <div class="important-note">
+                                    ⚠️ <strong>Importante:</strong> Apenas um &lt;main&gt; por página!
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Aside -->
+                        <div class="semantic-card">
+                            <h5>&lt;aside&gt;</h5>
+                            <p><strong>Conteúdo complementar</strong> relacionado ao principal</p>
+                            <div class="semantic-info">
+                                <div class="usage">
+                                    <strong>Use para:</strong>
+                                    <ul>
+                                        <li>Sidebar com links relacionados</li>
+                                        <li>Informações complementares</li>
+                                        <li>Publicidade relacionada</li>
+                                        <li>Biografia do autor</li>
+                                    </ul>
+                                </div>
+                                <div class="example-code">
+                                    <code>&lt;aside&gt;
+  &lt;h3&gt;Artigos Relacionados&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Artigo 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Artigo 2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/aside&gt;</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Figure -->
+                        <div class="semantic-card">
+                            <h5>&lt;figure&gt;</h5>
+                            <p><strong>Conteúdo ilustrativo</strong> com legenda opcional</p>
+                            <div class="semantic-info">
+                                <div class="usage">
+                                    <strong>Use para:</strong>
+                                    <ul>
+                                        <li>Imagens com legenda</li>
+                                        <li>Gráficos e diagramas</li>
+                                        <li>Códigos de exemplo</li>
+                                        <li>Citações longas</li>
+                                    </ul>
+                                </div>
+                                <div class="example-code">
+                                    <code>&lt;figure&gt;
+  &lt;img src="grafico.png" alt="Vendas 2024"&gt;
+  &lt;figcaption&gt;
+    Gráfico de vendas do primeiro trimestre
+  &lt;/figcaption&gt;
+&lt;/figure&gt;</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Figcaption -->
+                        <div class="semantic-card">
+                            <h5>&lt;figcaption&gt;</h5>
+                            <p><strong>Legenda</strong> para elemento &lt;figure&gt;</p>
+                            <div class="semantic-info">
+                                <div class="usage">
+                                    <strong>Use para:</strong>
+                                    <ul>
+                                        <li>Legenda de imagem</li>
+                                        <li>Descrição de gráfico</li>
+                                        <li>Créditos da imagem</li>
+                                        <li>Contexto adicional</li>
+                                    </ul>
+                                </div>
+                                <div class="example-code">
+                                    <code>&lt;figcaption&gt;
+  Foto: João Silva, 2024. 
+  Evento de lançamento do produto.
+&lt;/figcaption&gt;</code>
+                                </div>
+                                <div class="important-note">
+                                    💡 <strong>Dica:</strong> Sempre dentro de &lt;figure&gt;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemplo prático -->
+                <div class="semantic-example">
+                    <h4>🎯 Exemplo Prático - Artigo de Blog:</h4>
+                    <div class="code-example">
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">artigo-blog.html</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Como Usar HTML Semântico&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Meu Blog de Tecnologia&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/artigos"&gt;Artigos&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h1&gt;Como Usar HTML Semântico&lt;/h1&gt;
+                &lt;p&gt;Publicado em 15/03/2024 por João Silva&lt;/p&gt;
+            &lt;/header&gt;
+
+            &lt;section&gt;
+                &lt;h2&gt;Introdução&lt;/h2&gt;
+                &lt;p&gt;O HTML semântico é fundamental para...&lt;/p&gt;
+                
+                &lt;figure&gt;
+                    &lt;img src="html-semantico.png" alt="Estrutura HTML semântica"&gt;
+                    &lt;figcaption&gt;
+                        Figura 1: Exemplo de estrutura HTML semântica
+                    &lt;/figcaption&gt;
+                &lt;/figure&gt;
+            &lt;/section&gt;
+
+            &lt;section&gt;
+                &lt;h2&gt;Principais Elementos&lt;/h2&gt;
+                &lt;p&gt;Os elementos mais importantes são...&lt;/p&gt;
+                
+                &lt;figure&gt;
+                    &lt;pre&gt;&lt;code&gt;
+&lt;main&gt;
+  &lt;article&gt;Conteúdo principal&lt;/article&gt;
+&lt;/main&gt;
+                    &lt;/code&gt;&lt;/pre&gt;
+                    &lt;figcaption&gt;
+                        Código 1: Estrutura básica com main e article
+                    &lt;/figcaption&gt;
+                &lt;/figure&gt;
+            &lt;/section&gt;
+
+            &lt;footer&gt;
+                &lt;p&gt;Tags: HTML, Semântica, Acessibilidade&lt;/p&gt;
+            &lt;/footer&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+
+    &lt;aside&gt;
+        &lt;section&gt;
+            &lt;h3&gt;Sobre o Autor&lt;/h3&gt;
+            &lt;p&gt;João Silva é desenvolvedor frontend há 5 anos...&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;h3&gt;Artigos Relacionados&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;CSS Grid vs Flexbox&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Acessibilidade na Web&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;SEO para Desenvolvedores&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 Meu Blog. Todos os direitos reservados.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layout visual -->
+                <div class="layout-visualization">
+                    <h4>📐 Visualização do Layout Semântico:</h4>
+                    <div class="layout-demo">
+                        <div class="layout-container">
+                            <div class="layout-header">
+                                <span>&lt;header&gt;</span>
+                                Header + Nav
+                            </div>
+                            <div class="layout-content">
+                                <div class="layout-main">
+                                    <span>&lt;main&gt;</span>
+                                    <div class="layout-article">
+                                        <span>&lt;article&gt;</span>
+                                        <div class="layout-sections">
+                                            <div class="layout-section">
+                                                <span>&lt;section&gt;</span>
+                                                Seção 1
+                                                <div class="layout-figure">
+                                                    <span>&lt;figure&gt;</span>
+                                                    Imagem + figcaption
+                                                </div>
+                                            </div>
+                                            <div class="layout-section">
+                                                <span>&lt;section&gt;</span>
+                                                Seção 2
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layout-aside">
+                                    <span>&lt;aside&gt;</span>
+                                    Sidebar
+                                </div>
+                            </div>
+                            <div class="layout-footer">
+                                <span>&lt;footer&gt;</span>
+                                Footer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefícios finais -->
+                <div class="semantic-benefits-final">
+                    <h4>🌟 Benefícios dos Elementos Semânticos:</h4>
+                    <div class="benefits-final-grid">
+                        <div class="benefit-final">
+                            <h5>🔍 SEO Melhorado</h5>
+                            <p>Motores de busca entendem melhor a estrutura e hierarquia do conteúdo</p>
+                        </div>
+                        <div class="benefit-final">
+                            <h5>♿ Acessibilidade</h5>
+                            <p>Leitores de tela navegam mais facilmente pelo conteúdo estruturado</p>
+                        </div>
+                        <div class="benefit-final">
+                            <h5>📱 Responsividade</h5>
+                            <p>Mais fácil criar layouts adaptativos com estrutura clara</p>
+                        </div>
+                        <div class="benefit-final">
+                            <h5>🧹 Manutenção</h5>
+                            <p>Código mais limpo e fácil de entender para equipes</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navegação entre dias -->
+            <nav class="day-navigation">
+                <a href="dia3.html" class="nav-btn back">← Dia 3</a>
+                <a href="index.html" class="nav-btn back">Voltar ao Curso</a>
+                <a href="dia5.html" class="nav-btn next">Dia 5 →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Formação HTML e CSS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
