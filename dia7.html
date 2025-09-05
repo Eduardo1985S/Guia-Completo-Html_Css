@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 7A - Media Queries e Mobile-First | Formação HTML e CSS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/day-content.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🔹 Dia 7A</h1>
+            <p class="header__subtitle">Media Queries e Design Mobile-First</p>
+            <nav class="header__nav">
+                <a href="index.html" class="nav-link">← Voltar ao curso</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Navegação da aula -->
+            <nav class="lesson-nav">
+                <ul>
+                    <li><a href="#intro-responsivo">📱 Introdução à Responsividade</a></li>
+                    <li><a href="#viewport">🖥️ Viewport</a></li>
+                    <li><a href="#media-queries">📊 Media Queries</a></li>
+                    <li><a href="#breakpoints">📏 Breakpoints</a></li>
+                    <li><a href="#mobile-first">📲 Mobile-First</a></li>
+                    <li><a href="#praticas">💡 Boas Práticas</a></li>
+                </ul>
+            </nav>
+
+            <!-- Introdução à Responsividade -->
+            <section id="intro-responsivo" class="concept-section">
+                <h2><i class="fas fa-mobile-alt"></i> Introdução à Responsividade</h2>
+                
+                <div class="responsive-intro">
+                    <div class="responsive-overview">
+                        <h3>O que é Design Responsivo?</h3>
+                        <p>Design responsivo é uma abordagem de desenvolvimento web que faz com que as páginas se adaptem automaticamente a diferentes tamanhos de tela e dispositivos.</p>
+                        
+                        <div class="device-showcase">
+                            <div class="device-demo mobile">
+                                <div class="device-screen">
+                                    <div class="demo-content mobile-content">
+                                        <div class="demo-header">Header</div>
+                                        <div class="demo-nav">Menu</div>
+                                        <div class="demo-main">
+                                            <h4>Conteúdo Principal</h4>
+                                            <p>Layout adaptado para mobile</p>
+                                        </div>
+                                        <div class="demo-footer">Footer</div>
+                                    </div>
+                                </div>
+                                <p>📱 Mobile (320px)</p>
+                            </div>
+                            
+                            <div class="device-demo tablet">
+                                <div class="device-screen">
+                                    <div class="demo-content tablet-content">
+                                        <div class="demo-header">Header</div>
+                                        <div class="demo-body">
+                                            <div class="demo-sidebar">Sidebar</div>
+                                            <div class="demo-main">
+                                                <h4>Conteúdo Principal</h4>
+                                                <p>Layout adaptado para tablet</p>
+                                            </div>
+                                        </div>
+                                        <div class="demo-footer">Footer</div>
+                                    </div>
+                                </div>
+                                <p>📲 Tablet (768px)</p>
+                            </div>
+                            
+                            <div class="device-demo desktop">
+                                <div class="device-screen">
+                                    <div class="demo-content desktop-content">
+                                        <div class="demo-header">Header Expandido</div>
+                                        <div class="demo-body">
+                                            <div class="demo-sidebar">Sidebar</div>
+                                            <div class="demo-main">
+                                                <h4>Conteúdo Principal</h4>
+                                                <p>Layout completo para desktop</p>
+                                                <div class="demo-columns">
+                                                    <div class="demo-col">Col 1</div>
+                                                    <div class="demo-col">Col 2</div>
+                                                </div>
+                                            </div>
+                                            <div class="demo-aside">Aside</div>
+                                        </div>
+                                        <div class="demo-footer">Footer Completo</div>
+                                    </div>
+                                </div>
+                                <p>🖥️ Desktop (1200px)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="responsive-benefits">
+                        <h3>Por que é Importante?</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <i class="fas fa-users"></i>
+                                <h4>Experiência do Usuário</h4>
+                                <p>Interface otimizada para cada dispositivo</p>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <i class="fas fa-search"></i>
+                                <h4>SEO</h4>
+                                <p>Google favorece sites mobile-friendly</p>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Conversão</h4>
+                                <p>Maior taxa de conversão em todos os dispositivos</p>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <i class="fas fa-code"></i>
+                                <h4>Manutenção</h4>
+                                <p>Um código para todos os dispositivos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-stats">
+                        <h3>Estatísticas Atuais</h3>
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <div class="stat-number">60%</div>
+                                <div class="stat-label">Tráfego Mobile</div>
+                            </div>
+                            
+                            <div class="stat-item">
+                                <div class="stat-number">85%</div>
+                                <div class="stat-label">Usuários Esperam Sites Responsivos</div>
+                            </div>
+                            
+                            <div class="stat-item">
+                                <div class="stat-number">3s</div>
+                                <div class="stat-label">Tempo Máximo de Carregamento</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Viewport -->
+            <section id="viewport" class="concept-section">
+                <h2><i class="fas fa-expand"></i> Viewport - A Base da Responsividade</h2>
+                
+                <div class="viewport-content">
+                    <div class="viewport-explanation">
+                        <h3>O que é Viewport?</h3>
+                        <p>O viewport é a área visível de uma página web no dispositivo do usuário. É fundamental configurá-lo corretamente para garantir que o design responsivo funcione adequadamente.</p>
+                        
+                        <div class="viewport-comparison">
+                            <div class="viewport-demo">
+                                <h4>❌ Sem Meta Viewport</h4>
+                                <div class="demo-phone without-viewport">
+                                    <div class="phone-screen">
+                                        <div class="zoomed-content">
+                                            <div class="tiny-text">Texto muito pequeno</div>
+                                            <div class="tiny-button">Botão</div>
+                                        </div>
+                                    </div>
+                                    <p>Site aparece "zoomed out" e ilegível</p>
+                                </div>
+                            </div>
+                            
+                            <div class="viewport-demo">
+                                <h4>✅ Com Meta Viewport</h4>
+                                <div class="demo-phone with-viewport">
+                                    <div class="phone-screen">
+                                        <div class="proper-content">
+                                            <div class="readable-text">Texto legível</div>
+                                            <div class="proper-button">Botão</div>
+                                        </div>
+                                    </div>
+                                    <p>Site se adapta ao tamanho da tela</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="viewport-meta">
+                        <h3>Meta Tag Viewport</h3>
+                        <p>A tag meta viewport deve ser sempre incluída no <code>&lt;head&gt;</code> do HTML:</p>
+                        
+                        <div class="code-container">
+                            <code>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                            </code>
+                        </div>
+                        
+                        <div class="viewport-attributes">
+                            <h4>Atributos Principais</h4>
+                            <div class="attributes-grid">
+                                <div class="attribute-item">
+                                    <h5>width=device-width</h5>
+                                    <p>Define a largura do viewport igual à largura do dispositivo</p>
+                                </div>
+                                
+                                <div class="attribute-item">
+                                    <h5>initial-scale=1.0</h5>
+                                    <p>Define o zoom inicial como 100% (sem zoom)</p>
+                                </div>
+                                
+                                <div class="attribute-item">
+                                    <h5>user-scalable=no</h5>
+                                    <p>Impede o usuário de fazer zoom (geralmente não recomendado)</p>
+                                </div>
+                                
+                                <div class="attribute-item">
+                                    <h5>maximum-scale=1.0</h5>
+                                    <p>Define o zoom máximo permitido</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="viewport-best-practice">
+                            <h4><i class="fas fa-star"></i> Configuração Recomendada</h4>
+                            <div class="code-container">
+                                <code>
+&lt;!-- Configuração padrão recomendada --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+&lt;!-- Para casos específicos onde você quer controlar mais --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"&gt;
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Media Queries -->
+            <section id="media-queries" class="concept-section">
+                <h2><i class="fas fa-layer-group"></i> Media Queries - Adaptando o Layout</h2>
+                
+                <div class="media-queries-content">
+                    <div class="media-queries-intro">
+                        <h3>O que são Media Queries?</h3>
+                        <p>Media queries são uma funcionalidade CSS que permite aplicar estilos condicionalmente, baseados nas características do dispositivo, como largura da tela, altura, orientação, e mais.</p>
+                    </div>
+
+                    <div class="media-query-syntax">
+                        <h3>Sintaxe Básica</h3>
+                        <div class="syntax-example">
+                            <div class="code-container">
+                                <code>
+@media screen and (max-width: 768px) {
+    /* Estilos aplicados para telas até 768px */
+    .container {
+        padding: 1rem;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+}
+                                </code>
+                            </div>
+                        </div>
+                        
+                        <div class="syntax-breakdown">
+                            <div class="syntax-part">
+                                <h5>@media</h5>
+                                <p>Palavra-chave que inicia a media query</p>
+                            </div>
+                            
+                            <div class="syntax-part">
+                                <h5>screen</h5>
+                                <p>Tipo de mídia (screen, print, all)</p>
+                            </div>
+                            
+                            <div class="syntax-part">
+                                <h5>and</h5>
+                                <p>Operador lógico para combinar condições</p>
+                            </div>
+                            
+                            <div class="syntax-part">
+                                <h5>(max-width: 768px)</h5>
+                                <p>Condição: largura máxima de 768px</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-query-types">
+                        <h3>Tipos de Media Queries</h3>
+                        
+                        <div class="query-type">
+                            <h4>1. Largura (Width)</h4>
+                            <div class="code-container">
+                                <code>
+/* Largura máxima */
+@media (max-width: 768px) {
+    /* Estilos para telas até 768px */
+}
+
+/* Largura mínima */
+@media (min-width: 769px) {
+    /* Estilos para telas a partir de 769px */
+}
+
+/* Largura específica */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Estilos para telas entre 768px e 1024px */
+}
+                                </code>
+                            </div>
+                            
+                            <div class="width-demo">
+                                <div class="breakpoint-visual">
+                                    <div class="breakpoint mobile-bp">
+                                        <span>max-width: 767px</span>
+                                        <small>Mobile</small>
+                                    </div>
+                                    <div class="breakpoint tablet-bp">
+                                        <span>768px - 1023px</span>
+                                        <small>Tablet</small>
+                                    </div>
+                                    <div class="breakpoint desktop-bp">
+                                        <span>min-width: 1024px</span>
+                                        <small>Desktop</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="query-type">
+                            <h4>2. Altura (Height)</h4>
+                            <div class="code-container">
+                                <code>
+/* Para telas baixas (paisagem em mobile) */
+@media (max-height: 500px) {
+    .header {
+        height: 50px; /* Header menor */
+    }
+}
+
+/* Para telas altas */
+@media (min-height: 800px) {
+    .hero-section {
+        height: 100vh; /* Ocupar tela inteira */
+    }
+}
+                                </code>
+                            </div>
+                        </div>
+
+                        <div class="query-type">
+                            <h4>3. Orientação</h4>
+                            <div class="code-container">
+                                <code>
+/* Orientação retrato (portrait) */
+@media (orientation: portrait) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Orientação paisagem (landscape) */
+@media (orientation: landscape) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+                                </code>
+                            </div>
+                            
+                            <div class="orientation-demo">
+                                <div class="device-orientation">
+                                    <div class="portrait-demo">
+                                        <div class="orientation-screen portrait">
+                                            <div class="orientation-content">
+                                                <div class="grid-2">
+                                                    <div class="grid-item">1</div>
+                                                    <div class="grid-item">2</div>
+                                                    <div class="grid-item">3</div>
+                                                    <div class="grid-item">4</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>Portrait (2 colunas)</p>
+                                    </div>
+                                    
+                                    <div class="landscape-demo">
+                                        <div class="orientation-screen landscape">
+                                            <div class="orientation-content">
+                                                <div class="grid-4">
+                                                    <div class="grid-item">1</div>
+                                                    <div class="grid-item">2</div>
+                                                    <div class="grid-item">3</div>
+                                                    <div class="grid-item">4</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>Landscape (4 colunas)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="query-type">
+                            <h4>4. Resolução e Densidade de Pixels</h4>
+                            <div class="code-container">
+                                <code>
+/* Para telas de alta resolução (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    .logo {
+        background-image: url('logo@2x.png');
+        background-size: 100px 50px;
+    }
+}
+
+/* Para telas específicas */
+@media (min-resolution: 300dpi) {
+    /* Estilos para displays de alta densidade */
+}
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-query-operators">
+                        <h3>Operadores Lógicos</h3>
+                        
+                        <div class="operators-grid">
+                            <div class="operator-demo">
+                                <h4>AND - Combinar Condições</h4>
+                                <div class="code-container">
+                                    <code>
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Apenas para tablets */
+}
+
+@media screen and (orientation: landscape) {
+    /* Telas em modo paisagem */
+}
+                                    </code>
+                                </div>
+                            </div>
+                            
+                            <div class="operator-demo">
+                                <h4>OR - Múltiplas Condições</h4>
+                                <div class="code-container">
+                                    <code>
+@media (max-width: 768px), (orientation: portrait) {
+    /* Mobile OU orientação retrato */
+}
+
+@media (min-width: 1200px), print {
+    /* Desktop grande OU impressão */
+}
+                                    </code>
+                                </div>
+                            </div>
+                            
+                            <div class="operator-demo">
+                                <h4>NOT - Negação</h4>
+                                <div class="code-container">
+                                    <code>
+@media not screen {
+    /* Para todos os tipos EXCETO screen */
+}
+
+@media not (max-width: 768px) {
+    /* Para telas MAIORES que 768px */
+}
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practical-examples">
+                        <h3>Exemplos Práticos</h3>
+                        
+                        <div class="example-demo">
+                            <h4>Navegação Responsiva</h4>
+                            <div class="nav-responsive-demo">
+                                <div class="desktop-nav">
+                                    <div class="nav-logo">Logo</div>
+                                    <div class="nav-links">
+                                        <span>Home</span>
+                                        <span>Sobre</span>
+                                        <span>Contato</span>
+                                    </div>
+                                    <div class="nav-actions">
+                                        <span>Login</span>
+                                    </div>
+                                </div>
+                                <p class="device-label">Desktop</p>
+                                
+                                <div class="mobile-nav">
+                                    <div class="nav-mobile-header">
+                                        <div class="nav-logo">Logo</div>
+                                        <div class="hamburger">☰</div>
+                                    </div>
+                                    <div class="nav-mobile-menu">
+                                        <div>Home</div>
+                                        <div>Sobre</div>
+                                        <div>Contato</div>
+                                        <div>Login</div>
+                                    </div>
+                                </div>
+                                <p class="device-label">Mobile</p>
+                            </div>
+                            
+                            <div class="code-container">
+                                <code>
+/* Navegação Desktop */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+/* Navegação Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-mobile-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+}
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Breakpoints -->
+            <section id="breakpoints" class="concept-section">
+                <h2><i class="fas fa-ruler"></i> Breakpoints Estratégicos</h2>
+                
+                <div class="breakpoints-content">
+                    <div class="breakpoints-intro">
+                        <h3>O que são Breakpoints?</h3>
+                        <p>Breakpoints são pontos específicos de largura da tela onde o layout muda para se adaptar melhor ao dispositivo. A escolha dos breakpoints corretos é crucial para um design responsivo eficiente.</p>
+                    </div>
+
+                    <div class="common-breakpoints">
+                        <h3>Breakpoints Mais Utilizados</h3>
+                        
+                        <div class="breakpoints-table">
+                            <div class="breakpoint-row header">
+                                <div class="bp-device">Dispositivo</div>
+                                <div class="bp-range">Faixa de Tamanho</div>
+                                <div class="bp-media-query">Media Query</div>
+                            </div>
+                            
+                            <div class="breakpoint-row mobile">
+                                <div class="bp-device">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>Mobile</span>
+                                </div>
+                                <div class="bp-range">320px - 767px</div>
+                                <div class="bp-media-query">
+                                    <code>@media (max-width: 767px)</code>
+                                </div>
+                            </div>
+                            
+                            <div class="breakpoint-row tablet">
+                                <div class="bp-device">
+                                    <i class="fas fa-tablet-alt"></i>
+                                    <span>Tablet</span>
+                                </div>
+                                <div class="bp-range">768px - 1023px</div>
+                                <div class="bp-media-query">
+                                    <code>@media (min-width: 768px) and (max-width: 1023px)</code>
+                                </div>
+                            </div>
+                            
+                            <div class="breakpoint-row desktop">
+                                <div class="bp-device">
+                                    <i class="fas fa-desktop"></i>
+                                    <span>Desktop</span>
+                                </div>
+                                <div class="bp-range">1024px - 1439px</div>
+                                <div class="bp-media-query">
+                                    <code>@media (min-width: 1024px)</code>
+                                </div>
+                            </div>
+                            
+                            <div class="breakpoint-row large">
+                                <div class="bp-device">
+                                    <i class="fas fa-tv"></i>
+                                    <span>Large Desktop</span>
+                                </div>
+                                <div class="bp-range">1440px+</div>
+                                <div class="bp-media-query">
+                                    <code>@media (min-width: 1440px)</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="breakpoints-frameworks">
+                        <h3>Breakpoints de Frameworks Populares</h3>
+                        
+                        <div class="frameworks-comparison">
+                            <div class="framework-item">
+                                <h4>Bootstrap 5</h4>
+                                <div class="code-container small">
+                                    <code>
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { ... }
+                                    </code>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-item">
+                                <h4>Tailwind CSS</h4>
+                                <div class="code-container small">
+                                    <code>
+// Small (sm) - 640px and up
+@media (min-width: 640px) { ... }
+
+// Medium (md) - 768px and up
+@media (min-width: 768px) { ... }
+
+// Large (lg) - 1024px and up
+@media (min-width: 1024px) { ... }
+
+// Extra Large (xl) - 1280px and up
+@media (min-width: 1280px) { ... }
+
+// 2X Large (2xl) - 1536px and up
+@media (min-width: 1536px) { ... }
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="custom-breakpoints">
+                        <h3>Criando Seus Próprios Breakpoints</h3>
+                        
+                        <div class="custom-strategy">
+                            <h4>Estratégia Baseada em Conteúdo</h4>
+                            <p>Em vez de focar apenas em dispositivos, considere quando seu conteúdo precisa se adaptar:</p>
+                            
+                            <div class="content-based-example">
+                                <div class="code-container">
+                                    <code>
+/* Quando o menu fica apertado */
+@media (max-width: 950px) {
+    .navigation {
+        flex-direction: column;
+    }
+}
+
+/* Quando as cards ficam muito estreitas */
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Quando o texto fica difícil de ler */
+@media (max-width: 400px) {
+    .text-content {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="breakpoint-testing">
+                            <h4>Como Testar Breakpoints</h4>
+                            <div class="testing-tips">
+                                <div class="tip-item">
+                                    <i class="fas fa-tools"></i>
+                                    <div>
+                                        <h5>DevTools do Navegador</h5>
+                                        <p>Use F12 > Toggle Device Toolbar (Ctrl+Shift+M)</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="tip-item">
+                                    <i class="fas fa-window-restore"></i>
+                                    <div>
+                                        <h5>Redimensione a Janela</h5>
+                                        <p>Arraste a borda da janela para ver as transições</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="tip-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div>
+                                        <h5>Dispositivos Reais</h5>
+                                        <p>Teste sempre em dispositivos físicos quando possível</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile-First -->
+            <section id="mobile-first" class="concept-section">
+                <h2><i class="fas fa-mobile"></i> Design Mobile-First</h2>
+                
+                <div class="mobile-first-content">
+                    <div class="mobile-first-intro">
+                        <h3>O que é Mobile-First?</h3>
+                        <p>Mobile-First é uma abordagem de design onde você começa criando o layout para dispositivos móveis e depois adapta para telas maiores. É o oposto da abordagem tradicional desktop-first.</p>
+                        
+                        <div class="approach-comparison">
+                            <div class="approach-item">
+                                <h4>❌ Desktop-First (Abordagem Antiga)</h4>
+                                <div class="approach-flow">
+                                    <div class="flow-step desktop-step">
+                                        <i class="fas fa-desktop"></i>
+                                        <span>Desktop</span>
+                                    </div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-step tablet-step">
+                                        <i class="fas fa-tablet-alt"></i>
+                                        <span>Tablet</span>
+                                    </div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-step mobile-step">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span>Mobile</span>
+                                    </div>
+                                </div>
+                                <p>Mais difícil de adaptar, pode resultar em performance ruim no mobile</p>
+                            </div>
+                            
+                            <div class="approach-item">
+                                <h4>✅ Mobile-First (Abordagem Moderna)</h4>
+                                <div class="approach-flow">
+                                    <div class="flow-step mobile-step">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span>Mobile</span>
+                                    </div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-step tablet-step">
+                                        <i class="fas fa-tablet-alt"></i>
+                                        <span>Tablet</span>
+                                    </div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-step desktop-step">
+                                        <i class="fas fa-desktop"></i>
+                                        <span>Desktop</span>
+                                    </div>
+                                </div>
+                                <p>Melhor performance, design mais focado e adaptação mais natural</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-first-benefits">
+                        <h3>Vantagens do Mobile-First</h3>
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <div>
+                                    <h5>Performance</h5>
+                                    <p>Código mais leve e otimizado desde o início</p>
+                                </div>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <i class="fas fa-bullseye"></i>
+                                <div>
+                                    <h5>Foco no Essencial</h5>
+                                    <p>Força você a priorizar o conteúdo mais importante</p>
+                                </div>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <h5>Progressive Enhancement</h5>
+                                    <p>Adiciona funcionalidades gradualmente para telas maiores</p>
+                                </div>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <h5>Experiência do Usuário</h5>
+                                    <p>Melhor UX na maioria dos dispositivos usados hoje</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-first-implementation">
+                        <h3>Como Implementar Mobile-First</h3>
+                        
+                        <div class="implementation-steps">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Comece com CSS Base para Mobile</h4>
+                                    <div class="code-container">
+                                        <code>
+/* Estilos base para mobile (sem media query) */
+.container {
+    width: 100%;
+    padding: 1rem;
+}
+
+.navigation {
+    flex-direction: column;
+}
+
+.card {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.sidebar {
+    display: none; /* Ocultar no mobile */
+}
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Adicione Melhorias para Tablet</h4>
+                                    <div class="code-container">
+                                        <code>
+/* Tablet - min-width em vez de max-width */
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    .navigation {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .card {
+        width: calc(50% - 1rem);
+        display: inline-block;
+    }
+}
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Expanda para Desktop</h4>
+                                    <div class="code-container">
+                                        <code>
+/* Desktop - adicionar mais funcionalidades */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        padding: 3rem;
+    }
+    
+    .main-content {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .sidebar {
+        display: block; /* Mostrar sidebar no desktop */
+        flex: 0 0 300px;
+    }
+    
+    .content {
+        flex: 1;
+    }
+    
+    .card {
+        width: calc(33.333% - 1rem);
+    }
+}
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mobile-first-example">
+                        <h3>Exemplo Completo: Layout Responsivo</h3>
+                        
+                        <div class="layout-evolution">
+                            <div class="evolution-stage">
+                                <h4>Mobile (Base)</h4>
+                                <div class="stage-demo mobile-layout">
+                                    <div class="demo-header">Header</div>
+                                    <div class="demo-nav">☰ Menu</div>
+                                    <div class="demo-main">
+                                        <div class="demo-content">
+                                            <h5>Conteúdo Principal</h5>
+                                            <div class="demo-cards">
+                                                <div class="demo-card">Card 1</div>
+                                                <div class="demo-card">Card 2</div>
+                                                <div class="demo-card">Card 3</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="demo-footer">Footer</div>
+                                </div>
+                                <p>Layout em coluna única, navegação colapsada</p>
+                            </div>
+                            
+                            <div class="evolution-stage">
+                                <h4>Tablet (768px+)</h4>
+                                <div class="stage-demo tablet-layout">
+                                    <div class="demo-header">Header Expandido</div>
+                                    <div class="demo-nav">Home | Sobre | Contato</div>
+                                    <div class="demo-main">
+                                        <div class="demo-content">
+                                            <h5>Conteúdo Principal</h5>
+                                            <div class="demo-cards">
+                                                <div class="demo-card">Card 1</div>
+                                                <div class="demo-card">Card 2</div>
+                                                <div class="demo-card">Card 3</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="demo-footer">Footer Expandido</div>
+                                </div>
+                                <p>Navegação horizontal, cards em grid 2x</p>
+                            </div>
+                            
+                            <div class="evolution-stage">
+                                <h4>Desktop (1024px+)</h4>
+                                <div class="stage-demo desktop-layout">
+                                    <div class="demo-header">Header Completo com Logo e Ações</div>
+                                    <div class="demo-nav">Home | Sobre | Produtos | Serviços | Contato</div>
+                                    <div class="demo-main-desktop">
+                                        <div class="demo-sidebar">Sidebar</div>
+                                        <div class="demo-content">
+                                            <h5>Conteúdo Principal</h5>
+                                            <div class="demo-cards">
+                                                <div class="demo-card">Card 1</div>
+                                                <div class="demo-card">Card 2</div>
+                                                <div class="demo-card">Card 3</div>
+                                            </div>
+                                        </div>
+                                        <div class="demo-aside">Aside</div>
+                                    </div>
+                                    <div class="demo-footer">Footer Completo com Links</div>
+                                </div>
+                                <p>Layout completo com sidebar e aside</p>
+                            </div>
+                        </div>
+                        
+                        <div class="complete-code">
+                            <h4>CSS Completo</h4>
+                            <div class="code-container">
+                                <code>
+/* === MOBILE FIRST - ESTILOS BASE === */
+.header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.navigation {
+    background: #34495e;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.main-content {
+    padding: 1rem;
+}
+
+.sidebar,
+.aside {
+    display: none; /* Ocultar no mobile */
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card {
+    background: #ecf0f1;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.footer {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* === TABLET - 768px+ === */
+@media (min-width: 768px) {
+    .header {
+        padding: 1.5rem;
+    }
+    
+    .navigation {
+        padding: 1rem;
+    }
+    
+    .main-content {
+        padding: 2rem;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+    
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .card {
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+}
+
+/* === DESKTOP - 1024px+ === */
+@media (min-width: 1024px) {
+    .header {
+        padding: 2rem;
+    }
+    
+    .main-content {
+        max-width: 1200px;
+        padding: 3rem;
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .sidebar {
+        display: block;
+        flex: 0 0 200px;
+        background: #ecf0f1;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    
+    .content {
+        flex: 1;
+    }
+    
+    .aside {
+        display: block;
+        flex: 0 0 200px;
+        background: #ecf0f1;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    
+    .card {
+        flex: 0 0 calc(33.333% - 0.67rem);
+    }
+}
+
+/* === LARGE DESKTOP - 1440px+ === */
+@media (min-width: 1440px) {
+    .main-content {
+        max-width: 1400px;
+    }
+    
+    .sidebar,
+    .aside {
+        flex: 0 0 250px;
+    }
+}
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Boas Práticas -->
+            <section id="praticas" class="concept-section">
+                <h2><i class="fas fa-lightbulb"></i> Boas Práticas de Responsividade</h2>
+                
+                <div class="best-practices-content">
+                    <div class="practices-grid">
+                        <div class="practice-category">
+                            <h3><i class="fas fa-code"></i> CSS</h3>
+                            <div class="practice-list">
+                                <div class="practice-item">
+                                    <h5>✅ Use min-width em Mobile-First</h5>
+                                    <div class="code-container small">
+                                        <code>
+/* Correto */
+@media (min-width: 768px) { }
+
+/* Evite */
+@media (max-width: 767px) { }
+                                        </code>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-item">
+                                    <h5>✅ Organize Media Queries por Tamanho</h5>
+                                    <div class="code-container small">
+                                        <code>
+/* Mobile base */
+.element { }
+
+/* Tablet */
+@media (min-width: 768px) { }
+
+/* Desktop */
+@media (min-width: 1024px) { }
+                                        </code>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-item">
+                                    <h5>✅ Use em/rem para Text e Spacing</h5>
+                                    <div class="code-container small">
+                                        <code>
+.text {
+    font-size: 1rem; /* 16px */
+    margin: 1.5rem; /* 24px */
+}
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="practice-category">
+                            <h3><i class="fas fa-images"></i> Imagens</h3>
+                            <div class="practice-list">
+                                <div class="practice-item">
+                                    <h5>✅ Imagens Flexíveis</h5>
+                                    <div class="code-container small">
+                                        <code>
+img {
+    max-width: 100%;
+    height: auto;
+}
+                                        </code>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-item">
+                                    <h5>✅ Use srcset para Diferentes Resoluções</h5>
+                                    <div class="code-container small">
+                                        <code>
+&lt;img src="image.jpg" 
+     srcset="image-320.jpg 320w,
+             image-768.jpg 768w,
+             image-1200.jpg 1200w"
+     sizes="(max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            33vw"
+     alt="Descrição"&gt;
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="practice-category">
+                            <h3><i class="fas fa-font"></i> Tipografia</h3>
+                            <div class="practice-list">
+                                <div class="practice-item">
+                                    <h5>✅ Tamanhos Escaláveis</h5>
+                                    <div class="code-container small">
+                                        <code>
+/* Mobile */
+h1 { font-size: 1.5rem; }
+p { font-size: 1rem; }
+
+/* Desktop */
+@media (min-width: 1024px) {
+    h1 { font-size: 2.5rem; }
+    p { font-size: 1.125rem; }
+}
+                                        </code>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-item">
+                                    <h5>✅ Line Height Responsivo</h5>
+                                    <div class="code-container small">
+                                        <code>
+p {
+    line-height: 1.6; /* Mobile */
+}
+
+@media (min-width: 768px) {
+    p {
+        line-height: 1.8; /* Desktop */
+    }
+}
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="practice-category">
+                            <h3><i class="fas fa-mouse-pointer"></i> Touch/Interação</h3>
+                            <div class="practice-list">
+                                <div class="practice-item">
+                                    <h5>✅ Alvos de Toque Adequados</h5>
+                                    <div class="code-container small">
+                                        <code>
+button, .button {
+    min-height: 44px; /* iOS guideline */
+    min-width: 44px;
+    padding: 12px 16px;
+}
+                                        </code>
+                                    </div>
+                                </div>
+                                
+                                <div class="practice-item">
+                                    <h5>✅ Hover apenas para Desktop</h5>
+                                    <div class="code-container small">
+                                        <code>
+@media (hover: hover) {
+    .button:hover {
+        background-color: #0056b3;
+    }
+}
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testing-checklist">
+                        <h3><i class="fas fa-check-double"></i> Checklist de Teste</h3>
+                        <div class="checklist-grid">
+                            <div class="checklist-category">
+                                <h4>📱 Mobile</h4>
+                                <ul>
+                                    <li>✓ Texto legível sem zoom</li>
+                                    <li>✓ Botões fáceis de tocar</li>
+                                    <li>✓ Navegação simplificada</li>
+                                    <li>✓ Conteúdo prioritizado</li>
+                                    <li>✓ Formulários usáveis</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="checklist-category">
+                                <h4>📲 Tablet</h4>
+                                <ul>
+                                    <li>✓ Layout otimizado para orientação</li>
+                                    <li>✓ Uso eficiente do espaço</li>
+                                    <li>✓ Navegação touch-friendly</li>
+                                    <li>✓ Imagens em boa resolução</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="checklist-category">
+                                <h4>🖥️ Desktop</h4>
+                                <ul>
+                                    <li>✓ Largura máxima definida</li>
+                                    <li>✓ Hover states funcionais</li>
+                                    <li>✓ Navegação completa</li>
+                                    <li>✓ Uso adequado do espaço</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="common-mistakes">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Erros Comuns a Evitar</h3>
+                        <div class="mistakes-list">
+                            <div class="mistake-item">
+                                <h5>❌ Esquecer a Meta Viewport</h5>
+                                <p>Sempre inclua <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></p>
+                            </div>
+                            
+                            <div class="mistake-item">
+                                <h5>❌ Usar Pixels Fixos Demais</h5>
+                                <p>Prefira medidas relativas (%, em, rem, vw, vh) sempre que possível</p>
+                            </div>
+                            
+                            <div class="mistake-item">
+                                <h5>❌ Ignorar Orientação Landscape</h5>
+                                <p>Teste sempre em modo paisagem, especialmente em tablets</p>
+                            </div>
+                            
+                            <div class="mistake-item">
+                                <h5>❌ Testar Apenas no DevTools</h5>
+                                <p>Teste em dispositivos reais sempre que possível</p>
+                            </div>
+                            
+                            <div class="mistake-item">
+                                <h5>❌ Media Queries Muito Específicas</h5>
+                                <p>Evite breakpoints baseados em dispositivos específicos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Continue para Parte B -->
+            <section class="continue-section">
+                <div class="continue-content">
+                    <h2><i class="fas fa-arrow-right"></i> Continue na Parte B</h2>
+                    <p>Na segunda parte do Dia 7, vamos explorar:</p>
+                    <ul>
+                        <li><strong>Medidas Relativas:</strong> %, em, rem, vw, vh em detalhes</li>
+                        <li><strong>Ajustes de Flexbox:</strong> Adaptações para mobile</li>
+                        <li><strong>Exemplo Prático:</strong> Site completo responsivo</li>
+                        <li><strong>Performance:</strong> Otimizações para mobile</li>
+                    </ul>
+                    <div class="continue-actions">
+                        <a href="dia7b.html" class="btn-primary">
+                            <i class="fas fa-arrow-right"></i> Ir para Parte B
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resumo -->
+            <section class="summary-section">
+                <h2><i class="fas fa-check-circle"></i> Resumo da Parte A</h2>
+                
+                <div class="summary-content">
+                    <div class="learned-concepts">
+                        <h3>Conceitos Aprendidos</h3>
+                        <div class="concept-grid">
+                            <div class="concept-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h5>Responsividade</h5>
+                                <p>Adaptação automática a diferentes dispositivos</p>
+                            </div>
+                            
+                            <div class="concept-item">
+                                <i class="fas fa-expand"></i>
+                                <h5>Viewport</h5>
+                                <p>Configuração fundamental para mobile</p>
+                            </div>
+                            
+                            <div class="concept-item">
+                                <i class="fas fa-layer-group"></i>
+                                <h5>Media Queries</h5>
+                                <p>CSS condicional baseado em características do dispositivo</p>
+                            </div>
+                            
+                            <div class="concept-item">
+                                <i class="fas fa-ruler"></i>
+                                <h5>Breakpoints</h5>
+                                <p>Pontos estratégicos de mudança de layout</p>
+                            </div>
+                            
+                            <div class="concept-item">
+                                <i class="fas fa-mobile"></i>
+                                <h5>Mobile-First</h5>
+                                <p>Abordagem moderna começando pelo mobile</p>
+                            </div>
+                            
+                            <div class="concept-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <h5>Boas Práticas</h5>
+                                <p>Técnicas profissionais de desenvolvimento</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-takeaways">
+                        <h3>Pontos Importantes</h3>
+                        <ul>
+                            <li><strong>Viewport:</strong> Sempre configurar meta viewport</li>
+                            <li><strong>Mobile-First:</strong> Começar pelo mobile e expandir</li>
+                            <li><strong>Min-width:</strong> Use em vez de max-width no mobile-first</li>
+                            <li><strong>Breakpoints:</strong> Baseie no conteúdo, não em dispositivos específicos</li>
+                            <li><strong>Teste:</strong> Sempre teste em dispositivos reais</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Formação HTML e CSS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
