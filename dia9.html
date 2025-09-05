@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 9 - Git e GitHub | Formação HTML e CSS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/day-content.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🔹 Dia 9</h1>
+            <p class="header__subtitle">Git e GitHub: Versionamento e Publicação de Projetos</p>
+            <nav class="header__nav">
+                <a href="index.html" class="nav-link">← Voltar ao curso</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <nav class="lesson-nav">
+                <ul>
+                    <li><a href="#versionamento">🔀 Versionamento</a></li>
+                    <li><a href="#git-local">💻 Git Local</a></li>
+                    <li><a href="#github">🐙 GitHub</a></li>
+                    <li><a href="#gitignore">👁️‍🗨️ .gitignore</a></li>
+                    <li><a href="#boas-praticas">⭐ Boas Práticas</a></li>
+                    <li><a href="#github-pages">🌐 GitHub Pages</a></li>
+                    <li><a href="#projeto-final">🏆 Projeto Final</a></li>
+                    <li><a href="#resumo">🎓 Resumo</a></li>
+                </ul>
+            </nav>
+
+            <!-- Introdução ao Versionamento -->
+            <section id="versionamento" class="concept-section">
+                <h2>🔀 O que é Versionamento</h2>
+                <p>Versionamento é o controle de mudanças em arquivos ao longo do tempo. É essencial para
+                    desenvolvedores porque:</p>
+
+                <div class="versioning-benefits">
+                    <div class="benefit-grid">
+                        <div class="benefit-card">
+                            <i class="fas fa-history"></i>
+                            <h3>Histórico</h3>
+                            <p>Acompanha todas as mudanças feitas nos arquivos</p>
+                        </div>
+                        <div class="benefit-card">
+                            <i class="fas fa-undo"></i>
+                            <h3>Reversão</h3>
+                            <p>Voltar para versões anteriores quando necessário</p>
+                        </div>
+                        <div class="benefit-card">
+                            <i class="fas fa-users"></i>
+                            <h3>Colaboração</h3>
+                            <p>Múltiplas pessoas trabalhando no mesmo projeto</p>
+                        </div>
+                        <div class="benefit-card">
+                            <i class="fas fa-tags"></i>
+                            <h3>Releases</h3>
+                            <p>Marcar versões importantes do projeto</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="version-example">
+                    <h3>Exemplo sem Versionamento:</h3>
+                    <div class="file-versions">
+                        <div class="file-item">📄 meu-site.html</div>
+                        <div class="file-item">📄 meu-site-v2.html</div>
+                        <div class="file-item">📄 meu-site-final.html</div>
+                        <div class="file-item">📄 meu-site-final-final.html</div>
+                        <div class="file-item">📄 meu-site-agora-vai.html</div>
+                    </div>
+                    <p><strong>Problemas:</strong> Confuso, ocupa espaço, difícil de colaborar</p>
+                </div>
+
+                <div class="git-introduction">
+                    <h3>O que é Git?</h3>
+                    <p>Git é um sistema de controle de versão distribuído, criado por Linus Torvalds em 2005. É o padrão
+                        da indústria para versionamento de código.</p>
+
+                    <div class="git-concepts">
+                        <div class="concept-item">
+                            <strong>Repository (Repositório):</strong> Pasta do projeto com histórico completo
+                        </div>
+                        <div class="concept-item">
+                            <strong>Commit:</strong> Snapshot (foto) do projeto em um momento específico
+                        </div>
+                        <div class="concept-item">
+                            <strong>Branch:</strong> Linha de desenvolvimento paralela
+                        </div>
+                        <div class="concept-item">
+                            <strong>Remote:</strong> Versão do repositório em servidor externo
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Git Local -->
+            <section class="content-section">
+                <h2><i class="fas fa-laptop-code"></i> Git Local</h2>
+                <p>Vamos aprender os comandos básicos do Git para trabalhar localmente em seus projetos.</p>
+
+                <div class="git-workflow">
+                    <h3>Fluxo Básico do Git</h3>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Working Directory</h4>
+                                <p>Seus arquivos de trabalho</p>
+                            </div>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Staging Area</h4>
+                                <p>Arquivos preparados para commit</p>
+                            </div>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Repository</h4>
+                                <p>Histórico de commits</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="git-commands">
+                    <h3>Comandos Essenciais</h3>
+
+                    <div class="command-section">
+                        <h4><i class="fas fa-play"></i> git init</h4>
+                        <p>Inicializa um repositório Git na pasta atual</p>
+                        <div class="code-block">
+                            <pre><code># Navegar até a pasta do projeto
+cd meu-site
+
+# Inicializar repositório Git
+git init</code></pre>
+                        </div>
+                        <div class="command-result">
+                            <p><strong>Resultado:</strong> Cria pasta oculta .git com configurações do repositório</p>
+                        </div>
+                    </div>
+
+                    <div class="command-section">
+                        <h4><i class="fas fa-search"></i> git status</h4>
+                        <p>Mostra o estado atual dos arquivos no repositório</p>
+                        <div class="code-block">
+                            <pre><code>git status</code></pre>
+                        </div>
+                        <div class="status-examples">
+                            <div class="status-item untracked">
+                                <strong>Untracked files:</strong> Arquivos novos não monitorados
+                            </div>
+                            <div class="status-item modified">
+                                <strong>Modified:</strong> Arquivos alterados
+                            </div>
+                            <div class="status-item staged">
+                                <strong>Staged:</strong> Arquivos prontos para commit
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-section">
+                        <h4><i class="fas fa-plus"></i> git add</h4>
+                        <p>Adiciona arquivos ao staging area (preparação para commit)</p>
+                        <div class="code-block">
+                            <pre><code># Adicionar arquivo específico
+git add index.html
+
+# Adicionar vários arquivos
+git add index.html style.css
+
+# Adicionar todos os arquivos
+git add .
+
+# Adicionar todos os arquivos de uma extensão
+git add *.css</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="command-section">
+                        <h4><i class="fas fa-save"></i> git commit</h4>
+                        <p>Cria um snapshot do projeto com os arquivos do staging area</p>
+                        <div class="code-block">
+                            <pre><code># Commit com mensagem
+git commit -m "Adiciona página inicial do site"
+
+# Commit adicionando todos os arquivos modificados
+git commit -am "Atualiza estilos CSS"</code></pre>
+                        </div>
+                        <div class="commit-tips">
+                            <h5>Boas Práticas para Mensagens de Commit:</h5>
+                            <ul>
+                                <li>Use tempo presente: "Adiciona" ao invés de "Adicionado"</li>
+                                <li>Seja específico: "Corrige bug no menu mobile" ao invés de "Bug fix"</li>
+                                <li>Máximo 50 caracteres na primeira linha</li>
+                                <li>Use imperativo: "Adiciona", "Remove", "Corrige"</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="command-section">
+                        <h4><i class="fas fa-history"></i> git log</h4>
+                        <p>Mostra o histórico de commits do repositório</p>
+                        <div class="code-block">
+                            <pre><code># Log básico
+git log
+
+# Log resumido (uma linha por commit)
+git log --oneline
+
+# Log com gráfico de branches
+git log --oneline --graph
+
+# Log dos últimos 5 commits
+git log -5</code></pre>
+                        </div>
+                        <div class="log-example">
+                            <div class="log-entry">
+                                <div class="commit-hash">a1b2c3d</div>
+                                <div class="commit-message">Adiciona página de contato</div>
+                                <div class="commit-meta">João Silva • 2 hours ago</div>
+                            </div>
+                            <div class="log-entry">
+                                <div class="commit-hash">e4f5g6h</div>
+                                <div class="commit-message">Corrige responsividade do header</div>
+                                <div class="commit-meta">João Silva • 1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="git-practice">
+                    <h3>Prática: Primeiro Repositório</h3>
+                    <div class="practice-steps">
+                        <div class="practice-step">
+                            <div class="step-number">1</div>
+                            <div class="step-text">Criar pasta para projeto: <code>mkdir meu-primeiro-repo</code></div>
+                        </div>
+                        <div class="practice-step">
+                            <div class="step-number">2</div>
+                            <div class="step-text">Navegar para pasta: <code>cd meu-primeiro-repo</code></div>
+                        </div>
+                        <div class="practice-step">
+                            <div class="step-number">3</div>
+                            <div class="step-text">Inicializar Git: <code>git init</code></div>
+                        </div>
+                        <div class="practice-step">
+                            <div class="step-number">4</div>
+                            <div class="step-text">Criar arquivo: <code>echo "# Meu Primeiro Repo" > README.md</code>
+                            </div>
+                        </div>
+                        <div class="practice-step">
+                            <div class="step-number">5</div>
+                            <div class="step-text">Verificar status: <code>git status</code></div>
+                        </div>
+                        <div class="practice-step">
+                            <div class="step-number">6</div>
+                            <div class="step-text">Adicionar arquivo: <code>git add README.md</code></div>
+                        </div>
+                        <div class="practice-step">
+                            <div class="step-number">7</div>
+                            <div class="step-text">Fazer commit: <code>git commit -m "Primeiro commit"</code></div>
+                        </div>
+                        <div class="practice-step">
+                            <div class="step-number">8</div>
+                            <div class="step-text">Ver histórico: <code>git log</code></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GitHub -->
+            <section class="content-section">
+                <h2><i class="fab fa-github"></i> GitHub</h2>
+                <p>GitHub é uma plataforma de hospedagem de código que usa Git. É onde desenvolvedores armazenam,
+                    compartilham e colaboram em projetos.</p>
+
+                <div class="github-features">
+                    <h3>O que o GitHub oferece:</h3>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Repositórios Remotos</h4>
+                            <p>Backup na nuvem dos seus projetos</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-globe"></i>
+                            <h4>GitHub Pages</h4>
+                            <p>Hospedagem gratuita de sites estáticos</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Colaboração</h4>
+                            <p>Issues, Pull Requests, Reviews</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-eye"></i>
+                            <h4>Portfólio</h4>
+                            <p>Showcase dos seus projetos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="github-workflow">
+                    <h3>Fluxo Git + GitHub</h3>
+                    <div class="github-steps">
+                        <div class="github-step">
+                            <h4><i class="fas fa-plus-circle"></i> 1. Criar Repositório no GitHub</h4>
+                            <ul>
+                                <li>Acessar github.com</li>
+                                <li>Clicar em "New repository"</li>
+                                <li>Nomear o repositório</li>
+                                <li>Escolher público ou privado</li>
+                                <li>Opcionalmente adicionar README</li>
+                            </ul>
+                        </div>
+
+                        <div class="github-step">
+                            <h4><i class="fas fa-link"></i> 2. Conectar Local com Remote</h4>
+                            <div class="code-block">
+                                <pre><code># Adicionar remote origin
+git remote add origin https://github.com/usuario/repo.git
+
+# Verificar remotes configurados
+git remote -v</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="github-step">
+                            <h4><i class="fas fa-upload"></i> 3. Push - Enviar para GitHub</h4>
+                            <div class="code-block">
+                                <pre><code># Primeiro push (cria branch main no GitHub)
+git push -u origin main
+
+# Pushes subsequentes
+git push</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="github-step">
+                            <h4><i class="fas fa-download"></i> 4. Pull - Baixar do GitHub</h4>
+                            <div class="code-block">
+                                <pre><code># Baixar alterações do remote
+git pull
+
+# Equivale a: git fetch + git merge
+git fetch origin
+git merge origin/main</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="github-step">
+                            <h4><i class="fas fa-copy"></i> 5. Clone - Copiar Repositório</h4>
+                            <div class="code-block">
+                                <pre><code># Clonar repositório
+git clone https://github.com/usuario/repo.git
+
+# Clonar com nome específico
+git clone https://github.com/usuario/repo.git meu-projeto</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="github-demo">
+                    <h3>Demonstração Prática</h3>
+                    <div class="demo-scenario">
+                        <h4>Cenário: Colocando o site do curso no GitHub</h4>
+                        <div class="demo-steps">
+                            <div class="demo-step">
+                                <strong>Passo 1:</strong> Criar repositório "meu-site-html-css" no GitHub
+                            </div>
+                            <div class="demo-step">
+                                <strong>Passo 2:</strong> No terminal, na pasta do site:
+                                <div class="code-block">
+                                    <pre><code>git init
+git add .
+git commit -m "Adiciona site completo do curso"
+git remote add origin https://github.com/SEU-USUARIO/meu-site-html-css.git
+git push -u origin main</code></pre>
+                                </div>
+                            </div>
+                            <div class="demo-step">
+                                <strong>Resultado:</strong> Site disponível em github.com/SEU-USUARIO/meu-site-html-css
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- .gitignore -->
+            <section class="content-section">
+                <h2><i class="fas fa-eye-slash"></i> Estrutura de Projeto com .gitignore</h2>
+                <p>O arquivo .gitignore especifica quais arquivos e pastas o Git deve ignorar. É essencial para evitar
+                    commitar arquivos desnecessários.</p>
+
+                <div class="gitignore-examples">
+                    <h3>O que geralmente ignoramos:</h3>
+                    <div class="ignore-categories">
+                        <div class="ignore-category">
+                            <h4><i class="fas fa-folder"></i> Arquivos do Sistema</h4>
+                            <ul>
+                                <li>Thumbs.db (Windows)</li>
+                                <li>.DS_Store (macOS)</li>
+                                <li>desktop.ini</li>
+                            </ul>
+                        </div>
+                        <div class="ignore-category">
+                            <h4><i class="fas fa-cog"></i> Ferramentas/IDEs</h4>
+                            <ul>
+                                <li>.vscode/</li>
+                                <li>.idea/</li>
+                                <li>*.sublime-*</li>
+                            </ul>
+                        </div>
+                        <div class="ignore-category">
+                            <h4><i class="fas fa-box"></i> Dependencies</h4>
+                            <ul>
+                                <li>node_modules/</li>
+                                <li>vendor/</li>
+                                <li>*.log</li>
+                            </ul>
+                        </div>
+                        <div class="ignore-category">
+                            <h4><i class="fas fa-shield-alt"></i> Arquivos Sensíveis</h4>
+                            <ul>
+                                <li>.env</li>
+                                <li>config.local.js</li>
+                                <li>*.key</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gitignore-example">
+                    <h3>Exemplo de .gitignore para Projetos Web</h3>
+                    <div class="code-block">
+                        <pre><code># Arquivos do Sistema Operacional
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editores/IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+jspm_packages/
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Arquivos de build
+dist/
+build/
+.cache/
+
+# Arquivos de configuração local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Arquivos específicos do projeto
+uploads/
+*.zip
+*.tar.gz</code></pre>
+                    </div>
+                </div>
+
+                <div class="gitignore-tips">
+                    <h3>Dicas Importantes:</h3>
+                    <div class="tips-grid">
+                        <div class="tip-item">
+                            <i class="fas fa-file"></i>
+                            <h4>Nome do Arquivo</h4>
+                            <p>Deve ser exatamente <code>.gitignore</code> (com ponto no início)</p>
+                        </div>
+                        <div class="tip-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Localização</h4>
+                            <p>Na raiz do projeto (mesma pasta do .git/)</p>
+                        </div>
+                        <div class="tip-item">
+                            <i class="fas fa-history"></i>
+                            <h4>Arquivos já rastreados</h4>
+                            <p>Use <code>git rm --cached arquivo</code> para parar de rastrear</p>
+                        </div>
+                        <div class="tip-item">
+                            <i class="fas fa-globe"></i>
+                            <h4>Templates</h4>
+                            <p>Use github.com/github/gitignore para templates prontos</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Boas Práticas -->
+            <section class="content-section">
+                <h2><i class="fas fa-star"></i> Boas Práticas</h2>
+                <p>Siga estas práticas para manter um histórico Git limpo e organizando.</p>
+
+                <div class="best-practices">
+                    <div class="practice-category">
+                        <h3><i class="fas fa-pencil-alt"></i> Mensagens de Commit</h3>
+                        <div class="practice-examples">
+                            <div class="good-example">
+                                <div class="example-label good">✅ Bom</div>
+                                <div class="example-content">
+                                    <code>Adiciona validação de formulário de contato</code>
+                                    <code>Corrige bug de responsividade no menu</code>
+                                    <code>Remove código não utilizado do CSS</code>
+                                </div>
+                            </div>
+                            <div class="bad-example">
+                                <div class="example-label bad">❌ Ruim</div>
+                                <div class="example-content">
+                                    <code>mudanças</code>
+                                    <code>fix</code>
+                                    <code>atualizando coisas</code>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="commit-format">
+                            <h4>Formato Recomendado:</h4>
+                            <div class="code-block">
+                                <pre><code>tipo: breve descrição (máx 50 chars)
+
+Descrição mais detalhada se necessário.
+Explique o "porquê" da mudança, não apenas o "o que".
+
+- Item 1 da mudança
+- Item 2 da mudança
+
+Closes #123</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-category">
+                        <h3><i class="fas fa-clock"></i> Frequência de Commits</h3>
+                        <div class="frequency-tips">
+                            <div class="tip">
+                                <strong>Faça commits pequenos e frequentes</strong>
+                                <p>Melhor fazer 5 commits pequenos que 1 commit gigante</p>
+                            </div>
+                            <div class="tip">
+                                <strong>Cada commit deve ter um propósito</strong>
+                                <p>Uma funcionalidade, um bug fix, uma refatoração</p>
+                            </div>
+                            <div class="tip">
+                                <strong>Teste antes de comitar</strong>
+                                <p>Garanta que o código funciona antes do commit</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-category">
+                        <h3><i class="fas fa-code-branch"></i> Organização do Repositório</h3>
+                        <div class="repo-structure">
+                            <div class="structure-example">
+                                <div class="folder-structure">
+                                    <div class="folder-item">📁 meu-projeto/</div>
+                                    <div class="folder-item level-1">📄 README.md</div>
+                                    <div class="folder-item level-1">📄 .gitignore</div>
+                                    <div class="folder-item level-1">📄 index.html</div>
+                                    <div class="folder-item level-1">📁 assets/</div>
+                                    <div class="folder-item level-2">📁 css/</div>
+                                    <div class="folder-item level-2">📁 js/</div>
+                                    <div class="folder-item level-2">📁 images/</div>
+                                    <div class="folder-item level-1">📁 docs/</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-category">
+                        <h3><i class="fas fa-file-alt"></i> README.md Essencial</h3>
+                        <p>Todo projeto deve ter um README.md explicativo:</p>
+                        <div class="readme-template">
+                            <div class="code-block">
+                                <pre><code># Nome do Projeto
+
+Breve descrição do que o projeto faz.
+
+## 🚀 Tecnologias
+
+- HTML5
+- CSS3
+- JavaScript
+
+## 📋 Pré-requisitos
+
+- Navegador web moderno
+
+## 🔧 Instalação
+
+1. Clone o repositório
+```bash
+git clone https://github.com/usuario/projeto.git
+```
+
+2. Abra o index.html no navegador
+
+## 📖 Como usar
+
+Descreva como usar o projeto...
+
+## 🤝 Contribuindo
+
+1. Faça fork do projeto
+2. Crie uma branch para sua feature
+3. Commit suas mudanças
+4. Push para a branch
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT.</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GitHub Pages -->
+            <section class="content-section">
+                <h2><i class="fas fa-globe-americas"></i> GitHub Pages</h2>
+                <p>GitHub Pages permite hospedar sites estáticos gratuitamente diretamente do seu repositório GitHub.
+                </p>
+
+                <div class="pages-benefits">
+                    <h3>Vantagens do GitHub Pages:</h3>
+                    <div class="benefits-list">
+                        <div class="benefit">
+                            <i class="fas fa-free-code-camp"></i>
+                            <span><strong>Gratuito:</strong> Hospedagem sem custos</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-link"></i>
+                            <span><strong>URL personalizada:</strong> usuario.github.io/repositorio</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-sync"></i>
+                            <span><strong>Deploy automático:</strong> Atualiza quando você faz push</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-shield-alt"></i>
+                            <span><strong>HTTPS grátis:</strong> Certificado SSL incluído</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pages-setup">
+                    <h3>Como Configurar GitHub Pages:</h3>
+                    <div class="setup-steps">
+                        <div class="setup-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Preparar o Repositório</h4>
+                                <ul>
+                                    <li>Certifique-se que tem um arquivo <code>index.html</code></li>
+                                    <li>Faça push de todos os arquivos para o GitHub</li>
+                                    <li>Verifique se a estrutura está correta</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="setup-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Habilitar GitHub Pages</h4>
+                                <ul>
+                                    <li>Vá para Settings do repositório</li>
+                                    <li>Role até a seção "Pages"</li>
+                                    <li>Em "Source", selecione "Deploy from a branch"</li>
+                                    <li>Escolha a branch "main" e pasta "/ (root)"</li>
+                                    <li>Clique em "Save"</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="setup-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Acessar o Site</h4>
+                                <ul>
+                                    <li>Aguarde alguns minutos para o deploy</li>
+                                    <li>Acesse: <code>https://usuario.github.io/nome-repositorio</code></li>
+                                    <li>Site estará online e público!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pages-demo">
+                    <h3>Demonstração: Publicando o Site do Curso</h3>
+                    <div class="demo-steps">
+                        <div class="demo-step">
+                            <strong>1. Estrutura do Projeto:</strong>
+                            <div class="project-structure">
+                                <div class="file-tree">
+                                    <div class="file-item">📄 index.html</div>
+                                    <div class="file-item">📄 dia1.html</div>
+                                    <div class="file-item">📄 dia2.html</div>
+                                    <div class="file-item">📄 ...</div>
+                                    <div class="file-item">📁 assets/</div>
+                                    <div class="file-item indent">📁 css/</div>
+                                    <div class="file-item indent">📁 images/</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="demo-step">
+                            <strong>2. Comandos Git:</strong>
+                            <div class="code-block">
+                                <pre><code># Adicionar todos os arquivos
+git add .
+
+# Commit com mensagem descritiva
+git commit -m "Adiciona curso completo HTML e CSS"
+
+# Enviar para GitHub
+git push origin main</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="demo-step">
+                            <strong>3. Resultado:</strong>
+                            <div class="result-example">
+                                <div class="browser-mockup">
+                                    <div class="browser-bar">
+                                        <div class="browser-url">https://seunome.github.io/curso-html-css</div>
+                                    </div>
+                                    <div class="browser-content">
+                                        <h4>🎓 Curso HTML & CSS</h4>
+                                        <p>Seu site do curso online e acessível!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pages-tips">
+                    <h3>Dicas para GitHub Pages:</h3>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <i class="fas fa-file"></i>
+                            <h4>index.html obrigatório</h4>
+                            <p>O arquivo index.html será a página inicial</p>
+                        </div>
+                        <div class="tip-card">
+                            <i class="fas fa-link"></i>
+                            <h4>Links relativos</h4>
+                            <p>Use caminhos relativos para CSS, JS e imagens</p>
+                        </div>
+                        <div class="tip-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Propagação DNS</h4>
+                            <p>Pode levar até 10 minutos para mudanças aparecerem</p>
+                        </div>
+                        <div class="tip-card">
+                            <i class="fas fa-globe"></i>
+                            <h4>Domínio personalizado</h4>
+                            <p>Você pode usar seu próprio domínio se quiser</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projeto Final -->
+            <section class="content-section">
+                <h2><i class="fas fa-trophy"></i> Projeto Final</h2>
+                <p>Vamos colocar em prática tudo que aprendemos criando e publicando um projeto completo!</p>
+
+                <div class="final-project">
+                    <h3>🎯 Desafio: Portfólio Pessoal no GitHub</h3>
+                    <div class="project-requirements">
+                        <h4>Requisitos do Projeto:</h4>
+                        <div class="requirements-grid">
+                            <div class="requirement-item">
+                                <i class="fas fa-check"></i>
+                                <span>Página inicial com apresentação pessoal</span>
+                            </div>
+                            <div class="requirement-item">
+                                <i class="fas fa-check"></i>
+                                <span>Seção "Sobre" com informações</span>
+                            </div>
+                            <div class="requirement-item">
+                                <i class="fas fa-check"></i>
+                                <span>Portfólio com projetos (mínimo 3)</span>
+                            </div>
+                            <div class="requirement-item">
+                                <i class="fas fa-check"></i>
+                                <span>Página de contato com formulário</span>
+                            </div>
+                            <div class="requirement-item">
+                                <i class="fas fa-check"></i>
+                                <span>Design responsivo</span>
+                            </div>
+                            <div class="requirement-item">
+                                <i class="fas fa-check"></i>
+                                <span>Navegação funcional</span>
+                            </div>
+                            <div class="requirement-item">
+                                <i class="fas fa-check"></i>
+                                <span>CSS com efeitos e animações</span>
+                            </div>
+                            <div class="requirement-item">
+                                <i class="fas fa-check"></i>
+                                <span>Publicado no GitHub Pages</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-steps">
+                        <h4>Passo a Passo:</h4>
+                        <div class="steps-list">
+                            <div class="project-step">
+                                <div class="step-number">1</div>
+                                <div class="step-details">
+                                    <h5>Planejamento</h5>
+                                    <p>Definir estrutura, cores, layout</p>
+                                </div>
+                            </div>
+                            <div class="project-step">
+                                <div class="step-number">2</div>
+                                <div class="step-details">
+                                    <h5>Desenvolvimento</h5>
+                                    <p>Criar HTML, CSS e implementar funcionalidades</p>
+                                </div>
+                            </div>
+                            <div class="project-step">
+                                <div class="step-number">3</div>
+                                <div class="step-details">
+                                    <h5>Versionamento</h5>
+                                    <p>Usar Git para versionar o projeto</p>
+                                </div>
+                            </div>
+                            <div class="project-step">
+                                <div class="step-number">4</div>
+                                <div class="step-details">
+                                    <h5>Publicação</h5>
+                                    <p>Upload para GitHub e ativar Pages</p>
+                                </div>
+                            </div>
+                            <div class="project-step">
+                                <div class="step-number">5</div>
+                                <div class="step-details">
+                                    <h5>Documentação</h5>
+                                    <p>Criar README.md completo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-inspiration">
+                        <h4>Inspiração de Funcionalidades:</h4>
+                        <div class="features-grid">
+                            <div class="feature">
+                                <i class="fas fa-moon"></i>
+                                <span>Modo escuro/claro</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-language"></i>
+                                <span>Múltiplos idiomas</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-download"></i>
+                                <span>Download do currículo</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Gráfico de habilidades</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-envelope"></i>
+                                <span>Formulário funcional</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-blog"></i>
+                                <span>Seção de blog</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resumo -->
+            <section class="content-section summary-section">
+                <h2><i class="fas fa-graduation-cap"></i> Parabéns! Curso Concluído</h2>
+                <p>Você chegou ao final do curso de HTML e CSS! Agora você domina as ferramentas essenciais para criar
+                    sites profissionais.</p>
+
+                <div class="learned-concepts">
+                    <h3>🎓 O que você aprendeu:</h3>
+                    <div class="concept-grid">
+                        <div class="concept-item">
+                            <i class="fab fa-git-alt"></i>
+                            <h5>Versionamento</h5>
+                            <p>Controle de versões com Git</p>
+                        </div>
+                        <div class="concept-item">
+                            <i class="fab fa-github"></i>
+                            <h5>GitHub</h5>
+                            <p>Colaboração e hospedagem</p>
+                        </div>
+                        <div class="concept-item">
+                            <i class="fas fa-eye-slash"></i>
+                            <h5>.gitignore</h5>
+                            <p>Organização de projetos</p>
+                        </div>
+                        <div class="concept-item">
+                            <i class="fas fa-globe"></i>
+                            <h5>GitHub Pages</h5>
+                            <p>Publicação de sites</p>
+                        </div>
+                        <div class="concept-item">
+                            <i class="fas fa-star"></i>
+                            <h5>Boas Práticas</h5>
+                            <p>Commits e documentação</p>
+                        </div>
+                        <div class="concept-item">
+                            <i class="fas fa-rocket"></i>
+                            <h5>Deploy</h5>
+                            <p>Sites online e funcionais</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-completion">
+                    <h3>🏆 Jornada Completa - 9 Dias de Aprendizado:</h3>
+                    <div class="completion-timeline">
+                        <div class="timeline-item completed">
+                            <div class="timeline-day">Dia 1</div>
+                            <div class="timeline-content">Introdução ao HTML</div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-day">Dia 2</div>
+                            <div class="timeline-content">Estrutura e Semântica</div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-day">Dia 3</div>
+                            <div class="timeline-content">Formulários e Tabelas</div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-day">Dia 4</div>
+                            <div class="timeline-content">Introdução ao CSS</div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-day">Dia 5</div>
+                            <div class="timeline-content">Layout com CSS</div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-day">Dia 6</div>
+                            <div class="timeline-content">Flexbox e Grid</div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-day">Dia 7</div>
+                            <div class="timeline-content">Responsividade</div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-day">Dia 8</div>
+                            <div class="timeline-content">Efeitos com CSS</div>
+                        </div>
+                        <div class="timeline-item current">
+                            <div class="timeline-day">Dia 9</div>
+                            <div class="timeline-content">Git e GitHub</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-steps">
+                    <h3>🚀 Próximos Passos:</h3>
+                    <div class="steps-grid">
+                        <div class="next-step">
+                            <i class="fab fa-js-square"></i>
+                            <h4>JavaScript</h4>
+                            <p>Adicionar interatividade aos seus sites</p>
+                        </div>
+                        <div class="next-step">
+                            <i class="fab fa-react"></i>
+                            <h4>Frameworks</h4>
+                            <p>React, Vue.js ou Angular</p>
+                        </div>
+                        <div class="next-step">
+                            <i class="fas fa-server"></i>
+                            <h4>Backend</h4>
+                            <p>Node.js, Python, PHP</p>
+                        </div>
+                        <div class="next-step">
+                            <i class="fas fa-database"></i>
+                            <h4>Banco de Dados</h4>
+                            <p>MySQL, PostgreSQL, MongoDB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="final-message">
+                    <div class="message-content">
+                        <h3>🎉 Parabéns pela Dedicação!</h3>
+                        <p>Você agora tem as habilidades fundamentais para criar sites incríveis. Continue praticando,
+                            experimentando e construindo projetos. O importante é nunca parar de aprender!</p>
+                        <div class="celebration">
+                            <span class="celebration-emoji">🎊</span>
+                            <span class="celebration-text">Você é agora um(a) desenvolvedor(a) web!</span>
+                            <span class="celebration-emoji">🎊</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Curso HTML & CSS</h3>
+                    <p>Aprenda desenvolvimento web do zero ao profissional</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Dias do Curso</h4>
+                    <div class="footer-links">
+                        <a href="dia1.html">Dia 1 - HTML Básico</a>
+                        <a href="dia2.html">Dia 2 - Estrutura</a>
+                        <a href="dia3.html">Dia 3 - Formulários</a>
+                        <a href="dia4.html">Dia 4 - CSS Básico</a>
+                        <a href="dia5.html">Dia 5 - Layout</a>
+                        <a href="dia6.html">Dia 6 - Flexbox & Grid</a>
+                        <a href="dia7.html">Dia 7 - Responsividade</a>
+                        <a href="dia8.html">Dia 8 - Efeitos CSS</a>
+                        <a href="dia9.html">Dia 9 - Git & GitHub</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <div class="footer-links">
+                        <a href="https://github.com/" target="_blank">GitHub</a>
+                        <a href="https://git-scm.com/" target="_blank">Git Documentation</a>
+                        <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Curso HTML & CSS. Feito com ❤️ para aprender desenvolvimento web.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
