@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 3 - Cores, Links e Organização de Página | Formação HTML e CSS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/day-content.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🔹 Dia 3</h1>
+            <p class="header__subtitle">Cores, Links e Organização de Página</p>
+            <nav class="header__nav">
+                <a href="index.html" class="nav-link">← Voltar ao curso</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Navegação da aula -->
+            <nav class="lesson-nav">
+                <ul>
+                    <li><a href="#formatos-cores">🎨 Formatos de Cores</a></li>
+                    <li><a href="#psicologia-cores">🧠 Psicologia das Cores</a></li>
+                    <li><a href="#aplicacao-cores">✨ Aplicação de Cores</a></li>
+                    <li><a href="#links">🔗 Links</a></li>
+                    <li><a href="#estrutura-semantica">🏗️ Estrutura Semântica</a></li>
+                </ul>
+            </nav>
+
+            <!-- Seção 1: Formatos de Cores -->
+            <section id="formatos-cores" class="content-section">
+                <div class="section-header">
+                    <h2>🎨 Formato de Cores: Hexadecimal e RGB</h2>
+                    <p class="section-intro">Aprenda as diferentes formas de definir cores no CSS</p>
+                </div>
+
+                <!-- Introdução às cores -->
+                <div class="definition-box">
+                    <h3>🤔 Como funcionam as cores digitais?</h3>
+                    <p>As cores na web são formadas pela combinação de <strong>três cores primárias de luz</strong>: Vermelho (Red), Verde (Green) e Azul (Blue) - conhecido como sistema <strong>RGB</strong>.</p>
+                </div>
+
+                <!-- Formatos de cores -->
+                <div class="color-formats">
+                    <h4>📋 Principais Formatos de Cores:</h4>
+                    
+                    <!-- Hexadecimal -->
+                    <div class="color-format-card">
+                        <h5>🔢 Hexadecimal (#)</h5>
+                        <p>Formato mais usado na web. Usa números de 0-9 e letras de A-F.</p>
+                        
+                        <div class="color-examples">
+                            <div class="color-example">
+                                <div class="color-swatch" style="background-color: #FF0000;"></div>
+                                <div class="color-info">
+                                    <code>#FF0000</code>
+                                    <span>Vermelho puro</span>
+                                </div>
+                            </div>
+                            <div class="color-example">
+                                <div class="color-swatch" style="background-color: #00FF00;"></div>
+                                <div class="color-info">
+                                    <code>#00FF00</code>
+                                    <span>Verde puro</span>
+                                </div>
+                            </div>
+                            <div class="color-example">
+                                <div class="color-swatch" style="background-color: #0000FF;"></div>
+                                <div class="color-info">
+                                    <code>#0000FF</code>
+                                    <span>Azul puro</span>
+                                </div>
+                            </div>
+                            <div class="color-example">
+                                <div class="color-swatch" style="background-color: #000000;"></div>
+                                <div class="color-info">
+                                    <code>#000000</code>
+                                    <span>Preto</span>
+                                </div>
+                            </div>
+                            <div class="color-example">
+                                <div class="color-swatch" style="background-color: #FFFFFF;"></div>
+                                <div class="color-info">
+                                    <code>#FFFFFF</code>
+                                    <span>Branco</span>
+                                </div>
+                            </div>
+                            <div class="color-example">
+                                <div class="color-swatch" style="background-color: #808080;"></div>
+                                <div class="color-info">
+                                    <code>#808080</code>
+                                    <span>Cinza</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hex-explanation">
+                            <h6>🔍 Como funciona o Hexadecimal:</h6>
+                            <div class="hex-breakdown">
+                                <code class="hex-demo">#FF0000</code>
+                                <div class="hex-parts">
+                                    <span class="part red">FF = Vermelho (255)</span>
+                                    <span class="part green">00 = Verde (0)</span>
+                                    <span class="part blue">00 = Azul (0)</span>
+                                </div>
+                            </div>
+                            <p>Cada par de caracteres representa a intensidade de uma cor (00 = mínimo, FF = máximo)</p>
+                        </div>
+                    </div>
+
+                    <!-- RGB -->
+                    <div class="color-format-card">
+                        <h5>🎯 RGB (Red, Green, Blue)</h5>
+                        <p>Formato mais intuitivo. Usa números de 0 a 255 para cada cor.</p>
+                        
+                        <div class="rgb-examples">
+                            <div class="color-example">
+                                <div class="color-swatch" style="background-color: rgb(255, 0, 0);"></div>
+                                <div class="color-info">
+                                    <code>rgb(255, 0, 0)</code>
+                                    <span>Vermelho puro</span>
+                                </div>
+                            </div>
+                            <div class="color-example">
+                                <div class="color-swatch" style="background-color: rgb(0, 255, 0);"></div>
+                                <div class="color-info">
+                                    <code>rgb(0, 255, 0)</code>
+                                    <span>Verde puro</span>
+                                </div>
+                            </div>
+                            <div class="color-example">
+                                <div class="color-swatch" style="background-color: rgb(0, 0, 255);"></div>
+                                <div class="color-info">
+                                    <code>rgb(0, 0, 255)</code>
+                                    <span>Azul puro</span>
+                                </div>
+                            </div>
+                            <div class="color-example">
+                                <div class="color-swatch" style="background-color: rgb(255, 255, 0);"></div>
+                                <div class="color-info">
+                                    <code>rgb(255, 255, 0)</code>
+                                    <span>Amarelo</span>
+                                </div>
+                            </div>
+                            <div class="color-example">
+                                <div class="color-swatch" style="background-color: rgb(255, 0, 255);"></div>
+                                <div class="color-info">
+                                    <code>rgb(255, 0, 255)</code>
+                                    <span>Magenta</span>
+                                </div>
+                            </div>
+                            <div class="color-example">
+                                <div class="color-swatch" style="background-color: rgb(0, 255, 255);"></div>
+                                <div class="color-info">
+                                    <code>rgb(0, 255, 255)</code>
+                                    <span>Ciano</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conversão -->
+                    <div class="conversion-table">
+                        <h5>🔄 Tabela de Conversão (Hex ↔ RGB):</h5>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cor</th>
+                                    <th>Hexadecimal</th>
+                                    <th>RGB</th>
+                                    <th>Nome</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><div class="mini-swatch" style="background: #FF0000;"></div></td>
+                                    <td><code>#FF0000</code></td>
+                                    <td><code>rgb(255, 0, 0)</code></td>
+                                    <td>red</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="mini-swatch" style="background: #00FF00;"></div></td>
+                                    <td><code>#00FF00</code></td>
+                                    <td><code>rgb(0, 255, 0)</code></td>
+                                    <td>lime</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="mini-swatch" style="background: #0000FF;"></div></td>
+                                    <td><code>#0000FF</code></td>
+                                    <td><code>rgb(0, 0, 255)</code></td>
+                                    <td>blue</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="mini-swatch" style="background: #FFFF00;"></div></td>
+                                    <td><code>#FFFF00</code></td>
+                                    <td><code>rgb(255, 255, 0)</code></td>
+                                    <td>yellow</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="mini-swatch" style="background: #800080;"></div></td>
+                                    <td><code>#800080</code></td>
+                                    <td><code>rgb(128, 0, 128)</code></td>
+                                    <td>purple</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 2: Psicologia das Cores -->
+            <section id="psicologia-cores" class="content-section">
+                <div class="section-header">
+                    <h2>🧠 Psicologia das Cores</h2>
+                    <p class="section-intro">Como as cores influenciam emoções e comportamentos dos usuários</p>
+                </div>
+
+                <!-- Conceito -->
+                <div class="definition-box">
+                    <h3>🎭 O que é Psicologia das Cores?</h3>
+                    <p>É o estudo de como as cores afetam as <strong>emoções, comportamentos e decisões</strong> das pessoas. No design web, usar as cores certas pode aumentar conversões, melhorar a experiência do usuário e transmitir a mensagem correta.</p>
+                </div>
+
+                <!-- Cores e seus significados -->
+                <div class="color-psychology">
+                    <h4>🌈 Cores e Seus Significados:</h4>
+                    
+                    <div class="psychology-grid">
+                        <div class="psychology-card red">
+                            <div class="color-header">
+                                <div class="color-circle" style="background: #e74c3c;"></div>
+                                <h5>❤️ Vermelho</h5>
+                            </div>
+                            <div class="emotions">
+                                <strong>Emoções:</strong> Paixão, energia, urgência, poder
+                            </div>
+                            <div class="uses">
+                                <strong>Use para:</strong> Botões de ação, promoções, alertas
+                            </div>
+                            <div class="examples">
+                                <strong>Exemplos:</strong> YouTube, Netflix, Coca-Cola
+                            </div>
+                        </div>
+
+                        <div class="psychology-card blue">
+                            <div class="color-header">
+                                <div class="color-circle" style="background: #3498db;"></div>
+                                <h5>💙 Azul</h5>
+                            </div>
+                            <div class="emotions">
+                                <strong>Emoções:</strong> Confiança, profissionalismo, calma
+                            </div>
+                            <div class="uses">
+                                <strong>Use para:</strong> Sites corporativos, bancos, tecnologia
+                            </div>
+                            <div class="examples">
+                                <strong>Exemplos:</strong> Facebook, LinkedIn, IBM
+                            </div>
+                        </div>
+
+                        <div class="psychology-card green">
+                            <div class="color-header">
+                                <div class="color-circle" style="background: #27ae60;"></div>
+                                <h5>💚 Verde</h5>
+                            </div>
+                            <div class="emotions">
+                                <strong>Emoções:</strong> Natureza, crescimento, sucesso, saúde
+                            </div>
+                            <div class="uses">
+                                <strong>Use para:</strong> Botões de confirmação, eco-friendly
+                            </div>
+                            <div class="examples">
+                                <strong>Exemplos:</strong> WhatsApp, Spotify, Starbucks
+                            </div>
+                        </div>
+
+                        <div class="psychology-card yellow">
+                            <div class="color-header">
+                                <div class="color-circle" style="background: #f1c40f;"></div>
+                                <h5>💛 Amarelo</h5>
+                            </div>
+                            <div class="emotions">
+                                <strong>Emoções:</strong> Alegria, otimismo, criatividade, atenção
+                            </div>
+                            <div class="uses">
+                                <strong>Use para:</strong> Destacar informações, call-to-action
+                            </div>
+                            <div class="examples">
+                                <strong>Exemplos:</strong> McDonald's, Snapchat, IKEA
+                            </div>
+                        </div>
+
+                        <div class="psychology-card orange">
+                            <div class="color-header">
+                                <div class="color-circle" style="background: #e67e22;"></div>
+                                <h5>🧡 Laranja</h5>
+                            </div>
+                            <div class="emotions">
+                                <strong>Emoções:</strong> Entusiasmo, cordialidade, aventura
+                            </div>
+                            <div class="uses">
+                                <strong>Use para:</strong> CTAs, produtos jovens, eventos
+                            </div>
+                            <div class="examples">
+                                <strong>Exemplos:</strong> Amazon, Firefox, Fanta
+                            </div>
+                        </div>
+
+                        <div class="psychology-card purple">
+                            <div class="color-header">
+                                <div class="color-circle" style="background: #9b59b6;"></div>
+                                <h5>💜 Roxo</h5>
+                            </div>
+                            <div class="emotions">
+                                <strong>Emoções:</strong> Luxo, criatividade, mistério, espiritualidade
+                            </div>
+                            <div class="uses">
+                                <strong>Use para:</strong> Produtos premium, arte, beleza
+                            </div>
+                            <div class="examples">
+                                <strong>Exemplos:</strong> Twitch, Yahoo, Cadbury
+                            </div>
+                        </div>
+
+                        <div class="psychology-card black">
+                            <div class="color-header">
+                                <div class="color-circle" style="background: #2c3e50;"></div>
+                                <h5>🖤 Preto</h5>
+                            </div>
+                            <div class="emotions">
+                                <strong>Emoções:</strong> Elegância, sofisticação, poder, formalidade
+                            </div>
+                            <div class="uses">
+                                <strong>Use para:</strong> Produtos de luxo, moda, tecnologia
+                            </div>
+                            <div class="examples">
+                                <strong>Exemplos:</strong> Apple, Nike, Chanel
+                            </div>
+                        </div>
+
+                        <div class="psychology-card white">
+                            <div class="color-header">
+                                <div class="color-circle" style="background: #ecf0f1; border: 1px solid #bdc3c7;"></div>
+                                <h5>🤍 Branco</h5>
+                            </div>
+                            <div class="emotions">
+                                <strong>Emoções:</strong> Pureza, simplicidade, limpeza, minimalismo
+                            </div>
+                            <div class="uses">
+                                <strong>Use para:</strong> Backgrounds, espaços em branco, médico
+                            </div>
+                            <div class="examples">
+                                <strong>Exemplos:</strong> Google, Apple, Tesla
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dicas de combinação -->
+                <div class="color-combinations">
+                    <h4>🎨 Dicas de Combinação de Cores:</h4>
+                    <div class="combination-tips">
+                        <div class="tip-card">
+                            <h5>📐 Regra 60-30-10</h5>
+                            <p>60% cor dominante, 30% cor secundária, 10% cor de destaque</p>
+                            <div class="rule-example">
+                                <div class="rule-part sixty" style="background: #ecf0f1;">60%</div>
+                                <div class="rule-part thirty" style="background: #3498db;">30%</div>
+                                <div class="rule-part ten" style="background: #e74c3c;">10%</div>
+                            </div>
+                        </div>
+                        <div class="tip-card">
+                            <h5>🔗 Cores Complementares</h5>
+                            <p>Cores opostas no círculo cromático criam contraste forte</p>
+                            <div class="complement-examples">
+                                <div class="complement-pair">
+                                    <div class="color-dot" style="background: #e74c3c;"></div>
+                                    <span>+</span>
+                                    <div class="color-dot" style="background: #27ae60;"></div>
+                                </div>
+                                <div class="complement-pair">
+                                    <div class="color-dot" style="background: #3498db;"></div>
+                                    <span>+</span>
+                                    <div class="color-dot" style="background: #f39c12;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 3: Aplicação de Cores -->
+            <section id="aplicacao-cores" class="content-section">
+                <div class="section-header">
+                    <h2>✨ Aplicação de Cor em Textos e Backgrounds</h2>
+                    <p class="section-intro">Aprenda a aplicar cores de forma prática no CSS</p>
+                </div>
+
+                <!-- Propriedades CSS -->
+                <div class="css-properties">
+                    <h4>🎯 Principais Propriedades CSS para Cores:</h4>
+                    
+                    <div class="properties-grid">
+                        <div class="property-card">
+                            <h5>🔤 color</h5>
+                            <p>Define a cor do texto</p>
+                            <div class="property-example">
+                                <code>color: #3498db;</code>
+                                <div class="result" style="color: #3498db;">Texto azul</div>
+                            </div>
+                        </div>
+
+                        <div class="property-card">
+                            <h5>🎨 background-color</h5>
+                            <p>Define a cor de fundo do elemento</p>
+                            <div class="property-example">
+                                <code>background-color: #f1c40f;</code>
+                                <div class="result" style="background-color: #f1c40f; padding: 10px;">Fundo amarelo</div>
+                            </div>
+                        </div>
+
+                        <div class="property-card">
+                            <h5>🖌️ border-color</h5>
+                            <p>Define a cor da borda do elemento</p>
+                            <div class="property-example">
+                                <code>border: 2px solid #e74c3c;</code>
+                                <div class="result" style="border: 2px solid #e74c3c; padding: 10px;">Borda vermelha</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemplo prático completo -->
+                <div class="practical-color-example">
+                    <h4>💻 Exemplo Prático Completo:</h4>
+                    
+                    <div class="code-example">
+                        <h5>📄 HTML:</h5>
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">cores.html</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Exemplo de Cores&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header class="cabecalho"&gt;
+        &lt;h1&gt;Meu Site Colorido&lt;/h1&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;p class="destaque"&gt;Este é um texto de destaque!&lt;/p&gt;
+        &lt;p class="normal"&gt;Este é um texto normal.&lt;/p&gt;
+        &lt;div class="caixa-especial"&gt;
+            &lt;p&gt;Conteúdo em uma caixa especial&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="code-example">
+                        <h5>🎨 CSS:</h5>
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">style.css</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>/* Reset básico */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #ecf0f1;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.cabecalho h1 {
+    color: #3498db;
+    margin: 0;
+}
+
+/* Textos */
+.destaque {
+    color: #e74c3c;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #fff5f5;
+    padding: 15px;
+    border-left: 5px solid #e74c3c;
+}
+
+.normal {
+    color: #2c3e50;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Caixa especial */
+.caixa-especial {
+    background-color: #27ae60;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 3px solid #1e8449;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="visual-result">
+                        <h5>📋 Resultado no Navegador:</h5>
+                        <div class="browser-preview color-demo">
+                            <div style="background-color: #2c3e50; color: #ffffff; padding: 30px; text-align: center; border-radius: 10px; margin-bottom: 20px;">
+                                <h1 style="color: #3498db; margin: 0;">Meu Site Colorido</h1>
+                            </div>
+                            <p style="color: #e74c3c; font-size: 1.5em; font-weight: bold; background-color: #fff5f5; padding: 15px; border-left: 5px solid #e74c3c; margin: 10px 0;">Este é um texto de destaque!</p>
+                            <p style="color: #2c3e50; background-color: #ffffff; padding: 15px; border-radius: 5px; margin: 10px 0;">Este é um texto normal.</p>
+                            <div style="background-color: #27ae60; color: #ffffff; padding: 20px; border-radius: 10px; margin-top: 20px; border: 3px solid #1e8449;">
+                                <p style="margin: 0;">Conteúdo em uma caixa especial</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dicas importantes -->
+                <div class="color-tips">
+                    <h4>💡 Dicas Importantes sobre Cores:</h4>
+                    <div class="tips-grid">
+                        <div class="tip-item">
+                            <h5>♿ Acessibilidade</h5>
+                            <ul>
+                                <li>Contraste mínimo 4.5:1 para texto normal</li>
+                                <li>Contraste mínimo 3:1 para texto grande</li>
+                                <li>Teste com daltonismo em mente</li>
+                                <li>Não use apenas cor para informação importante</li>
+                            </ul>
+                        </div>
+                        <div class="tip-item">
+                            <h5>📱 Responsividade</h5>
+                            <ul>
+                                <li>Cores podem parecer diferentes em telas diferentes</li>
+                                <li>Teste em vários dispositivos</li>
+                                <li>Considere modo escuro/claro</li>
+                            </ul>
+                        </div>
+                        <div class="tip-item">
+                            <h5>🎨 Consistência</h5>
+                            <ul>
+                                <li>Crie uma paleta de cores</li>
+                                <li>Use variáveis CSS para cores principais</li>
+                                <li>Mantenha hierarquia visual</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 4: Links -->
+            <section id="links" class="content-section">
+                <div class="section-header">
+                    <h2>🔗 Links (&lt;a&gt;): Internos, Externos, Download e Formatação</h2>
+                    <p class="section-intro">Conecte páginas e recursos com diferentes tipos de links</p>
+                </div>
+
+                <!-- Estrutura básica do link -->
+                <div class="concept-box">
+                    <h4>🏷️ Estrutura Básica do Link</h4>
+                    <p>A tag <code>&lt;a&gt;</code> (anchor/âncora) cria links clicáveis. O atributo <code>href</code> define o destino.</p>
+                </div>
+
+                <div class="tag-anatomy">
+                    <code>&lt;a href="destino" target="_blank"&gt;Texto do Link&lt;/a&gt;</code>
+                    <div class="tag-parts">
+                        <span class="part">Tag</span>
+                        <span class="part">href (obrigatório)</span>
+                        <span class="part">target (opcional)</span>
+                        <span class="part">Texto visível</span>
+                    </div>
+                </div>
+
+                <!-- Tipos de links -->
+                <div class="link-types">
+                    <h4>📋 Tipos de Links:</h4>
+                    
+                    <!-- Links Internos -->
+                    <div class="link-type-card">
+                        <h5>🏠 Links Internos</h5>
+                        <p>Conectam páginas dentro do mesmo site</p>
+                        
+                        <div class="link-examples">
+                            <div class="link-example">
+                                <h6>Para outra página:</h6>
+                                <code>&lt;a href="sobre.html"&gt;Sobre Nós&lt;/a&gt;</code>
+                                <div class="result"><a href="#" style="color: #3498db; text-decoration: underline;">Sobre Nós</a></div>
+                            </div>
+                            
+                            <div class="link-example">
+                                <h6>Para seção da mesma página:</h6>
+                                <code>&lt;a href="#contato"&gt;Ir para Contato&lt;/a&gt;</code>
+                                <div class="result"><a href="#" style="color: #3498db; text-decoration: underline;">Ir para Contato</a></div>
+                            </div>
+                            
+                            <div class="link-example">
+                                <h6>Para pasta específica:</h6>
+                                <code>&lt;a href="produtos/lista.html"&gt;Produtos&lt;/a&gt;</code>
+                                <div class="result"><a href="#" style="color: #3498db; text-decoration: underline;">Produtos</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Links Externos -->
+                    <div class="link-type-card">
+                        <h5>🌐 Links Externos</h5>
+                        <p>Conectam para outros sites na internet</p>
+                        
+                        <div class="link-examples">
+                            <div class="link-example">
+                                <h6>Site externo (mesma aba):</h6>
+                                <code>&lt;a href="https://www.google.com"&gt;Google&lt;/a&gt;</code>
+                                <div class="result"><a href="#" style="color: #3498db; text-decoration: underline;">Google</a></div>
+                            </div>
+                            
+                            <div class="link-example">
+                                <h6>Site externo (nova aba):</h6>
+                                <code>&lt;a href="https://www.google.com" target="_blank"&gt;Google&lt;/a&gt;</code>
+                                <div class="result"><a href="#" style="color: #3498db; text-decoration: underline;">Google ↗</a></div>
+                            </div>
+                            
+                            <div class="link-example">
+                                <h6>Com segurança adicional:</h6>
+                                <code>&lt;a href="https://exemplo.com" target="_blank" rel="noopener"&gt;Site Externo&lt;/a&gt;</code>
+                                <div class="result"><a href="#" style="color: #3498db; text-decoration: underline;">Site Externo ↗</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Links de Download -->
+                    <div class="link-type-card">
+                        <h5>📥 Links de Download</h5>
+                        <p>Fazem download de arquivos em vez de navegar</p>
+                        
+                        <div class="link-examples">
+                            <div class="link-example">
+                                <h6>Download direto:</h6>
+                                <code>&lt;a href="arquivo.pdf" download&gt;Baixar PDF&lt;/a&gt;</code>
+                                <div class="result"><a href="#" style="color: #e74c3c; text-decoration: underline;">📄 Baixar PDF</a></div>
+                            </div>
+                            
+                            <div class="link-example">
+                                <h6>Download com nome personalizado:</h6>
+                                <code>&lt;a href="doc.pdf" download="manual.pdf"&gt;Manual&lt;/a&gt;</code>
+                                <div class="result"><a href="#" style="color: #e74c3c; text-decoration: underline;">📄 Manual</a></div>
+                            </div>
+                            
+                            <div class="link-example">
+                                <h6>Download de imagem:</h6>
+                                <code>&lt;a href="foto.jpg" download&gt;Baixar Foto&lt;/a&gt;</code>
+                                <div class="result"><a href="#" style="color: #e74c3c; text-decoration: underline;">🖼️ Baixar Foto</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Links Especiais -->
+                    <div class="link-type-card">
+                        <h5>📧 Links Especiais</h5>
+                        <p>Links que executam ações específicas</p>
+                        
+                        <div class="link-examples">
+                            <div class="link-example">
+                                <h6>Email:</h6>
+                                <code>&lt;a href="mailto:contato@site.com"&gt;Enviar Email&lt;/a&gt;</code>
+                                <div class="result"><a href="#" style="color: #27ae60; text-decoration: underline;">📧 Enviar Email</a></div>
+                            </div>
+                            
+                            <div class="link-example">
+                                <h6>Telefone:</h6>
+                                <code>&lt;a href="tel:+5511999999999"&gt;Ligar&lt;/a&gt;</code>
+                                <div class="result"><a href="#" style="color: #27ae60; text-decoration: underline;">📞 Ligar</a></div>
+                            </div>
+                            
+                            <div class="link-example">
+                                <h6>WhatsApp:</h6>
+                                <code>&lt;a href="https://wa.me/5511999999999"&gt;WhatsApp&lt;/a&gt;</code>
+                                <div class="result"><a href="#" style="color: #27ae60; text-decoration: underline;">💬 WhatsApp</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formatação de links com CSS -->
+                <div class="link-styling">
+                    <h4>🎨 Formatação de Links com CSS:</h4>
+                    
+                    <div class="code-example">
+                        <h5>🎯 Estados dos Links:</h5>
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">links.css</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>/* Estado normal do link */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Quando o mouse passa por cima */
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+
+/* Quando o link é clicado */
+a:active {
+    color: #1f4e79;
+    transform: translateY(0);
+}
+
+/* Links já visitados */
+a:visited {
+    color: #9b59b6;
+}
+
+/* Quando o link tem foco (teclado) */
+a:focus {
+    outline: 2px solid #f39c12;
+    outline-offset: 2px;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="link-styles-demo">
+                        <h5>🎭 Estilos de Links Populares:</h5>
+                        <div class="styles-grid">
+                            <div class="style-demo">
+                                <h6>Botão Simples:</h6>
+                                <a href="#" class="btn-simple">Clique Aqui</a>
+                                <code>background: #3498db; padding: 10px 20px; border-radius: 5px;</code>
+                            </div>
+                            
+                            <div class="style-demo">
+                                <h6>Link Sublinhado:</h6>
+                                <a href="#" class="link-underline">Link com Sublinhado</a>
+                                <code>border-bottom: 2px solid #e74c3c;</code>
+                            </div>
+                            
+                            <div class="style-demo">
+                                <h6>Botão com Ícone:</h6>
+                                <a href="#" class="btn-icon">📄 Download</a>
+                                <code>background: #27ae60; color: white; padding: 8px 16px;</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 5: Estrutura Semântica -->
+            <section id="estrutura-semantica" class="content-section">
+                <div class="section-header">
+                    <h2>🏗️ Estrutura Semântica Básica</h2>
+                    <p class="section-intro">Organize seu HTML de forma significativa com elementos semânticos</p>
+                </div>
+
+                <!-- O que é semântica -->
+                <div class="definition-box">
+                    <h3>🤔 O que é HTML Semântico?</h3>
+                    <p>HTML semântico usa <strong>elementos que têm significado</strong>, não apenas aparência. Isso ajuda navegadores, leitores de tela e motores de busca a entender melhor o conteúdo.</p>
+                </div>
+
+                <!-- Comparação -->
+                <div class="semantic-comparison">
+                    <h4>📊 Não Semântico vs Semântico:</h4>
+                    <div class="comparison-boxes">
+                        <div class="bad-example">
+                            <h5>❌ Não Semântico (Evite):</h5>
+                            <div class="code-container small">
+                                <pre class="code dracula-theme"><code>&lt;div class="cabecalho"&gt;
+    &lt;div class="titulo"&gt;Site&lt;/div&gt;
+    &lt;div class="menu"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="conteudo"&gt;
+    &lt;div class="artigo"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="rodape"&gt;...&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+                        <div class="good-example">
+                            <h5>✅ Semântico (Recomendado):</h5>
+                            <div class="code-container small">
+                                <pre class="code dracula-theme"><code>&lt;header&gt;
+    &lt;h1&gt;Site&lt;/h1&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;section&gt;...&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elementos semânticos principais -->
+                <div class="semantic-elements">
+                    <h4>🏷️ Principais Elementos Semânticos:</h4>
+                    
+                    <div class="elements-grid">
+                        <div class="element-card">
+                            <h5>&lt;header&gt;</h5>
+                            <p><strong>Cabeçalho</strong> da página ou seção</p>
+                            <div class="element-use">
+                                <strong>Use para:</strong> Logo, navegação principal, título da página
+                            </div>
+                            <div class="element-example">
+                                <code>&lt;header&gt;
+  &lt;h1&gt;Meu Site&lt;/h1&gt;
+  &lt;nav&gt;Menu&lt;/nav&gt;
+&lt;/header&gt;</code>
+                            </div>
+                        </div>
+
+                        <div class="element-card">
+                            <h5>&lt;nav&gt;</h5>
+                            <p><strong>Navegação</strong> principal do site</p>
+                            <div class="element-use">
+                                <strong>Use para:</strong> Menu principal, breadcrumbs, links de navegação
+                            </div>
+                            <div class="element-example">
+                                <code>&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code>
+                            </div>
+                        </div>
+
+                        <div class="element-card">
+                            <h5>&lt;main&gt;</h5>
+                            <p><strong>Conteúdo principal</strong> da página</p>
+                            <div class="element-use">
+                                <strong>Use para:</strong> Conteúdo único da página (apenas um por página)
+                            </div>
+                            <div class="element-example">
+                                <code>&lt;main&gt;
+  &lt;h1&gt;Título da Página&lt;/h1&gt;
+  &lt;p&gt;Conteúdo principal...&lt;/p&gt;
+&lt;/main&gt;</code>
+                            </div>
+                        </div>
+
+                        <div class="element-card">
+                            <h5>&lt;section&gt;</h5>
+                            <p><strong>Seção</strong> temática de conteúdo</p>
+                            <div class="element-use">
+                                <strong>Use para:</strong> Capítulos, abas, grupos de conteúdo relacionado
+                            </div>
+                            <div class="element-example">
+                                <code>&lt;section&gt;
+  &lt;h2&gt;Nossos Serviços&lt;/h2&gt;
+  &lt;p&gt;Descrição dos serviços...&lt;/p&gt;
+&lt;/section&gt;</code>
+                            </div>
+                        </div>
+
+                        <div class="element-card">
+                            <h5>&lt;article&gt;</h5>
+                            <p><strong>Artigo</strong> independente</p>
+                            <div class="element-use">
+                                <strong>Use para:</strong> Posts de blog, notícias, comentários
+                            </div>
+                            <div class="element-example">
+                                <code>&lt;article&gt;
+  &lt;h2&gt;Título do Post&lt;/h2&gt;
+  &lt;p&gt;Conteúdo do artigo...&lt;/p&gt;
+&lt;/article&gt;</code>
+                            </div>
+                        </div>
+
+                        <div class="element-card">
+                            <h5>&lt;aside&gt;</h5>
+                            <p><strong>Conteúdo lateral</strong> relacionado</p>
+                            <div class="element-use">
+                                <strong>Use para:</strong> Sidebar, informações complementares, publicidade
+                            </div>
+                            <div class="element-example">
+                                <code>&lt;aside&gt;
+  &lt;h3&gt;Posts Relacionados&lt;/h3&gt;
+  &lt;ul&gt;...&lt;/ul&gt;
+&lt;/aside&gt;</code>
+                            </div>
+                        </div>
+
+                        <div class="element-card">
+                            <h5>&lt;footer&gt;</h5>
+                            <p><strong>Rodapé</strong> da página ou seção</p>
+                            <div class="element-use">
+                                <strong>Use para:</strong> Copyright, links de contato, informações do autor
+                            </div>
+                            <div class="element-example">
+                                <code>&lt;footer&gt;
+  &lt;p&gt;&copy; 2024 Meu Site&lt;/p&gt;
+&lt;/footer&gt;</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Estrutura completa -->
+                <div class="complete-structure">
+                    <h4>🏠 Estrutura HTML Semântica Completa:</h4>
+                    <div class="code-example">
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">estrutura-semantica.html</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Site com Estrutura Semântica&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Meu Site Profissional&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#servicos"&gt;Serviços&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#contato"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section id="home"&gt;
+            &lt;h2&gt;Bem-vindo&lt;/h2&gt;
+            &lt;p&gt;Página inicial do site...&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section id="sobre"&gt;
+            &lt;h2&gt;Sobre Nós&lt;/h2&gt;
+            &lt;article&gt;
+                &lt;h3&gt;Nossa História&lt;/h3&gt;
+                &lt;p&gt;Texto sobre a empresa...&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+
+        &lt;section id="servicos"&gt;
+            &lt;h2&gt;Nossos Serviços&lt;/h2&gt;
+            &lt;p&gt;Lista de serviços oferecidos...&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;aside&gt;
+        &lt;h3&gt;Notícias&lt;/h3&gt;
+        &lt;p&gt;Últimas atualizações...&lt;/p&gt;
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 Meu Site. Todos os direitos reservados.&lt;/p&gt;
+        &lt;nav&gt;
+            &lt;a href="#privacidade"&gt;Privacidade&lt;/a&gt;
+            &lt;a href="#termos"&gt;Termos&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefícios -->
+                <div class="semantic-benefits">
+                    <h4>🌟 Benefícios do HTML Semântico:</h4>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <h5>🔍 SEO</h5>
+                            <p>Motores de busca entendem melhor seu conteúdo e ranqueiam melhor</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>♿ Acessibilidade</h5>
+                            <p>Leitores de tela navegam mais facilmente pelo site</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>🧹 Código Limpo</h5>
+                            <p>Mais fácil de ler, manter e trabalhar em equipe</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>📱 Dispositivos</h5>
+                            <p>Melhor compatibilidade com diferentes dispositivos</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navegação entre dias -->
+            <nav class="day-navigation">
+                <a href="dia2.html" class="nav-btn back">← Dia 2</a>
+                <a href="index.html" class="nav-btn back">Voltar ao Curso</a>
+                <a href="dia4.html" class="nav-btn next">Dia 4 →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Formação HTML e CSS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

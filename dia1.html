@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 1 - História da Web + Fundamentos | Formação HTML e CSS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/day-content.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🔹 Dia 1</h1>
+            <p class="header__subtitle">História da Web + Fundamentos</p>
+            <nav class="header__nav">
+                <a href="index.html" class="nav-link">← Voltar ao curso</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Navegação da aula -->
+            <nav class="lesson-nav">
+                <ul>
+                    <li><a href="#historia-web">🌐 História da Web</a></li>
+                    <li><a href="#dominio-hospedagem">🏠 Domínio e Hospedagem</a></li>
+                    <li><a href="#linguagens-marcacao">📝 Linguagens de Marcação</a></li>
+                    <li><a href="#estrutura-pastas">📁 Estrutura de Pastas</a></li>
+                    <li><a href="#vscode">💻 VS Code</a></li>
+                </ul>
+            </nav>
+
+            <!-- Seção 1: História da Web -->
+            <section id="historia-web" class="content-section">
+                <div class="section-header">
+                    <h2>🌐 História da Web e Evolução do WWW</h2>
+                    <p class="section-intro">Vamos entender como a internet e a web se desenvolveram ao longo dos anos</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1969</div>
+                        <div class="timeline-content">
+                            <h3>ARPANET</h3>
+                            <p>Primeira rede de computadores criada pelo Departamento de Defesa dos EUA. Era o embrião da internet.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">1989</div>
+                        <div class="timeline-content">
+                            <h3>Tim Berners-Lee</h3>
+                            <p>Criou o conceito da World Wide Web (WWW) no CERN. Inventou o HTML, HTTP e URLs.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">1993</div>
+                        <div class="timeline-content">
+                            <h3>Mosaic Browser</h3>
+                            <p>Primeiro navegador gráfico popular, permitindo visualizar imagens junto com texto.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">1995</div>
+                        <div class="timeline-content">
+                            <h3>CSS e JavaScript</h3>
+                            <p>CSS foi criado para estilização e JavaScript para interatividade nas páginas web.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">2014</div>
+                        <div class="timeline-content">
+                            <h3>HTML5</h3>
+                            <p>Versão atual do HTML com novos elementos semânticos e recursos multimídia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h4>💡 Conceitos importantes:</h4>
+                    <ul>
+                        <li><strong>Internet:</strong> Rede global de computadores conectados</li>
+                        <li><strong>Web (WWW):</strong> Sistema de documentos interligados que roda na internet</li>
+                        <li><strong>Navegador:</strong> Software que interpreta e exibe páginas web</li>
+                        <li><strong>Servidor:</strong> Computador que armazena e entrega páginas web</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 2: Registro, Domínio e Hospedagem -->
+            <section id="dominio-hospedagem" class="content-section">
+                <div class="section-header">
+                    <h2>🏠 Registro, Domínio e Hospedagem</h2>
+                    <p class="section-intro">Como colocar seu site no ar e torná-lo acessível na internet</p>
+                </div>
+
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3>🌐 Domínio</h3>
+                        <p>É o endereço do seu site na internet. Como o CEP de uma casa.</p>
+                        <div class="example-box">
+                            <h4>Exemplos:</h4>
+                            <code>meusite.com.br</code><br>
+                            <code>loja.com</code><br>
+                            <code>escola.edu.br</code>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>🏢 Hospedagem</h3>
+                        <p>Serviço que armazena os arquivos do seu site em um servidor conectado à internet.</p>
+                        <div class="example-box">
+                            <h4>Tipos:</h4>
+                            <ul>
+                                <li>Hospedagem Compartilhada</li>
+                                <li>VPS (Servidor Virtual)</li>
+                                <li>Hospedagem Dedicada</li>
+                                <li>Cloud Hosting</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>📝 Registro</h3>
+                        <p>Processo de reservar um domínio para uso exclusivo por um período determinado.</p>
+                        <div class="example-box">
+                            <h4>No Brasil:</h4>
+                            <ul>
+                                <li>Registro.br (domínios .br)</li>
+                                <li>Renovação anual</li>
+                                <li>Documentação necessária</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-flow">
+                    <h4>🔄 Como funciona:</h4>
+                    <div class="flow-steps">
+                        <div class="step">1. Usuário digita URL</div>
+                        <div class="arrow">→</div>
+                        <div class="step">2. DNS encontra o servidor</div>
+                        <div class="arrow">→</div>
+                        <div class="step">3. Servidor envia os arquivos</div>
+                        <div class="arrow">→</div>
+                        <div class="step">4. Navegador exibe a página</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 3: Linguagens de Marcação -->
+            <section id="linguagens-marcacao" class="content-section">
+                <div class="section-header">
+                    <h2>📝 Linguagens de Marcação: Definição e Tipos</h2>
+                    <p class="section-intro">Entenda o que são e como funcionam as linguagens de marcação</p>
+                </div>
+
+                <div class="definition-box">
+                    <h3>🤔 O que é uma Linguagem de Marcação?</h3>
+                    <p>É uma linguagem que usa <strong>tags (etiquetas)</strong> para definir a estrutura e o significado do conteúdo, sem ser uma linguagem de programação.</p>
+                </div>
+
+                <div class="comparison-table">
+                    <h4>📊 Tipos de Linguagens de Marcação</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Linguagem</th>
+                                <th>Uso Principal</th>
+                                <th>Exemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>HTML</strong></td>
+                                <td>Páginas web</td>
+                                <td><code>&lt;h1&gt;Título&lt;/h1&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>XML</strong></td>
+                                <td>Troca de dados</td>
+                                <td><code>&lt;pessoa&gt;&lt;nome&gt;João&lt;/nome&gt;&lt;/pessoa&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Markdown</strong></td>
+                                <td>Documentação</td>
+                                <td><code># Título</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="code-example">
+                    <h4>🔍 HTML em Ação:</h4>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="file-name">exemplo.html</span>
+                            <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                        </div>
+                        <pre class="code dracula-theme"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Minha Primeira Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bem-vindo ao HTML!&lt;/h1&gt;
+    &lt;p&gt;Este é um parágrafo de exemplo.&lt;/p&gt;
+    &lt;a href="https://www.w3.org"&gt;Link para W3C&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="concept-box">
+                    <h4>🏷️ Anatomia de uma Tag HTML:</h4>
+                    <div class="tag-anatomy">
+                        <code>&lt;h1 class="titulo"&gt;Conteúdo&lt;/h1&gt;</code>
+                        <div class="tag-parts">
+                            <span class="part">Tag de abertura</span>
+                            <span class="part">Atributo</span>
+                            <span class="part">Conteúdo</span>
+                            <span class="part">Tag de fechamento</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 4: Estrutura de Pastas -->
+            <section id="estrutura-pastas" class="content-section">
+                <div class="section-header">
+                    <h2>📁 Estrutura de Pastas para Projetos Web</h2>
+                    <p class="section-intro">Como organizar seus arquivos de forma profissional</p>
+                </div>
+
+                <div class="folder-structure">
+                    <h4>🗂️ Estrutura Padrão Recomendada:</h4>
+                    <div class="file-tree">
+                        <div class="folder">
+                            <span class="folder-icon">📁</span> meu-projeto/
+                            <div class="folder-content">
+                                <div class="file">
+                                    <span class="file-icon">🌐</span> index.html
+                                    <span class="file-desc">← Página principal (obrigatório)</span>
+                                </div>
+                                <div class="folder">
+                                    <span class="folder-icon">📁</span> assets/
+                                    <div class="folder-content">
+                                        <div class="folder">
+                                            <span class="folder-icon">📁</span> css/
+                                            <div class="folder-content">
+                                                <div class="file">
+                                                    <span class="file-icon">🎨</span> style.css
+                                                </div>
+                                                <div class="file">
+                                                    <span class="file-icon">🎨</span> reset.css
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="folder">
+                                            <span class="folder-icon">📁</span> img/
+                                            <div class="folder-content">
+                                                <div class="file">
+                                                    <span class="file-icon">🖼️</span> logo.png
+                                                </div>
+                                                <div class="file">
+                                                    <span class="file-icon">🖼️</span> banner.jpg
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="folder">
+                                            <span class="folder-icon">📁</span> js/
+                                            <div class="folder-content">
+                                                <div class="file">
+                                                    <span class="file-icon">⚡</span> script.js
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="best-practices">
+                    <h4>✅ Boas Práticas:</h4>
+                    <div class="practices-grid">
+                        <div class="practice-item">
+                            <h5>📝 Nomenclatura</h5>
+                            <ul>
+                                <li>Use nomes descritivos</li>
+                                <li>Sem espaços ou acentos</li>
+                                <li>Use hífen ou underscore</li>
+                                <li>Tudo em minúsculo</li>
+                            </ul>
+                        </div>
+                        <div class="practice-item">
+                            <h5>🗂️ Organização</h5>
+                            <ul>
+                                <li>Agrupe arquivos por tipo</li>
+                                <li>Mantenha pasta assets/</li>
+                                <li>index.html na raiz</li>
+                                <li>Use subpastas quando necessário</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-comparison">
+                    <h4>❌ ✅ Comparação:</h4>
+                    <div class="comparison-boxes">
+                        <div class="bad-example">
+                            <h5>❌ Não faça assim:</h5>
+                            <ul>
+                                <li>Página Principal.html</li>
+                                <li>estilo com espaços.css</li>
+                                <li>imagem grande(1).jpg</li>
+                                <li>Script Final.js</li>
+                            </ul>
+                        </div>
+                        <div class="good-example">
+                            <h5>✅ Faça assim:</h5>
+                            <ul>
+                                <li>index.html</li>
+                                <li>style.css</li>
+                                <li>banner-principal.jpg</li>
+                                <li>main-script.js</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 5: Introdução ao VS Code -->
+            <section id="vscode" class="content-section">
+                <div class="section-header">
+                    <h2>💻 Introdução ao Visual Studio Code</h2>
+                    <p class="section-intro">Configuração e primeiros passos com o melhor editor para desenvolvimento web</p>
+                </div>
+
+                <div class="vscode-intro">
+                    <h4>🚀 Por que usar o VS Code?</h4>
+                    <div class="benefits-grid">
+                        <div class="benefit">
+                            <span class="benefit-icon">🆓</span>
+                            <h5>Gratuito</h5>
+                            <p>Completamente gratuito e open source</p>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">🔌</span>
+                            <h5>Extensões</h5>
+                            <p>Milhares de extensões disponíveis</p>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">⚡</span>
+                            <h5>Rápido</h5>
+                            <p>Leve e responsivo</p>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">🎨</span>
+                            <h5>Personalizável</h5>
+                            <p>Temas e configurações flexíveis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setup-guide">
+                    <h4>🛠️ Configuração Inicial (macOS):</h4>
+                    <div class="setup-steps">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h5>Download e Instalação</h5>
+                                <p>Baixe em <code>code.visualstudio.com</code></p>
+                                <p>Instale o arquivo .dmg</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h5>Configurar Terminal</h5>
+                                <p>Cmd + Shift + P</p>
+                                <p>Digite: "Shell Command: Install 'code' command"</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h5>Instalar Tema Dracula</h5>
+                                <p>Cmd + Shift + X (Extensions)</p>
+                                <p>Pesquise: "Dracula Official"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="extensions-list">
+                    <h4>🔌 Extensões Essenciais para HTML/CSS:</h4>
+                    <div class="extensions-grid">
+                        <div class="extension-card">
+                            <h5>Live Server</h5>
+                            <p>Servidor local com auto-reload</p>
+                            <code>ritwickdey.LiveServer</code>
+                        </div>
+                        <div class="extension-card">
+                            <h5>HTML CSS Support</h5>
+                            <p>Autocompletar CSS em HTML</p>
+                            <code>ecmel.vscode-html-css</code>
+                        </div>
+                        <div class="extension-card">
+                            <h5>Prettier</h5>
+                            <p>Formatação automática de código</p>
+                            <code>esbenp.prettier-vscode</code>
+                        </div>
+                        <div class="extension-card">
+                            <h5>Auto Rename Tag</h5>
+                            <p>Renomeia tags HTML automaticamente</p>
+                            <code>formulahendry.auto-rename-tag</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vscode-demo">
+                    <h4>📸 Interface do VS Code (Tema Dracula):</h4>
+                    <div class="vscode-mockup">
+                        <div class="vscode-header">
+                            <div class="window-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <div class="title">Visual Studio Code</div>
+                        </div>
+                        <div class="vscode-body">
+                            <div class="sidebar">
+                                <div class="file-explorer">
+                                    <h6>EXPLORER</h6>
+                                    <div class="file-tree-small">
+                                        <div>📁 meu-projeto</div>
+                                        <div>&nbsp;&nbsp;🌐 index.html</div>
+                                        <div>&nbsp;&nbsp;📁 assets</div>
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;📁 css</div>
+                                        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🎨 style.css</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="editor-area">
+                                <div class="tabs">
+                                    <div class="tab active">index.html</div>
+                                </div>
+                                <div class="editor-content">
+                                    <div class="line-numbers">1<br>2<br>3<br>4<br>5</div>
+                                    <div class="code-content">
+                                        <span class="tag">&lt;!DOCTYPE html&gt;</span><br>
+                                        <span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="string">"pt-BR"</span><span class="tag">&gt;</span><br>
+                                        <span class="tag">&lt;head&gt;</span><br>
+                                        &nbsp;&nbsp;<span class="tag">&lt;title&gt;</span>Meu Site<span class="tag">&lt;/title&gt;</span><br>
+                                        <span class="tag">&lt;/head&gt;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shortcuts">
+                    <h4>⌨️ Atalhos Úteis (macOS):</h4>
+                    <div class="shortcuts-grid">
+                        <div class="shortcut">
+                            <code>Cmd + S</code>
+                            <span>Salvar arquivo</span>
+                        </div>
+                        <div class="shortcut">
+                            <code>Cmd + /</code>
+                            <span>Comentar linha</span>
+                        </div>
+                        <div class="shortcut">
+                            <code>Cmd + D</code>
+                            <span>Selecionar próxima ocorrência</span>
+                        </div>
+                        <div class="shortcut">
+                            <code>Cmd + Shift + P</code>
+                            <span>Paleta de comandos</span>
+                        </div>
+                        <div class="shortcut">
+                            <code>Cmd + `</code>
+                            <span>Abrir terminal</span>
+                        </div>
+                        <div class="shortcut">
+                            <code>Cmd + B</code>
+                            <span>Mostrar/ocultar sidebar</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navegação entre dias -->
+            <nav class="day-navigation">
+                <a href="index.html" class="nav-btn back">← Voltar ao Curso</a>
+                <a href="dia2.html" class="nav-btn next">Dia 2 →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Formação HTML e CSS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 2 - Texto, Listas, Imagens e Introdução ao CSS | Formação HTML e CSS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/day-content.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🔹 Dia 2</h1>
+            <p class="header__subtitle">Texto, Listas, Imagens e Introdução ao CSS</p>
+            <nav class="header__nav">
+                <a href="index.html" class="nav-link">← Voltar ao curso</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Navegação da aula -->
+            <nav class="lesson-nav">
+                <ul>
+                    <li><a href="#tags-texto">📝 Tags de Texto</a></li>
+                    <li><a href="#listas">📋 Listas</a></li>
+                    <li><a href="#imagens">🖼️ Imagens</a></li>
+                    <li><a href="#estrutura-html">🏗️ Estrutura HTML</a></li>
+                    <li><a href="#introducao-css">🎨 Introdução ao CSS</a></li>
+                </ul>
+            </nav>
+
+            <!-- Seção 1: Tags de Texto -->
+            <section id="tags-texto" class="content-section">
+                <div class="section-header">
+                    <h2>📝 Tags de Texto: p, h1 a h6, b, i, em, strong, br, hr</h2>
+                    <p class="section-intro">Aprenda as principais tags para formatar e estruturar textos em HTML</p>
+                </div>
+
+                <!-- Cabeçalhos -->
+                <div class="concept-box">
+                    <h4>🏷️ Cabeçalhos (Headings) - h1 a h6</h4>
+                    <p>Os cabeçalhos organizam o conteúdo hierarquicamente, do mais importante (h1) ao menos importante (h6).</p>
+                </div>
+
+                <div class="code-example">
+                    <h4>💻 Exemplo de Cabeçalhos:</h4>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="file-name">cabecalhos.html</span>
+                            <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                        </div>
+                        <pre class="code dracula-theme"><code>&lt;h1&gt;Título Principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Seção&lt;/h3&gt;
+&lt;h4&gt;Subseção&lt;/h4&gt;
+&lt;h5&gt;Tópico&lt;/h5&gt;
+&lt;h6&gt;Subtópico&lt;/h6&gt;</code></pre>
+                    </div>
+                    <div class="visual-result">
+                        <h4>📋 Como aparece no navegador:</h4>
+                        <div class="browser-preview">
+                            <h1 style="font-size: 2em; margin: 0.5rem 0;">Título Principal</h1>
+                            <h2 style="font-size: 1.5em; margin: 0.5rem 0;">Subtítulo</h2>
+                            <h3 style="font-size: 1.25em; margin: 0.5rem 0;">Seção</h3>
+                            <h4 style="font-size: 1.1em; margin: 0.5rem 0;">Subseção</h4>
+                            <h5 style="font-size: 1em; margin: 0.5rem 0;">Tópico</h5>
+                            <h6 style="font-size: 0.9em; margin: 0.5rem 0;">Subtópico</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parágrafos -->
+                <div class="concept-box">
+                    <h4>📄 Parágrafos - &lt;p&gt;</h4>
+                    <p>A tag &lt;p&gt; define parágrafos de texto. É uma das tags mais usadas no HTML.</p>
+                </div>
+
+                <div class="code-example">
+                    <h4>💻 Exemplo de Parágrafos:</h4>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="file-name">paragrafos.html</span>
+                            <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                        </div>
+                        <pre class="code dracula-theme"><code>&lt;p&gt;Este é um parágrafo de exemplo.&lt;/p&gt;
+&lt;p&gt;Este é outro parágrafo. O navegador adiciona 
+automaticamente espaço entre os parágrafos.&lt;/p&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Tags de Formatação -->
+                <div class="tags-formatting">
+                    <h4>✨ Tags de Formatação de Texto:</h4>
+                    <div class="formatting-grid">
+                        <div class="format-card">
+                            <h5>&lt;b&gt; - Bold (Negrito)</h5>
+                            <div class="format-example">
+                                <code>&lt;b&gt;Texto em negrito&lt;/b&gt;</code>
+                                <div class="result"><b>Texto em negrito</b></div>
+                            </div>
+                        </div>
+                        <div class="format-card">
+                            <h5>&lt;i&gt; - Italic (Itálico)</h5>
+                            <div class="format-example">
+                                <code>&lt;i&gt;Texto em itálico&lt;/i&gt;</code>
+                                <div class="result"><i>Texto em itálico</i></div>
+                            </div>
+                        </div>
+                        <div class="format-card">
+                            <h5>&lt;strong&gt; - Importância</h5>
+                            <div class="format-example">
+                                <code>&lt;strong&gt;Texto importante&lt;/strong&gt;</code>
+                                <div class="result"><strong>Texto importante</strong></div>
+                            </div>
+                        </div>
+                        <div class="format-card">
+                            <h5>&lt;em&gt; - Ênfase</h5>
+                            <div class="format-example">
+                                <code>&lt;em&gt;Texto com ênfase&lt;/em&gt;</code>
+                                <div class="result"><em>Texto com ênfase</em></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quebras de linha -->
+                <div class="concept-box">
+                    <h4>🔗 Quebras e Separadores:</h4>
+                    <div class="breaks-grid">
+                        <div class="break-item">
+                            <h5>&lt;br&gt; - Quebra de linha</h5>
+                            <code>Primeira linha&lt;br&gt;Segunda linha</code>
+                            <div class="result">
+                                Primeira linha<br>Segunda linha
+                            </div>
+                        </div>
+                        <div class="break-item">
+                            <h5>&lt;hr&gt; - Linha horizontal</h5>
+                            <code>Texto acima&lt;hr&gt;Texto abaixo</code>
+                            <div class="result">
+                                Texto acima<hr style="margin: 0.5rem 0;">Texto abaixo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 2: Listas -->
+            <section id="listas" class="content-section">
+                <div class="section-header">
+                    <h2>📋 Listas: Ordenadas, Não Ordenadas e Aninhadas</h2>
+                    <p class="section-intro">Organize informações de forma clara com diferentes tipos de listas</p>
+                </div>
+
+                <!-- Lista Não Ordenada -->
+                <div class="list-type">
+                    <h4>🔘 Lista Não Ordenada - &lt;ul&gt;</h4>
+                    <p>Use quando a ordem dos itens não importa (lista de compras, menu, etc.)</p>
+                    
+                    <div class="code-example">
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">lista-nao-ordenada.html</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>&lt;ul&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        </div>
+                        <div class="visual-result">
+                            <h5>📋 Resultado:</h5>
+                            <ul>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lista Ordenada -->
+                <div class="list-type">
+                    <h4>🔢 Lista Ordenada - &lt;ol&gt;</h4>
+                    <p>Use quando a ordem dos itens é importante (passos, ranking, etc.)</p>
+                    
+                    <div class="code-example">
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">lista-ordenada.html</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>&lt;ol&gt;
+    &lt;li&gt;Abrir VS Code&lt;/li&gt;
+    &lt;li&gt;Criar arquivo HTML&lt;/li&gt;
+    &lt;li&gt;Escrever código&lt;/li&gt;
+    &lt;li&gt;Salvar arquivo&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                        </div>
+                        <div class="visual-result">
+                            <h5>📋 Resultado:</h5>
+                            <ol>
+                                <li>Abrir VS Code</li>
+                                <li>Criar arquivo HTML</li>
+                                <li>Escrever código</li>
+                                <li>Salvar arquivo</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listas Aninhadas -->
+                <div class="list-type">
+                    <h4>🪆 Listas Aninhadas</h4>
+                    <p>Você pode colocar uma lista dentro de outra para criar estruturas hierárquicas</p>
+                    
+                    <div class="code-example">
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">lista-aninhada.html</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>&lt;ul&gt;
+    &lt;li&gt;Frontend
+        &lt;ul&gt;
+            &lt;li&gt;HTML&lt;/li&gt;
+            &lt;li&gt;CSS&lt;/li&gt;
+            &lt;li&gt;JavaScript&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Backend
+        &lt;ul&gt;
+            &lt;li&gt;PHP&lt;/li&gt;
+            &lt;li&gt;Python&lt;/li&gt;
+            &lt;li&gt;Node.js&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        </div>
+                        <div class="visual-result">
+                            <h5>📋 Resultado:</h5>
+                            <ul>
+                                <li>Frontend
+                                    <ul>
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                        <li>JavaScript</li>
+                                    </ul>
+                                </li>
+                                <li>Backend
+                                    <ul>
+                                        <li>PHP</li>
+                                        <li>Python</li>
+                                        <li>Node.js</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 3: Imagens -->
+            <section id="imagens" class="content-section">
+                <div class="section-header">
+                    <h2>🖼️ Tag de Imagem: &lt;img&gt; e Atributos</h2>
+                    <p class="section-intro">Adicione imagens às suas páginas web de forma profissional</p>
+                </div>
+
+                <!-- Estrutura básica da tag img -->
+                <div class="concept-box">
+                    <h4>🏷️ Estrutura da Tag &lt;img&gt;</h4>
+                    <p>A tag &lt;img&gt; é uma <strong>tag vazia</strong> (não tem fechamento) e usa atributos para definir suas propriedades.</p>
+                </div>
+
+                <div class="tag-anatomy">
+                    <code>&lt;img src="caminho/imagem.jpg" alt="Descrição da imagem" width="300"&gt;</code>
+                    <div class="tag-parts">
+                        <span class="part">Tag</span>
+                        <span class="part">src (obrigatório)</span>
+                        <span class="part">alt (obrigatório)</span>
+                        <span class="part">width (opcional)</span>
+                    </div>
+                </div>
+
+                <!-- Atributos principais -->
+                <div class="attributes-grid">
+                    <div class="attribute-card">
+                        <h5>📁 src (source)</h5>
+                        <p><strong>Obrigatório</strong> - Caminho para o arquivo de imagem</p>
+                        <div class="example-box">
+                            <h6>Exemplos:</h6>
+                            <code>src="assets/img/logo.png"</code><br>
+                            <code>src="https://exemplo.com/foto.jpg"</code>
+                        </div>
+                    </div>
+
+                    <div class="attribute-card">
+                        <h5>🔍 alt (alternative text)</h5>
+                        <p><strong>Obrigatório</strong> - Texto alternativo para acessibilidade</p>
+                        <div class="example-box">
+                            <h6>Exemplos:</h6>
+                            <code>alt="Logo da empresa"</code><br>
+                            <code>alt="Pessoa sorrindo no parque"</code>
+                        </div>
+                    </div>
+
+                    <div class="attribute-card">
+                        <h5>📏 width (largura)</h5>
+                        <p><strong>Opcional</strong> - Define a largura da imagem em pixels</p>
+                        <div class="example-box">
+                            <h6>Exemplos:</h6>
+                            <code>width="300"</code><br>
+                            <code>width="150"</code>
+                        </div>
+                    </div>
+
+                    <div class="attribute-card">
+                        <h5>📐 height (altura)</h5>
+                        <p><strong>Opcional</strong> - Define a altura da imagem em pixels</p>
+                        <div class="example-box">
+                            <h6>Exemplos:</h6>
+                            <code>height="200"</code><br>
+                            <code>height="100"</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemplos práticos -->
+                <div class="code-example">
+                    <h4>💻 Exemplos Práticos:</h4>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="file-name">imagens.html</span>
+                            <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                        </div>
+                        <pre class="code dracula-theme"><code>&lt;!-- Imagem simples --&gt;
+&lt;img src="assets/img/logo.png" alt="Logo da empresa"&gt;
+
+&lt;!-- Imagem com tamanho específico --&gt;
+&lt;img src="assets/img/banner.jpg" 
+     alt="Banner do site" 
+     width="600" 
+     height="300"&gt;
+
+&lt;!-- Imagem externa --&gt;
+&lt;img src="https://via.placeholder.com/150" 
+     alt="Imagem de exemplo"&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Boas práticas -->
+                <div class="best-practices">
+                    <h4>✅ Boas Práticas com Imagens:</h4>
+                    <div class="practices-grid">
+                        <div class="practice-item">
+                            <h5>📝 Alt sempre presente</h5>
+                            <ul>
+                                <li>Descreva o conteúdo da imagem</li>
+                                <li>Use "" para imagens decorativas</li>
+                                <li>Importante para acessibilidade</li>
+                            </ul>
+                        </div>
+                        <div class="practice-item">
+                            <h5>📁 Organização de arquivos</h5>
+                            <ul>
+                                <li>Crie pasta assets/img/</li>
+                                <li>Use nomes descritivos</li>
+                                <li>Prefira .jpg, .png, .webp</li>
+                            </ul>
+                        </div>
+                        <div class="practice-item">
+                            <h5>⚡ Performance</h5>
+                            <ul>
+                                <li>Otimize o tamanho dos arquivos</li>
+                                <li>Use dimensões apropriadas</li>
+                                <li>Evite redimensionar via HTML</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 4: Estrutura HTML -->
+            <section id="estrutura-html" class="content-section">
+                <div class="section-header">
+                    <h2>🏗️ Estrutura Básica do HTML</h2>
+                    <p class="section-intro">Entenda os elementos fundamentais de todo documento HTML</p>
+                </div>
+
+                <!-- Documento HTML completo -->
+                <div class="code-example">
+                    <h4>📄 Estrutura Completa de um Documento HTML:</h4>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="file-name">estrutura-basica.html</span>
+                            <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                        </div>
+                        <pre class="code dracula-theme"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título da Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Conteúdo da Página&lt;/h1&gt;
+    &lt;p&gt;Este é o conteúdo visível da página.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Explicação de cada elemento -->
+                <div class="html-structure-explanation">
+                    <h4>🔍 Explicação de Cada Elemento:</h4>
+                    <div class="structure-items">
+                        <div class="structure-item">
+                            <div class="item-tag">&lt;!DOCTYPE html&gt;</div>
+                            <div class="item-description">
+                                <h5>Declaração do Tipo de Documento</h5>
+                                <p>Informa ao navegador que é um documento HTML5. Sempre deve ser a primeira linha.</p>
+                            </div>
+                        </div>
+
+                        <div class="structure-item">
+                            <div class="item-tag">&lt;html&gt;</div>
+                            <div class="item-description">
+                                <h5>Elemento Raiz</h5>
+                                <p>Contém todo o conteúdo da página. O atributo <code>lang="pt-BR"</code> define o idioma.</p>
+                            </div>
+                        </div>
+
+                        <div class="structure-item">
+                            <div class="item-tag">&lt;head&gt;</div>
+                            <div class="item-description">
+                                <h5>Cabeçalho do Documento</h5>
+                                <p>Contém metadados, título e links para arquivos externos. Não é visível na página.</p>
+                            </div>
+                        </div>
+
+                        <div class="structure-item">
+                            <div class="item-tag">&lt;meta charset="UTF-8"&gt;</div>
+                            <div class="item-description">
+                                <h5>Codificação de Caracteres</h5>
+                                <p>Define como o navegador deve interpretar caracteres especiais e acentos.</p>
+                            </div>
+                        </div>
+
+                        <div class="structure-item">
+                            <div class="item-tag">&lt;title&gt;</div>
+                            <div class="item-description">
+                                <h5>Título da Página</h5>
+                                <p>Aparece na aba do navegador e nos resultados de busca. Muito importante para SEO.</p>
+                            </div>
+                        </div>
+
+                        <div class="structure-item">
+                            <div class="item-tag">&lt;body&gt;</div>
+                            <div class="item-description">
+                                <h5>Corpo do Documento</h5>
+                                <p>Contém todo o conteúdo visível da página (textos, imagens, links, etc.).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template para começar -->
+                <div class="template-box">
+                    <h4>🚀 Template Básico para Começar:</h4>
+                    <p>Use este template como ponto de partida para suas páginas HTML:</p>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="file-name">template-basico.html</span>
+                            <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                        </div>
+                        <pre class="code dracula-theme"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Minha Página Web&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Seu conteúdo aqui --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 5: Introdução ao CSS -->
+            <section id="introducao-css" class="content-section">
+                <div class="section-header">
+                    <h2>🎨 Primeira Folha de Estilo (CSS Externo)</h2>
+                    <p class="section-intro">Dê vida às suas páginas HTML com estilos CSS</p>
+                </div>
+
+                <!-- O que é CSS -->
+                <div class="definition-box">
+                    <h3>🤔 O que é CSS?</h3>
+                    <p><strong>CSS (Cascading Style Sheets)</strong> é a linguagem usada para estilizar páginas HTML. Enquanto o HTML define a estrutura, o CSS define a aparência.</p>
+                </div>
+
+                <!-- Analogia -->
+                <div class="analogy-box">
+                    <h4>🏠 Analogia da Casa:</h4>
+                    <div class="analogy-grid">
+                        <div class="analogy-item">
+                            <h5>🏗️ HTML</h5>
+                            <p>É como a <strong>estrutura</strong> da casa: paredes, portas, janelas, cômodos</p>
+                        </div>
+                        <div class="analogy-item">
+                            <h5>🎨 CSS</h5>
+                            <p>É como a <strong>decoração</strong>: cores, móveis, cortinas, iluminação</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS Externo -->
+                <div class="css-types">
+                    <h4>📁 CSS Externo - A Melhor Prática</h4>
+                    <p>O CSS externo é escrito em um arquivo separado (.css) e linkado ao HTML. É a forma mais profissional e organizada.</p>
+                    
+                    <div class="steps-container">
+                        <h5>📋 Passos para usar CSS externo:</h5>
+                        <div class="step-by-step">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h6>Criar a pasta CSS</h6>
+                                    <p>Crie a pasta <code>assets/css/</code> no seu projeto</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h6>Criar o arquivo CSS</h6>
+                                    <p>Crie o arquivo <code>style.css</code> dentro da pasta</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h6>Linkar no HTML</h6>
+                                    <p>Adicione a tag <code>&lt;link&gt;</code> no <code>&lt;head&gt;</code></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemplo prático -->
+                <div class="practical-example">
+                    <h4>💻 Exemplo Prático Completo:</h4>
+                    
+                    <!-- Estrutura de arquivos -->
+                    <div class="file-structure-mini">
+                        <h5>📁 Estrutura de arquivos:</h5>
+                        <div class="file-tree">
+                            <div class="folder">
+                                📁 meu-projeto/
+                                <div class="folder-content">
+                                    <div class="file">🌐 index.html</div>
+                                    <div class="folder">
+                                        📁 assets/
+                                        <div class="folder-content">
+                                            <div class="folder">
+                                                📁 css/
+                                                <div class="folder-content">
+                                                    <div class="file">🎨 style.css</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HTML -->
+                    <div class="code-example">
+                        <h5>1️⃣ Arquivo HTML (index.html):</h5>
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">index.html</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Minha Primeira Página com CSS&lt;/title&gt;
+    &lt;link rel="stylesheet" href="assets/css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bem-vindo ao meu site!&lt;/h1&gt;
+    &lt;p&gt;Este parágrafo será estilizado com CSS.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- CSS -->
+                    <div class="code-example">
+                        <h5>2️⃣ Arquivo CSS (assets/css/style.css):</h5>
+                        <div class="code-container">
+                            <div class="code-header">
+                                <span class="file-name">style.css</span>
+                                <span class="vs-code-theme">VS Code - Dracula Theme</span>
+                            </div>
+                            <pre class="code dracula-theme"><code>/* Estilos para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Estilos para o título principal */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+/* Estilos para parágrafos */
+p {
+    color: #34495e;
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resultado visual -->
+                <div class="visual-result">
+                    <h5>3️⃣ Como aparece no navegador:</h5>
+                    <div class="browser-preview styled">
+                        <h1 style="color: #2c3e50; text-align: center; font-size: 2.5em;">Bem-vindo ao meu site!</h1>
+                        <p style="color: #34495e; font-size: 1.2em; line-height: 1.6; max-width: 600px; margin: 0 auto;">Este parágrafo será estilizado com CSS.</p>
+                    </div>
+                </div>
+
+                <!-- Atalhos do VS Code (Windows) -->
+                <div class="vscode-shortcuts">
+                    <h4>⌨️ Atalhos Úteis do VS Code (Windows):</h4>
+                    <div class="shortcuts-grid">
+                        <div class="shortcut">
+                            <code>Ctrl + S</code>
+                            <span>Salvar arquivo</span>
+                        </div>
+                        <div class="shortcut">
+                            <code>Ctrl + /</code>
+                            <span>Comentar linha</span>
+                        </div>
+                        <div class="shortcut">
+                            <code>Ctrl + D</code>
+                            <span>Selecionar próxima ocorrência</span>
+                        </div>
+                        <div class="shortcut">
+                            <code>Ctrl + Shift + P</code>
+                            <span>Paleta de comandos</span>
+                        </div>
+                        <div class="shortcut">
+                            <code>Ctrl + `</code>
+                            <span>Abrir terminal</span>
+                        </div>
+                        <div class="shortcut">
+                            <code>Ctrl + B</code>
+                            <span>Mostrar/ocultar sidebar</span>
+                        </div>
+                        <div class="shortcut">
+                            <code>Alt + Shift + F</code>
+                            <span>Formatar documento</span>
+                        </div>
+                        <div class="shortcut">
+                            <code>Ctrl + Shift + L</code>
+                            <span>Selecionar todas as ocorrências</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dicas importantes -->
+                <div class="important-tips">
+                    <h4>💡 Dicas Importantes:</h4>
+                    <div class="tips-grid">
+                        <div class="tip-item">
+                            <h5>🔗 Tag &lt;link&gt;</h5>
+                            <ul>
+                                <li>Sempre no <code>&lt;head&gt;</code></li>
+                                <li>Atributo <code>rel="stylesheet"</code></li>
+                                <li>Caminho correto no <code>href</code></li>
+                            </ul>
+                        </div>
+                        <div class="tip-item">
+                            <h5>📁 Organização</h5>
+                            <ul>
+                                <li>Use sempre a pasta <code>assets/css/</code></li>
+                                <li>Nome descritivo: <code>style.css</code></li>
+                                <li>Um arquivo CSS por página ou geral</li>
+                            </ul>
+                        </div>
+                        <div class="tip-item">
+                            <h5>🐛 Problemas comuns</h5>
+                            <ul>
+                                <li>Caminho do arquivo incorreto</li>
+                                <li>Esquecer de salvar os arquivos</li>
+                                <li>Não atualizar o navegador (F5)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navegação entre dias -->
+            <nav class="day-navigation">
+                <a href="dia1.html" class="nav-btn back">← Dia 1</a>
+                <a href="index.html" class="nav-btn back">Voltar ao Curso</a>
+                <a href="dia3.html" class="nav-btn next">Dia 3 →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Formação HTML e CSS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
