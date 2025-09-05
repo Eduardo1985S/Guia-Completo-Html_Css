@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 7B - Unidades, Flexbox Responsivo e Projeto | Formação HTML e CSS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/day-content.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🔹 Dia 7B</h1>
+            <p class="header__subtitle">Unidades Relativas, Flexbox Responsivo e Projeto Prático</p>
+            <nav class="header__nav">
+                <a href="index.html" class="nav-link">← Voltar ao curso</a>
+                <a href="dia7.html" class="nav-link">← Parte A</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <nav class="lesson-nav">
+                <ul>
+                    <li><a href="#unidades">📐 Unidades Relativas</a></li>
+                    <li><a href="#comparacao">⚖️ Comparação Prática</a></li>
+                    <li><a href="#tipografia">🔤 Tipografia Fluida</a></li>
+                    <li><a href="#flex-ajustes">🧩 Ajustes Flexbox Mobile</a></li>
+                    <li><a href="#imagens">🖼️ Imagens Responsivas</a></li>
+                    <li><a href="#projeto">🛠️ Projeto Responsivo</a></li>
+                    <li><a href="#performance">🚀 Performance</a></li>
+                    <li><a href="#checklist">✅ Checklist Final</a></li>
+                    <li><a href="#exercicios">🏁 Exercícios</a></li>
+                </ul>
+            </nav>
+
+            <!-- Unidades Relativas -->
+            <section id="unidades" class="concept-section">
+                <h2><i class="fas fa-ruler-combined"></i> Unidades Relativas</h2>
+                <p>As unidades relativas permitem criar layouts flexíveis que se adaptam ao tamanho da tela,
+                    configurações do usuário e fluxo do conteúdo.</p>
+
+                <div class="units-overview">
+                    <div class="units-grid">
+                        <div class="unit-card">
+                            <h3>%</h3>
+                            <p>Percentual relativo ao elemento pai. Muito usada para larguras flexíveis.</p>
+                            <div class="code-container small"><code>.box { width: 50%; }</code></div>
+                        </div>
+                        <div class="unit-card">
+                            <h3>em</h3>
+                            <p>Relativa ao font-size do elemento PAI imediato.</p>
+                            <div class="code-container small"><code>.btn { padding: 1em 2em; }</code></div>
+                        </div>
+                        <div class="unit-card">
+                            <h3>rem</h3>
+                            <p>Relativa ao font-size da raiz (html). Consistente.</p>
+                            <div class="code-container small">
+                                <code>html { font-size: 16px } h1 { font-size: 2.5rem }</code></div>
+                        </div>
+                        <div class="unit-card">
+                            <h3>vw / vh</h3>
+                            <p>Viewport Width / Height. 1vw = 1% da largura da janela.</p>
+                            <div class="code-container small"><code>.hero { height: 60vh; font-size: 5vw; }</code></div>
+                        </div>
+                        <div class="unit-card">
+                            <h3>vmin / vmax</h3>
+                            <p>Baseadas no menor ou maior lado do viewport. Úteis em proporções.</p>
+                            <div class="code-container small"><code>.circle { width: 20vmin; height: 20vmin; }</code>
+                            </div>
+                        </div>
+                        <div class="unit-card">
+                            <h3>clamp()</h3>
+                            <p>Define valor fluido com limites mínimo e máximo.</p>
+                            <div class="code-container small"><code>h1 { font-size: clamp(1.5rem, 5vw, 3rem); }</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="unit-warning">
+                        <h4><i class="fas fa-exclamation-circle"></i> Atenção com em vs rem</h4>
+                        <ul>
+                            <li><strong>em:</strong> acumula (pode crescer demais em elementos aninhados)</li>
+                            <li><strong>rem:</strong> previsível e consistente</li>
+                            <li>Use em para <em>padding/margem</em> relativo ao texto local</li>
+                            <li>Use rem para tamanhos de fonte globais e espaçamentos padronizados</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparação Prática -->
+            <section id="comparacao" class="concept-section">
+                <h2><i class="fas fa-balance-scale"></i> Comparação Prática de Unidades</h2>
+                <p>Observe como diferentes unidades reagem ao ajuste do tamanho base de fonte (root) e do container.</p>
+
+                <div class="units-demo-wrapper">
+                    <div class="units-settings">
+                        <div class="setting-group">
+                            <h4>Tamanho Base (html)</h4>
+                            <div class="base-size-options">
+                                <button class="size-btn" data-size="14">14px</button>
+                                <button class="size-btn active" data-size="16">16px</button>
+                                <button class="size-btn" data-size="18">18px</button>
+                            </div>
+                        </div>
+                        <p class="hint">(Simulação visual sem JS real - conceito didático)</p>
+                    </div>
+
+                    <div class="units-columns">
+                        <div class="units-column">
+                            <h4>em</h4>
+                            <div class="scale-list em-scale">
+                                <div class="scale-item" data-factor="0.75">0.75em</div>
+                                <div class="scale-item" data-factor="1">1em</div>
+                                <div class="scale-item" data-factor="1.25">1.25em</div>
+                                <div class="scale-item" data-factor="1.5">1.5em</div>
+                                <div class="scale-item" data-factor="2">2em</div>
+                            </div>
+                        </div>
+                        <div class="units-column">
+                            <h4>rem</h4>
+                            <div class="scale-list rem-scale">
+                                <div class="scale-item" data-factor="0.75">0.75rem</div>
+                                <div class="scale-item" data-factor="1">1rem</div>
+                                <div class="scale-item" data-factor="1.25">1.25rem</div>
+                                <div class="scale-item" data-factor="1.5">1.5rem</div>
+                                <div class="scale-item" data-factor="2">2rem</div>
+                            </div>
+                        </div>
+                        <div class="units-column">
+                            <h4>vw (largura)</h4>
+                            <div class="scale-list vw-scale">
+                                <div class="scale-item">2vw</div>
+                                <div class="scale-item">3vw</div>
+                                <div class="scale-item">4vw</div>
+                                <div class="scale-item">5vw</div>
+                                <div class="scale-item">6vw</div>
+                            </div>
+                        </div>
+                        <div class="units-column">
+                            <h4>clamp()</h4>
+                            <div class="scale-list clamp-scale">
+                                <div class="scale-item">clamp(1rem, 2vw, 1.5rem)</div>
+                                <div class="scale-item">clamp(1.25rem, 3vw, 2rem)</div>
+                                <div class="scale-item">clamp(1.5rem, 4vw, 2.5rem)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tipografia Fluida -->
+            <section id="tipografia" class="concept-section">
+                <h2><i class="fas fa-font"></i> Tipografia Fluida e Escalável</h2>
+                <p>Uma boa tipografia responsiva melhora leitura e acessibilidade, adaptando-se a diferentes telas sem
+                    rupturas bruscas.</p>
+
+                <div class="typography-examples">
+                    <div class="fluid-type-card">
+                        <h3>Escala Fixa (Não Recomendada)</h3>
+                        <div class="code-container small"><code>h1 { font-size: 48px; } h2 { font-size: 32px; }</code>
+                        </div>
+                        <p>Quebra em telas pequenas e fica desproporcional em telas muito grandes.</p>
+                    </div>
+                    <div class="fluid-type-card">
+                        <h3>Escala com rem</h3>
+                        <div class="code-container small">
+                            <code>h1 { font-size: 2.5rem } h2 { font-size: 1.75rem }</code></div>
+                        <p>Melhor, mas ainda não se adapta dinamicamente ao viewport.</p>
+                    </div>
+                    <div class="fluid-type-card highlight">
+                        <h3>Escala Fluida com clamp()</h3>
+                        <div class="code-container small"><code>h1 { font-size: clamp(1.8rem, 5vw, 3rem); }
+body { font-size: clamp(1rem, 1.2vw, 1.125rem); }</code></div>
+                        <p>Se adapta suavemente entre tamanhos mínimo e máximo.</p>
+                    </div>
+                </div>
+
+                <div class="demo-fluid-text">
+                    <h1 class="fluid-heading">Título Responsivo</h1>
+                    <p class="fluid-paragraph">Este parágrafo usa <code>clamp()</code> para ajustar o tamanho entre
+                        limites confortáveis de leitura em qualquer dispositivo.</p>
+                </div>
+
+                <div class="type-guidelines">
+                    <h4>Boas Práticas</h4>
+                    <ul>
+                        <li>Use <code>line-height</code> entre 1.4 e 1.8</li>
+                        <li>Defina <code>max-width</code> em blocos de texto (60–75 caracteres/linha)</li>
+                        <li>Evite fontes menores que 0.875rem em mobile</li>
+                        <li>Use <code>rem</code> e <code>clamp()</code> para escala adaptativa</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Ajustes Flexbox -->
+            <section id="flex-ajustes" class="concept-section">
+                <h2><i class="fas fa-th-large"></i> Ajustes Flexbox para Mobile</h2>
+                <p>Transforme layouts horizontais em verticais e adapte espaçamentos/navegação para telas menores.</p>
+
+                <div class="flex-adjust-demo">
+                    <div class="flex-stage desktop-layout">
+                        <h4>Desktop</h4>
+                        <div class="flex-row-demo">
+                            <div class="flex-box">Menu</div>
+                            <div class="flex-box">Conteúdo</div>
+                            <div class="flex-box">Lateral</div>
+                        </div>
+                    </div>
+                    <div class="flex-stage mobile-layout">
+                        <h4>Mobile</h4>
+                        <div class="flex-column-demo">
+                            <div class="flex-box">Menu (hamburger)</div>
+                            <div class="flex-box">Conteúdo</div>
+                            <div class="flex-box">Footer ações</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-container">
+                    <code>/* Layout base (mobile-first) */
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Desktop >= 1024px */
+@media (min-width: 1024px) {
+  .layout { flex-direction: row; }
+  .sidebar { flex: 0 0 250px; }
+  .content { flex: 1; }
+  .aside { flex: 0 0 200px; }
+}</code>
+                </div>
+
+                <div class="flex-guidelines">
+                    <h4>Boas Práticas em Flex Responsivo</h4>
+                    <ul>
+                        <li>Empilhe colunas (column) em mobile</li>
+                        <li>Reduza gaps para economizar espaço vertical</li>
+                        <li>Oculte conteúdos não críticos ou mova para o final</li>
+                        <li>Transforme menus horizontais em dropdown/hamburger</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Imagens Responsivas -->
+            <section id="imagens" class="concept-section">
+                <h2><i class="fas fa-image"></i> Imagens Responsivas e Otimizadas</h2>
+                <p>Imagens podem impactar fortemente performance em mobile. Técnicas corretas reduzem tempo de
+                    carregamento.</p>
+
+                <div class="image-responsive-grid">
+                    <div class="image-technique">
+                        <h4>Imagem Flexível</h4>
+                        <div class="code-container small"><code>img { max-width: 100%; height: auto; }</code></div>
+                    </div>
+                    <div class="image-technique">
+                        <h4>Srcset Adaptativo</h4>
+                        <div class="code-container small"><code>&lt;img src="banner-800.jpg"
+ srcset="banner-400.jpg 400w, banner-800.jpg 800w, banner-1200.jpg 1200w"
+ sizes="(max-width: 600px) 100vw, (max-width: 1200px) 75vw, 60vw" alt="Banner"&gt;</code></div>
+                    </div>
+                    <div class="image-technique">
+                        <h4>Elemento &lt;picture&gt;</h4>
+                        <div class="code-container small"><code>&lt;picture&gt;
+  &lt;source srcset="hero.avif" type="image/avif"&gt;
+  &lt;source srcset="hero.webp" type="image/webp"&gt;
+  &lt;img src="hero.jpg" alt="Hero" loading="lazy"&gt;
+&lt;/picture&gt;</code></div>
+                    </div>
+                    <div class="image-technique">
+                        <h4>Lazy Loading</h4>
+                        <div class="code-container small">
+                            <code>&lt;img src="foto.jpg" loading="lazy" alt="Descrição"&gt;</code></div>
+                    </div>
+                </div>
+
+                <div class="image-guidelines">
+                    <h4>Boas Práticas</h4>
+                    <ul>
+                        <li>Compressão (TinyPNG, Squoosh)</li>
+                        <li>Formatos modernos (WebP / AVIF)</li>
+                        <li>Evite usar imagens para texto</li>
+                        <li>Use <code>width/height</code> para evitar layout shift</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Projeto Responsivo -->
+            <section id="projeto" class="concept-section">
+                <h2><i class="fas fa-project-diagram"></i> Projeto Prático: Landing Page Responsiva</h2>
+                <p>Vamos estruturar uma landing page simples e totalmente responsiva usando tudo que aprendemos.</p>
+
+                <div class="project-steps">
+                    <div class="project-step">
+                        <h4>1. Estrutura HTML Semântica</h4>
+                        <div class="code-container small"><code>&lt;header&gt; &lt;nav&gt; ... &lt;/nav&gt; &lt;/header&gt;
+&lt;main&gt;
+  &lt;section class="hero"&gt;...&lt;/section&gt;
+  &lt;section class="features"&gt;...&lt;/section&gt;
+  &lt;section class="depoimentos"&gt;...&lt;/section&gt;
+  &lt;section class="cta"&gt;...&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></div>
+                    </div>
+                    <div class="project-step">
+                        <h4>2. Layout Base (Mobile-First)</h4>
+                        <div class="code-container small"><code>.hero { text-align: center; padding: 2rem 1rem; }
+.features { display: flex; flex-direction: column; gap: 1.5rem; }
+.feature { background: #fff; padding: 1.5rem; border-radius: 8px; }
+.cta { padding: 2rem 1rem; text-align: center; }</code></div>
+                    </div>
+                    <div class="project-step">
+                        <h4>3. Melhorias em Tablet</h4>
+                        <div class="code-container small"><code>@media (min-width: 768px) {
+  .features { flex-direction: row; }
+  .feature { flex: 1; }
+  .hero { padding: 3rem 2rem; }
+}</code></div>
+                    </div>
+                    <div class="project-step">
+                        <h4>4. Layout Desktop Completo</h4>
+                        <div class="code-container small"><code>@media (min-width: 1024px) {
+  .hero { display: flex; align-items: center; justify-content: space-between; text-align: left; }
+  .hero .texto { flex: 1; }
+  .hero .imagem { flex: 1; }
+  .features { gap: 2rem; }
+}</code></div>
+                    </div>
+                </div>
+
+                <div class="project-wireframes">
+                    <div class="wireframe mobile">
+                        <h5>Mobile</h5>
+                        <div class="wf-hero">HERO</div>
+                        <div class="wf-block">Feat 1</div>
+                        <div class="wf-block">Feat 2</div>
+                        <div class="wf-block">Feat 3</div>
+                        <div class="wf-cta">CTA</div>
+                    </div>
+                    <div class="wireframe tablet">
+                        <h5>Tablet</h5>
+                        <div class="wf-hero">HERO</div>
+                        <div class="wf-row">
+                            <div class="wf-block">Feat 1</div>
+                            <div class="wf-block">Feat 2</div>
+                        </div>
+                        <div class="wf-block">Feat 3</div>
+                        <div class="wf-cta">CTA</div>
+                    </div>
+                    <div class="wireframe desktop">
+                        <h5>Desktop</h5>
+                        <div class="wf-hero">HERO (Texto + Imagem)</div>
+                        <div class="wf-row">
+                            <div class="wf-block">Feat 1</div>
+                            <div class="wf-block">Feat 2</div>
+                            <div class="wf-block">Feat 3</div>
+                        </div>
+                        <div class="wf-cta">CTA Largo</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance -->
+            <section id="performance" class="concept-section">
+                <h2><i class="fas fa-rocket"></i> Performance em Dispositivos Móveis</h2>
+                <p>Sites rápidos retêm usuários e melhoram ranking em buscadores.</p>
+
+                <div class="performance-grid">
+                    <div class="perf-card">
+                        <h4>CSS Eficiente</h4>
+                        <ul>
+                            <li>Agrupe media queries por breakpoint</li>
+                            <li>Evite seletores muito específicos</li>
+                            <li>Remova código não utilizado</li>
+                        </ul>
+                    </div>
+                    <div class="perf-card">
+                        <h4>Carregamento</h4>
+                        <ul>
+                            <li>Carregue fontes com <code>font-display: swap</code></li>
+                            <li>Use pré-carregamento: <code>&lt;link rel="preload"&gt;</code></li>
+                            <li>Imagens otimizadas e lazy</li>
+                        </ul>
+                    </div>
+                    <div class="perf-card">
+                        <h4>Layout Estável</h4>
+                        <ul>
+                            <li>Sempre defina width/height em imagens</li>
+                            <li>Evite mudanças de fonte tardias</li>
+                            <li>Use animações leves (transform/opacity)</li>
+                        </ul>
+                    </div>
+                    <div class="perf-card">
+                        <h4>Medir</h4>
+                        <ul>
+                            <li>Lighthouse (Chrome DevTools)</li>
+                            <li>PageSpeed Insights</li>
+                            <li>WebPageTest.org</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Checklist -->
+            <section id="checklist" class="concept-section">
+                <h2><i class="fas fa-clipboard-check"></i> Checklist Final Responsivo</h2>
+                <div class="checklist-final-grid">
+                    <div class="checklist-block">
+                        <h4>Layout</h4>
+                        <ul>
+                            <li>✓ Mobile-first aplicado</li>
+                            <li>✓ Breakpoints necessários</li>
+                            <li>✓ Layout não quebra entre pontos</li>
+                        </ul>
+                    </div>
+                    <div class="checklist-block">
+                        <h4>Tipografia</h4>
+                        <ul>
+                            <li>✓ Fontes legíveis</li>
+                            <li>✓ Escala fluida com clamp()</li>
+                            <li>✓ Contraste adequado</li>
+                        </ul>
+                    </div>
+                    <div class="checklist-block">
+                        <h4>Imagens</h4>
+                        <ul>
+                            <li>✓ Uso de srcset/picture</li>
+                            <li>✓ Lazy loading aplicado</li>
+                            <li>✓ Formatos otimizados</li>
+                        </ul>
+                    </div>
+                    <div class="checklist-block">
+                        <h4>Performance</h4>
+                        <ul>
+                            <li>✓ CSS enxuto</li>
+                            <li>✓ Sem layout shifts</li>
+                            <li>✓ Tempo de carregamento < 3s</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercícios -->
+            <section id="exercicios" class="concept-section">
+                <h2><i class="fas fa-dumbbell"></i> Exercícios Práticos</h2>
+                <div class="exercises-grid">
+                    <div class="exercise-card">
+                        <h4>1. Tipografia Fluida</h4>
+                        <p>Crie uma escala tipográfica usando <code>clamp()</code> para h1–h4.</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>2. Galeria Responsiva</h4>
+                        <p>Monte uma galeria que muda de 1 → 2 → 4 colunas em 480px / 768px / 1024px.</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>3. Navbar Adaptativa</h4>
+                        <p>Transforme menu horizontal em ícone hamburger no mobile.</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>4. Imagens Otimizadas</h4>
+                        <p>Implemente uma mesma imagem com <code>&lt;picture&gt;</code> servindo WebP/AVIF.</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>5. Landing Page</h4>
+                        <p>Construa a landing completa seguindo o modelo desta aula.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="summary-section">
+                <h2><i class="fas fa-flag-checkered"></i> Conclusão da Parte B</h2>
+                <div class="summary-content">
+                    <div class="learned-concepts">
+                        <h3>Novos Conceitos</h3>
+                        <div class="concept-grid">
+                            <div class="concept-item"><i class="fas fa-ruler-combined"></i>
+                                <h5>Unidades</h5>
+                                <p>% em rem vw vh</p>
+                            </div>
+                            <div class="concept-item"><i class="fas fa-font"></i>
+                                <h5>Clamp()</h5>
+                                <p>Escala fluida</p>
+                            </div>
+                            <div class="concept-item"><i class="fas fa-image"></i>
+                                <h5>Srcset</h5>
+                                <p>Imagens adaptativas</p>
+                            </div>
+                            <div class="concept-item"><i class="fas fa-th-large"></i>
+                                <h5>Flex Mobile</h5>
+                                <p>Ajustes práticos</p>
+                            </div>
+                            <div class="concept-item"><i class="fas fa-project-diagram"></i>
+                                <h5>Projeto</h5>
+                                <p>Landing page</p>
+                            </div>
+                            <div class="concept-item"><i class="fas fa-rocket"></i>
+                                <h5>Performance</h5>
+                                <p>Otimização</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-takeaways">
+                        <h3>Pontos-Chave</h3>
+                        <ul>
+                            <li><strong>clamp():</strong> Texto adaptável sem media queries extras</li>
+                            <li><strong>rem:</strong> Base para consistência global</li>
+                            <li><strong>Flex:</strong> Reorganize colunas → linhas com min-width</li>
+                            <li><strong>Imagens:</strong> Carregue somente o necessário</li>
+                            <li><strong>Performance:</strong> Meça e ajuste continuamente</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Formação HTML e CSS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

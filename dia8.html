@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 8 - Efeitos com CSS | Formação HTML e CSS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/day-content.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🔹 Dia 8</h1>
+            <p class="header__subtitle">Efeitos com CSS: Pseudo-classes, Transições, Animações e Transformações</p>
+            <nav class="header__nav">
+                <a href="index.html" class="nav-link">← Voltar ao curso</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <nav class="lesson-nav">
+                <ul>
+                    <li><a href="#pseudo-classes">🎯 Pseudo-classes</a></li>
+                    <li><a href="#transicoes">⚡ Transições</a></li>
+                    <li><a href="#animacoes">🎬 Animações</a></li>
+                    <li><a href="#transformacoes">🔄 Transformações</a></li>
+                    <li><a href="#estilos-visuais">🎨 Estilos Visuais</a></li>
+                    <li><a href="#navbar-pratica">🧭 Navbar Animada</a></li>
+                    <li><a href="#botoes-interativos">🔘 Botões Interativos</a></li>
+                    <li><a href="#galeria-pratica">🖼️ Galeria de Efeitos</a></li>
+                    <li><a href="#exercicios">🏁 Exercícios</a></li>
+                    <li><a href="#resumo">📋 Resumo</a></li>
+                </ul>
+            </nav>
+
+            <!-- Pseudo-classes -->
+            <section id="pseudo-classes" class="concept-section">
+                <h2><i class="fas fa-target"></i> Pseudo-classes</h2>
+                <p>Pseudo-classes permitem aplicar estilos em estados específicos de elementos, sem adicionar classes no HTML.</p>
+
+                <div class="pseudo-overview">
+                    <h3>Principais Pseudo-classes</h3>
+                    <div class="pseudo-grid">
+                        <div class="pseudo-card">
+                            <h4>:hover</h4>
+                            <p>Quando o cursor está sobre o elemento</p>
+                            <div class="pseudo-demo hover-demo">
+                                <div class="hover-box">Passe o mouse aqui</div>
+                            </div>
+                            <div class="code-container small">
+                                <code>.box:hover {
+    background-color: #3498db;
+    transform: scale(1.05);
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="pseudo-card">
+                            <h4>:focus</h4>
+                            <p>Quando o elemento está em foco (input, button)</p>
+                            <div class="pseudo-demo focus-demo">
+                                <input type="text" placeholder="Clique aqui para focar" class="focus-input">
+                            </div>
+                            <div class="code-container small">
+                                <code>input:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 5px rgba(231,76,60,0.5);
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="pseudo-card">
+                            <h4>:active</h4>
+                            <p>Quando o elemento está sendo clicado</p>
+                            <div class="pseudo-demo active-demo">
+                                <button class="active-button">Clique e segure</button>
+                            </div>
+                            <div class="code-container small">
+                                <code>button:active {
+    transform: scale(0.95);
+    background-color: #2c3e50;
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="pseudo-card">
+                            <h4>:nth-child()</h4>
+                            <p>Seleciona elementos específicos por posição</p>
+                            <div class="pseudo-demo nth-demo">
+                                <ul class="nth-list">
+                                    <li>Item 1</li>
+                                    <li>Item 2 (par)</li>
+                                    <li>Item 3</li>
+                                    <li>Item 4 (par)</li>
+                                    <li>Item 5</li>
+                                </ul>
+                            </div>
+                            <div class="code-container small">
+                                <code>li:nth-child(even) {
+    background-color: #f8f9fa;
+}
+li:nth-child(3) {
+    font-weight: bold;
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="pseudo-card">
+                            <h4>:first-child / :last-child</h4>
+                            <p>Primeiro e último filho</p>
+                            <div class="pseudo-demo child-demo">
+                                <div class="child-container">
+                                    <div class="child-item">Primeiro</div>
+                                    <div class="child-item">Meio</div>
+                                    <div class="child-item">Último</div>
+                                </div>
+                            </div>
+                            <div class="code-container small">
+                                <code>.item:first-child {
+    border-left: 4px solid #e74c3c;
+}
+.item:last-child {
+    border-right: 4px solid #27ae60;
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="pseudo-card">
+                            <h4>:not()</h4>
+                            <p>Seleciona elementos que NÃO atendem à condição</p>
+                            <div class="pseudo-demo not-demo">
+                                <div class="not-container">
+                                    <p>Parágrafo normal</p>
+                                    <p class="special">Parágrafo especial</p>
+                                    <p>Parágrafo normal</p>
+                                </div>
+                            </div>
+                            <div class="code-container small">
+                                <code>p:not(.special) {
+    color: #7f8c8d;
+    opacity: 0.7;
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pseudo-advanced">
+                    <h3>Combinações Avançadas</h3>
+                    <div class="advanced-examples">
+                        <div class="advanced-example">
+                            <h4>Menu com Estados</h4>
+                            <div class="menu-states-demo">
+                                <nav class="states-nav">
+                                    <a href="#" class="nav-item">Home</a>
+                                    <a href="#" class="nav-item active">Produtos</a>
+                                    <a href="#" class="nav-item">Sobre</a>
+                                    <a href="#" class="nav-item">Contato</a>
+                                </nav>
+                            </div>
+                            <div class="code-container">
+                                <code>.nav-item {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: #f0f0f0;
+    color: #2980b9;
+}
+
+.nav-item.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.nav-item:active {
+    transform: translateY(1px);
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transições -->
+            <section id="transicoes" class="concept-section">
+                <h2><i class="fas fa-bolt"></i> Transições CSS</h2>
+                <p>Transições criam mudanças suaves entre estados, melhorando a experiência do usuário.</p>
+
+                <div class="transition-basics">
+                    <h3>Propriedades de Transição</h3>
+                    <div class="transition-properties">
+                        <div class="property-card">
+                            <h4>transition-property</h4>
+                            <p>Qual propriedade animar</p>
+                            <div class="code-container small">
+                                <code>transition-property: background-color;</code>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <h4>transition-duration</h4>
+                            <p>Duração da transição</p>
+                            <div class="code-container small">
+                                <code>transition-duration: 0.3s;</code>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <h4>transition-timing-function</h4>
+                            <p>Curva de aceleração</p>
+                            <div class="code-container small">
+                                <code>transition-timing-function: ease-in-out;</code>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <h4>transition-delay</h4>
+                            <p>Atraso antes de começar</p>
+                            <div class="code-container small">
+                                <code>transition-delay: 0.1s;</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transition-shorthand">
+                        <h4>Shorthand (Forma Reduzida)</h4>
+                        <div class="code-container">
+                            <code>/* transition: property duration timing-function delay; */
+transition: all 0.3s ease-in-out 0s;
+
+/* Múltiplas propriedades */
+transition: background-color 0.3s ease, 
+            transform 0.2s ease-out,
+            box-shadow 0.3s ease;</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transition-demos">
+                    <h3>Exemplos Práticos</h3>
+                    <div class="transition-examples">
+                        <div class="transition-example">
+                            <h4>Cores e Tamanhos</h4>
+                            <div class="transition-demo color-size-demo">
+                                <div class="color-box">Hover: Cor + Tamanho</div>
+                            </div>
+                            <div class="code-container small">
+                                <code>.box {
+    transition: all 0.3s ease;
+}
+.box:hover {
+    background-color: #e74c3c;
+    transform: scale(1.1);
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="transition-example">
+                            <h4>Bordas e Sombras</h4>
+                            <div class="transition-demo border-shadow-demo">
+                                <div class="shadow-box">Hover: Borda + Sombra</div>
+                            </div>
+                            <div class="code-container small">
+                                <code>.box {
+    transition: border 0.3s, box-shadow 0.3s;
+}
+.box:hover {
+    border: 3px solid #3498db;
+    box-shadow: 0 5px 15px rgba(52,152,219,0.3);
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="transition-example">
+                            <h4>Opacidade e Movimento</h4>
+                            <div class="transition-demo opacity-move-demo">
+                                <div class="move-box">Hover: Move + Opacidade</div>
+                            </div>
+                            <div class="code-container small">
+                                <code>.box {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.box:hover {
+    transform: translateX(50px);
+    opacity: 0.7;
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timing-functions">
+                    <h3>Funções de Tempo</h3>
+                    <div class="timing-demo">
+                        <div class="timing-examples">
+                            <div class="timing-item" data-timing="linear">
+                                <div class="timing-ball"></div>
+                                <span>linear</span>
+                            </div>
+                            <div class="timing-item" data-timing="ease">
+                                <div class="timing-ball"></div>
+                                <span>ease</span>
+                            </div>
+                            <div class="timing-item" data-timing="ease-in">
+                                <div class="timing-ball"></div>
+                                <span>ease-in</span>
+                            </div>
+                            <div class="timing-item" data-timing="ease-out">
+                                <div class="timing-ball"></div>
+                                <span>ease-out</span>
+                            </div>
+                            <div class="timing-item" data-timing="ease-in-out">
+                                <div class="timing-ball"></div>
+                                <span>ease-in-out</span>
+                            </div>
+                        </div>
+                        <button class="timing-trigger">▶️ Testar Animações</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Animações -->
+            <section id="animacoes" class="concept-section">
+                <h2><i class="fas fa-film"></i> Animações com @keyframes</h2>
+                <p>Animações CSS permitem criar sequências de mudanças complexas sem JavaScript.</p>
+
+                <div class="animation-basics">
+                    <h3>Estrutura Básica</h3>
+                    <div class="code-container">
+                        <code>/* 1. Definir os keyframes */
+@keyframes nomeAnimacao {
+    0% {
+        /* estado inicial */
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        /* estado intermediário */
+        opacity: 0.5;
+    }
+    100% {
+        /* estado final */
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Aplicar no elemento */
+.elemento {
+    animation: nomeAnimacao 2s ease-in-out;
+}</code>
+                    </div>
+                </div>
+
+                <div class="animation-properties">
+                    <h3>Propriedades de Animação</h3>
+                    <div class="animation-props-grid">
+                        <div class="prop-card">
+                            <h4>animation-name</h4>
+                            <p>Nome do @keyframes</p>
+                        </div>
+                        <div class="prop-card">
+                            <h4>animation-duration</h4>
+                            <p>Duração total</p>
+                        </div>
+                        <div class="prop-card">
+                            <h4>animation-timing-function</h4>
+                            <p>Curva de velocidade</p>
+                        </div>
+                        <div class="prop-card">
+                            <h4>animation-delay</h4>
+                            <p>Atraso inicial</p>
+                        </div>
+                        <div class="prop-card">
+                            <h4>animation-iteration-count</h4>
+                            <p>Quantas vezes repetir</p>
+                        </div>
+                        <div class="prop-card">
+                            <h4>animation-direction</h4>
+                            <p>Direção (normal, reverse, alternate)</p>
+                        </div>
+                        <div class="prop-card">
+                            <h4>animation-fill-mode</h4>
+                            <p>Estado antes/depois</p>
+                        </div>
+                        <div class="prop-card">
+                            <h4>animation-play-state</h4>
+                            <p>Pausar/continuar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animation-examples">
+                    <h3>Exemplos de Animações</h3>
+                    <div class="animation-demos">
+                        <div class="animation-demo">
+                            <h4>Fade In</h4>
+                            <div class="demo-container">
+                                <div class="fade-in-box">Fade In</div>
+                            </div>
+                            <div class="code-container small">
+                                <code>@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.element {
+    animation: fadeIn 1s ease-in;
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="animation-demo">
+                            <h4>Slide In</h4>
+                            <div class="demo-container">
+                                <div class="slide-in-box">Slide In</div>
+                            </div>
+                            <div class="code-container small">
+                                <code>@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+.element {
+    animation: slideIn 0.8s ease-out;
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="animation-demo">
+                            <h4>Bounce</h4>
+                            <div class="demo-container">
+                                <div class="bounce-box">Bounce</div>
+                            </div>
+                            <div class="code-container small">
+                                <code>@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+.element {
+    animation: bounce 1s infinite;
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="animation-demo">
+                            <h4>Pulse</h4>
+                            <div class="demo-container">
+                                <div class="pulse-box">Pulse</div>
+                            </div>
+                            <div class="code-container small">
+                                <code>@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.element {
+    animation: pulse 2s infinite;
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="animation-demo">
+                            <h4>Rotate</h4>
+                            <div class="demo-container">
+                                <div class="rotate-box">🔄</div>
+                            </div>
+                            <div class="code-container small">
+                                <code>@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.element {
+    animation: rotate 2s linear infinite;
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="animation-demo">
+                            <h4>Loading Dots</h4>
+                            <div class="demo-container">
+                                <div class="loading-dots">
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                            <div class="code-container small">
+                                <code>@keyframes loading {
+    0%, 80%, 100% { opacity: 0; }
+    40% { opacity: 1; }
+}
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transformações -->
+            <section id="transformacoes" class="concept-section">
+                <h2><i class="fas fa-sync-alt"></i> Transformações CSS</h2>
+                <p>Transformações permitem alterar forma, tamanho, posição e rotação de elementos sem afetar o layout.</p>
+
+                <div class="transform-types">
+                    <h3>Tipos de Transformação</h3>
+                    <div class="transform-examples">
+                        <div class="transform-demo">
+                            <h4>Scale (Escala)</h4>
+                            <div class="transform-container">
+                                <div class="transform-box scale-demo">
+                                    <span>Scale</span>
+                                </div>
+                            </div>
+                            <div class="code-container small">
+                                <code>/* Aumentar 150% */
+transform: scale(1.5);
+
+/* Diferentes X e Y */
+transform: scaleX(2) scaleY(0.5);
+
+/* Hover effect */
+.box:hover {
+    transform: scale(1.1);
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="transform-demo">
+                            <h4>Rotate (Rotação)</h4>
+                            <div class="transform-container">
+                                <div class="transform-box rotate-demo">
+                                    <span>Rotate</span>
+                                </div>
+                            </div>
+                            <div class="code-container small">
+                                <code>/* 45 graus */
+transform: rotate(45deg);
+
+/* Rotação contínua */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 3D */
+transform: rotateX(45deg) rotateY(45deg);</code>
+                            </div>
+                        </div>
+
+                        <div class="transform-demo">
+                            <h4>Translate (Movimento)</h4>
+                            <div class="transform-container">
+                                <div class="transform-box translate-demo">
+                                    <span>Translate</span>
+                                </div>
+                            </div>
+                            <div class="code-container small">
+                                <code>/* Mover 50px direita, 20px baixo */
+transform: translate(50px, 20px);
+
+/* Apenas X ou Y */
+transform: translateX(100px);
+transform: translateY(-50px);
+
+/* Percentual */
+transform: translate(50%, -50%);</code>
+                            </div>
+                        </div>
+
+                        <div class="transform-demo">
+                            <h4>Skew (Inclinar)</h4>
+                            <div class="transform-container">
+                                <div class="transform-box skew-demo">
+                                    <span>Skew</span>
+                                </div>
+                            </div>
+                            <div class="code-container small">
+                                <code>/* Inclinar 20 graus no X */
+transform: skewX(20deg);
+
+/* X e Y */
+transform: skew(20deg, 10deg);
+
+/* Efeito paralaxe */
+transform: skewY(-5deg);</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transform-combinations">
+                    <h3>Combinações de Transformações</h3>
+                    <div class="combination-examples">
+                        <div class="combination-demo">
+                            <h4>Múltiplas Transformações</h4>
+                            <div class="transform-container">
+                                <div class="transform-box multi-transform">
+                                    <span>Multi</span>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <code>/* Combinando múltiplas transformações */
+transform: scale(1.2) rotate(15deg) translate(20px, -10px);
+
+/* Com transição suave */
+.box {
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.1) rotate(5deg) translateY(-5px);
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="combination-demo">
+                            <h4>Transform Origin</h4>
+                            <div class="transform-container">
+                                <div class="origin-demos">
+                                    <div class="transform-box origin-center">Center</div>
+                                    <div class="transform-box origin-top">Top</div>
+                                    <div class="transform-box origin-corner">Corner</div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <code>/* Ponto de origem da transformação */
+transform-origin: center center; /* padrão */
+transform-origin: top left;
+transform-origin: 100% 0%; /* top right */
+transform-origin: 50px 30px; /* posição exata */
+
+/* Rotação no canto */
+.corner {
+    transform-origin: top left;
+    transform: rotate(45deg);
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transform-3d">
+                    <h3>Transformações 3D</h3>
+                    <div class="transform-3d-examples">
+                        <div class="transform-3d-demo">
+                            <h4>Perspective</h4>
+                            <div class="perspective-container">
+                                <div class="perspective-box">
+                                    <div class="box-3d">3D Box</div>
+                                </div>
+                            </div>
+                            <div class="code-container">
+                                <code>/* Container com perspectiva */
+.container {
+    perspective: 800px;
+}
+
+/* Elemento 3D */
+.box {
+    transform: rotateX(30deg) rotateY(45deg);
+    transform-style: preserve-3d;
+}
+
+/* Flip card effect */
+.card:hover {
+    transform: rotateY(180deg);
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Estilos Visuais -->
+            <section id="estilos-visuais" class="concept-section">
+                <h2><i class="fas fa-palette"></i> Estilos Visuais Avançados</h2>
+                <p>Propriedades CSS que criam efeitos visuais modernos e atraentes.</p>
+
+                <div class="visual-effects">
+                    <div class="visual-effect">
+                        <h3>Opacity (Opacidade)</h3>
+                        <div class="opacity-demos">
+                            <div class="opacity-demo">
+                                <div class="opacity-box" style="opacity: 1">100%</div>
+                                <div class="opacity-box" style="opacity: 0.7">70%</div>
+                                <div class="opacity-box" style="opacity: 0.4">40%</div>
+                                <div class="opacity-box" style="opacity: 0.1">10%</div>
+                            </div>
+                            <div class="opacity-hover-demo">
+                                <div class="hover-opacity">Hover para transparência</div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <code>/* Opacidade fixa */
+.transparent {
+    opacity: 0.7; /* 0 = invisível, 1 = opaco */
+}
+
+/* Efeito hover */
+.card {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover {
+    opacity: 1;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}</code>
+                        </div>
+                    </div>
+
+                    <div class="visual-effect">
+                        <h3>Border-radius</h3>
+                        <div class="border-radius-demos">
+                            <div class="radius-demo">
+                                <div class="radius-box" style="border-radius: 0">0px</div>
+                                <div class="radius-box" style="border-radius: 8px">8px</div>
+                                <div class="radius-box" style="border-radius: 20px">20px</div>
+                                <div class="radius-box" style="border-radius: 50%">50%</div>
+                            </div>
+                            <div class="radius-complex-demo">
+                                <div class="complex-radius-1">Diferentes cantos</div>
+                                <div class="complex-radius-2">Formas orgânicas</div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <code>/* Bordas arredondadas básicas */
+.rounded {
+    border-radius: 10px;
+}
+
+/* Círculo perfeito */
+.circle {
+    border-radius: 50%;
+}
+
+/* Cantos específicos */
+.custom {
+    border-radius: 20px 0 20px 0;
+    /* top-left, top-right, bottom-right, bottom-left */
+}
+
+/* Formas complexas */
+.organic {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}</code>
+                        </div>
+                    </div>
+
+                    <div class="visual-effect">
+                        <h3>Gradientes</h3>
+                        <div class="gradient-demos">
+                            <div class="gradient-demo">
+                                <div class="gradient-box linear-gradient-1">Linear</div>
+                                <div class="gradient-box radial-gradient-1">Radial</div>
+                                <div class="gradient-box conic-gradient-1">Conic</div>
+                            </div>
+                            <div class="gradient-complex">
+                                <div class="gradient-box complex-gradient-1">Complexo 1</div>
+                                <div class="gradient-box complex-gradient-2">Complexo 2</div>
+                                <div class="gradient-box animated-gradient">Animado</div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <code>/* Gradiente linear */
+.linear {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+}
+
+/* Gradiente radial */
+.radial {
+    background: radial-gradient(circle, #ff9a9e, #fecfef);
+}
+
+/* Múltiplas cores */
+.rainbow {
+    background: linear-gradient(90deg, 
+        #ff0000, #ff7f00, #ffff00, #00ff00, 
+        #0000ff, #4b0082, #9400d3);
+}
+
+/* Gradiente animado */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animated {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientShift 4s ease infinite;
+}</code>
+                        </div>
+                    </div>
+
+                    <div class="visual-effect">
+                        <h3>Box-shadow</h3>
+                        <div class="shadow-demos">
+                            <div class="shadow-demo">
+                                <div class="shadow-box simple-shadow">Sombra simples</div>
+                                <div class="shadow-box multiple-shadow">Múltiplas</div>
+                                <div class="shadow-box inset-shadow">Interna</div>
+                                <div class="shadow-box glow-shadow">Glow</div>
+                            </div>
+                        </div>
+                        <div class="code-container">
+                            <code>/* Sombra básica */
+.shadow {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* x-offset y-offset blur spread color */
+}
+
+/* Sombra elevada */
+.elevated {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1),
+                0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Sombra interna */
+.inset {
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Efeito glow */
+.glow {
+    box-shadow: 0 0 20px rgba(52,152,219,0.5);
+}
+
+/* Hover effect */
+.card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}</code>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navbar Animada -->
+            <section id="navbar-pratica" class="concept-section">
+                <h2><i class="fas fa-compass"></i> Projeto: Navbar Animada</h2>
+                <p>Vamos criar uma navegação completa com efeitos modernos e responsivos.</p>
+
+                <div class="navbar-project">
+                    <div class="navbar-demo-container">
+                        <nav class="animated-navbar">
+                            <div class="navbar-brand">
+                                <div class="logo">🚀</div>
+                                <span class="brand-text">WebSite</span>
+                            </div>
+                            <ul class="navbar-menu">
+                                <li><a href="#" class="navbar-link active">Home</a></li>
+                                <li><a href="#" class="navbar-link">Sobre</a></li>
+                                <li><a href="#" class="navbar-link">Serviços</a></li>
+                                <li><a href="#" class="navbar-link">Portfolio</a></li>
+                                <li><a href="#" class="navbar-link">Contato</a></li>
+                            </ul>
+                            <div class="navbar-toggle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="navbar-features">
+                        <h3>Recursos Implementados</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-mouse-pointer"></i>
+                                <h4>Hover Effects</h4>
+                                <p>Links com animação suave ao passar o mouse</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h4>Menu Hamburger</h4>
+                                <p>Transforma em menu mobile responsivo</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-eye"></i>
+                                <h4>Estado Ativo</h4>
+                                <p>Indicador visual da página atual</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-magic"></i>
+                                <h4>Logo Animado</h4>
+                                <p>Rotação suave no hover do logo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="navbar-code">
+                        <h3>Código Completo</h3>
+                        <div class="code-container">
+                            <code>/* HTML */
+&lt;nav class="animated-navbar"&gt;
+  &lt;div class="navbar-brand"&gt;
+    &lt;div class="logo"&gt;🚀&lt;/div&gt;
+    &lt;span class="brand-text"&gt;WebSite&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;ul class="navbar-menu"&gt;
+    &lt;li&gt;&lt;a href="#" class="navbar-link active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="navbar-link"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+    &lt;!-- mais links --&gt;
+  &lt;/ul&gt;
+  &lt;div class="navbar-toggle"&gt;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+/* CSS */
+.animated-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transition: left 0.3s ease;
+}
+
+.navbar-link:hover::before {
+  left: 0;
+}
+
+.navbar-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.navbar-link.active {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: inherit;
+    flex-direction: column;
+    padding: 1rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}</code>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botões Interativos -->
+            <section id="botoes-interativos" class="concept-section">
+                <h2><i class="fas fa-hand-pointer"></i> Botões Interativos</h2>
+                <p>Coleção de botões com diferentes efeitos e animações para interfaces modernas.</p>
+
+                <div class="buttons-showcase">
+                    <div class="button-category">
+                        <h3>Efeitos Básicos</h3>
+                        <div class="buttons-row">
+                            <button class="btn-basic">Básico</button>
+                            <button class="btn-hover-bg">Hover Background</button>
+                            <button class="btn-hover-border">Hover Border</button>
+                            <button class="btn-scale">Scale Effect</button>
+                        </div>
+                    </div>
+
+                    <div class="button-category">
+                        <h3>Efeitos de Preenchimento</h3>
+                        <div class="buttons-row">
+                            <button class="btn-fill-horizontal">Fill Horizontal</button>
+                            <button class="btn-fill-vertical">Fill Vertical</button>
+                            <button class="btn-fill-center">Fill Center</button>
+                            <button class="btn-fill-diagonal">Fill Diagonal</button>
+                        </div>
+                    </div>
+
+                    <div class="button-category">
+                        <h3>Efeitos 3D e Sombras</h3>
+                        <div class="buttons-row">
+                            <button class="btn-shadow">Shadow Effect</button>
+                            <button class="btn-raised">Raised Button</button>
+                            <button class="btn-pressed">Press Effect</button>
+                            <button class="btn-glow">Glow Effect</button>
+                        </div>
+                    </div>
+
+                    <div class="button-category">
+                        <h3>Efeitos Especiais</h3>
+                        <div class="buttons-row">
+                            <button class="btn-gradient">Gradient</button>
+                            <button class="btn-ripple">Ripple Effect</button>
+                            <button class="btn-loading">
+                                <span class="btn-text">Loading</span>
+                                <span class="btn-loader"></span>
+                            </button>
+                            <button class="btn-success">
+                                <span class="btn-icon">✓</span>
+                                <span class="btn-text">Success</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-codes">
+                    <h3>Códigos dos Efeitos</h3>
+                    <div class="button-code-examples">
+                        <div class="code-example">
+                            <h4>Fill Horizontal</h4>
+                            <div class="code-container">
+                                <code>.btn-fill-horizontal {
+  background: transparent;
+  border: 2px solid #3498db;
+  color: #3498db;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.btn-fill-horizontal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #3498db;
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.btn-fill-horizontal:hover::before {
+  left: 0;
+}
+
+.btn-fill-horizontal:hover {
+  color: white;
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="code-example">
+                            <h4>Glow Effect</h4>
+                            <div class="code-container">
+                                <code>.btn-glow {
+  background: #9b59b6;
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(155, 89, 182, 0.6),
+              0 0 40px rgba(155, 89, 182, 0.4),
+              0 0 60px rgba(155, 89, 182, 0.2);
+  transform: translateY(-2px);
+}</code>
+                            </div>
+                        </div>
+
+                        <div class="code-example">
+                            <h4>Loading Button</h4>
+                            <div class="code-container">
+                                <code>.btn-loading {
+  position: relative;
+}
+
+.btn-loader {
+  display: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.btn-loading.loading .btn-text {
+  opacity: 0;
+}
+
+.btn-loading.loading .btn-loader {
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galeria de Efeitos -->
+            <section id="galeria-pratica" class="concept-section">
+                <h2><i class="fas fa-images"></i> Galeria de Efeitos Práticos</h2>
+                <p>Exemplos práticos combinando todos os conceitos aprendidos.</p>
+
+                <div class="effects-gallery">
+                    <div class="gallery-category">
+                        <h3>Cards Interativos</h3>
+                        <div class="cards-demo">
+                            <div class="interactive-card hover-lift">
+                                <div class="card-icon">📱</div>
+                                <h4>Mobile App</h4>
+                                <p>Desenvolvimento de aplicativos móveis modernos</p>
+                                <div class="card-button">Ver mais</div>
+                            </div>
+
+                            <div class="interactive-card hover-tilt">
+                                <div class="card-icon">🎨</div>
+                                <h4>Design</h4>
+                                <p>Criação de interfaces elegantes e funcionais</p>
+                                <div class="card-button">Ver mais</div>
+                            </div>
+
+                            <div class="interactive-card hover-zoom">
+                                <div class="card-icon">⚡</div>
+                                <h4>Performance</h4>
+                                <p>Otimização para máxima velocidade</p>
+                                <div class="card-button">Ver mais</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-category">
+                        <h3>Elementos de Interface</h3>
+                        <div class="ui-elements-demo">
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="toggle1">
+                                <label for="toggle1" class="slider"></label>
+                            </div>
+
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+
+                            <div class="notification toast">
+                                <div class="toast-icon">✓</div>
+                                <div class="toast-message">Operação realizada com sucesso!</div>
+                                <div class="toast-close">×</div>
+                            </div>
+
+                            <div class="floating-action-btn">
+                                <span class="fab-icon">+</span>
+                                <div class="fab-menu">
+                                    <div class="fab-item">📧</div>
+                                    <div class="fab-item">📞</div>
+                                    <div class="fab-item">💬</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-category">
+                        <h3>Animações de Loading</h3>
+                        <div class="loading-demos">
+                            <div class="loader spinner"></div>
+                            <div class="loader dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="loader bars">
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="loader wave">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercícios -->
+            <section id="exercicios" class="concept-section">
+                <h2><i class="fas fa-dumbbell"></i> Exercícios Práticos</h2>
+                <div class="exercises-grid">
+                    <div class="exercise-card">
+                        <h4>1. Menu Dropdown</h4>
+                        <p>Crie um menu dropdown que aparece suavemente no hover com transições CSS.</p>
+                        <div class="exercise-requirements">
+                            <small><strong>Requisitos:</strong> :hover, transition, transform</small>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <h4>2. Card Flip</h4>
+                        <p>Desenvolva um card que vira ao ser clicado, mostrando informações no verso.</p>
+                        <div class="exercise-requirements">
+                            <small><strong>Requisitos:</strong> transform, rotateY, perspective</small>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <h4>3. Botão de Loading</h4>
+                        <p>Implemente um botão que mostra animação de carregamento ao ser clicado.</p>
+                        <div class="exercise-requirements">
+                            <small><strong>Requisitos:</strong> @keyframes, animation, pseudo-elementos</small>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <h4>4. Galeria com Hover</h4>
+                        <p>Crie uma galeria onde as imagens crescem e mostram overlay com texto no hover.</p>
+                        <div class="exercise-requirements">
+                            <small><strong>Requisitos:</strong> scale, opacity, overlay</small>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <h4>5. Form com Validação Visual</h4>
+                        <p>Desenvolva um formulário com feedback visual usando pseudo-classes.</p>
+                        <div class="exercise-requirements">
+                            <small><strong>Requisitos:</strong> :focus, :valid, :invalid, border-color</small>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <h4>6. Sidebar Animada</h4>
+                        <p>Implemente uma sidebar que desliza suavemente da lateral da tela.</p>
+                        <div class="exercise-requirements">
+                            <small><strong>Requisitos:</strong> translateX, transition, overflow</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resumo -->
+            <section id="resumo" class="summary-section">
+                <h2><i class="fas fa-graduation-cap"></i> Resumo do Dia 8</h2>
+                <div class="summary-content">
+                    <div class="learned-concepts">
+                        <h3>Conceitos Dominados</h3>
+                        <div class="concept-grid">
+                            <div class="concept-item">
+                                <i class="fas fa-target"></i>
+                                <h5>Pseudo-classes</h5>
+                                <p>:hover, :focus, :active, :nth-child, :not()</p>
+                            </div>
+                            <div class="concept-item">
+                                <i class="fas fa-bolt"></i>
+                                <h5>Transições</h5>
+                                <p>Mudanças suaves entre estados</p>
+                            </div>
+                            <div class="concept-item">
+                                <i class="fas fa-film"></i>
+                                <h5>Animações</h5>
+                                <p>@keyframes para sequências complexas</p>
+                            </div>
+                            <div class="concept-item">
+                                <i class="fas fa-sync-alt"></i>
+                                <h5>Transformações</h5>
+                                <p>scale, rotate, translate, skew</p>
+                            </div>
+                            <div class="concept-item">
+                                <i class="fas fa-palette"></i>
+                                <h5>Efeitos Visuais</h5>
+                                <p>opacity, border-radius, gradientes, sombras</p>
+                            </div>
+                            <div class="concept-item">
+                                <i class="fas fa-magic"></i>
+                                <h5>Projetos Práticos</h5>
+                                <p>navbar e botões interativos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="key-takeaways">
+                        <h3>Pontos Importantes</h3>
+                        <ul>
+                            <li><strong>Performance:</strong> Use transform e opacity para animações fluidas</li>
+                            <li><strong>Acessibilidade:</strong> Considere usuários que preferem menos movimento</li>
+                            <li><strong>Progressivo:</strong> Efeitos devem melhorar, não quebrar a experiência</li>
+                            <li><strong>Responsivo:</strong> Teste animações em diferentes dispositivos</li>
+                            <li><strong>Moderação:</strong> Menos é mais - use efeitos com propósito</li>
+                        </ul>
+                    </div>
+
+                    <div class="next-steps">
+                        <h3>Próximos Passos</h3>
+                        <p>No Dia 9, vamos aprender controle de versão com Git e GitHub para gerenciar nossos projetos web de forma profissional.</p>
+                        <div class="next-topics">
+                            <span class="topic-tag">Git</span>
+                            <span class="topic-tag">GitHub</span>
+                            <span class="topic-tag">Versionamento</span>
+                            <span class="topic-tag">GitHub Pages</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Formação HTML e CSS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

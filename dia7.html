@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dia 7A - Media Queries e Mobile-First | Formação HTML e CSS</title>
+    <title>Dia 7 - Responsividade Completa (Partes A e B) | Formação HTML e CSS</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/day-content.css">
 </head>
@@ -12,8 +12,10 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="header__title">🔹 Dia 7A</h1>
-            <p class="header__subtitle">Media Queries e Design Mobile-First</p>
+            <h1 class="header__title">🔹 Dia 7</h1>
+            <p class="header__subtitle">Responsividade Completa: Media Queries, Mobile-First, Unidades, Tipografia
+                Fluida, Flex e Performance
+            </p>
             <nav class="header__nav">
                 <a href="index.html" class="nav-link">← Voltar ao curso</a>
             </nav>
@@ -25,12 +27,28 @@
             <!-- Navegação da aula -->
             <nav class="lesson-nav">
                 <ul>
-                    <li><a href="#intro-responsivo">📱 Introdução à Responsividade</a></li>
+                    <!-- Parte A -->
+                    <li><strong>Parte A</strong></li>
+                    <li><a href="#intro-responsivo">📱 Introdução</a></li>
                     <li><a href="#viewport">🖥️ Viewport</a></li>
                     <li><a href="#media-queries">📊 Media Queries</a></li>
                     <li><a href="#breakpoints">📏 Breakpoints</a></li>
                     <li><a href="#mobile-first">📲 Mobile-First</a></li>
                     <li><a href="#praticas">💡 Boas Práticas</a></li>
+                    <li><a href="#resumo-a">✅ Resumo A</a></li>
+
+                    <!-- Parte B -->
+                    <li><strong>Parte B</strong></li>
+                    <li><a href="#unidades">📐 Unidades</a></li>
+                    <li><a href="#comparacao">⚖️ Comparação</a></li>
+                    <li><a href="#tipografia">🔤 Tipografia Fluida</a></li>
+                    <li><a href="#flex-ajustes">🧩 Flex Ajustes</a></li>
+                    <li><a href="#imagens">🖼️ Imagens Resp.</a></li>
+                    <li><a href="#projeto">🛠️ Projeto</a></li>
+                    <li><a href="#performance">🚀 Performance</a></li>
+                    <li><a href="#checklist">🗂️ Checklist</a></li>
+                    <li><a href="#exercicios">🏁 Exercícios</a></li>
+                    <li><a href="#conclusao-b">🏳️ Conclusão B</a></li>
                 </ul>
             </nav>
 
@@ -1140,253 +1158,8 @@
                 </div>
             </section>
 
-            <!-- Boas Práticas -->
-            <section id="praticas" class="concept-section">
-                <h2><i class="fas fa-lightbulb"></i> Boas Práticas de Responsividade</h2>
-
-                <div class="best-practices-content">
-                    <div class="practices-grid">
-                        <div class="practice-category">
-                            <h3><i class="fas fa-code"></i> CSS</h3>
-                            <div class="practice-list">
-                                <div class="practice-item">
-                                    <h5>✅ Use min-width em Mobile-First</h5>
-                                    <div class="code-container small">
-                                        <code>
-/* Correto */
-@media (min-width: 768px) { }
-
-/* Evite */
-@media (max-width: 767px) { }
-                                        </code>
-                                    </div>
-                                </div>
-
-                                <div class="practice-item">
-                                    <h5>✅ Organize Media Queries por Tamanho</h5>
-                                    <div class="code-container small">
-                                        <code>
-/* Mobile base */
-.element { }
-
-/* Tablet */
-@media (min-width: 768px) { }
-
-/* Desktop */
-@media (min-width: 1024px) { }
-                                        </code>
-                                    </div>
-                                </div>
-
-                                <div class="practice-item">
-                                    <h5>✅ Use em/rem para Text e Spacing</h5>
-                                    <div class="code-container small">
-                                        <code>
-.text {
-    font-size: 1rem; /* 16px */
-    margin: 1.5rem; /* 24px */
-}
-                                        </code>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="practice-category">
-                            <h3><i class="fas fa-images"></i> Imagens</h3>
-                            <div class="practice-list">
-                                <div class="practice-item">
-                                    <h5>✅ Imagens Flexíveis</h5>
-                                    <div class="code-container small">
-                                        <code>
-img {
-    max-width: 100%;
-    height: auto;
-}
-                                        </code>
-                                    </div>
-                                </div>
-
-                                <div class="practice-item">
-                                    <h5>✅ Use srcset para Diferentes Resoluções</h5>
-                                    <div class="code-container small">
-                                        <code>
-&lt;img src="image.jpg" 
-     srcset="image-320.jpg 320w,
-             image-768.jpg 768w,
-             image-1200.jpg 1200w"
-     sizes="(max-width: 768px) 100vw,
-            (max-width: 1200px) 50vw,
-            33vw"
-     alt="Descrição"&gt;
-                                        </code>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="practice-category">
-                            <h3><i class="fas fa-font"></i> Tipografia</h3>
-                            <div class="practice-list">
-                                <div class="practice-item">
-                                    <h5>✅ Tamanhos Escaláveis</h5>
-                                    <div class="code-container small">
-                                        <code>
-/* Mobile */
-h1 { font-size: 1.5rem; }
-p { font-size: 1rem; }
-
-/* Desktop */
-@media (min-width: 1024px) {
-    h1 { font-size: 2.5rem; }
-    p { font-size: 1.125rem; }
-}
-                                        </code>
-                                    </div>
-                                </div>
-
-                                <div class="practice-item">
-                                    <h5>✅ Line Height Responsivo</h5>
-                                    <div class="code-container small">
-                                        <code>
-p {
-    line-height: 1.6; /* Mobile */
-}
-
-@media (min-width: 768px) {
-    p {
-        line-height: 1.8; /* Desktop */
-    }
-}
-                                        </code>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="practice-category">
-                            <h3><i class="fas fa-mouse-pointer"></i> Touch/Interação</h3>
-                            <div class="practice-list">
-                                <div class="practice-item">
-                                    <h5>✅ Alvos de Toque Adequados</h5>
-                                    <div class="code-container small">
-                                        <code>
-button, .button {
-    min-height: 44px; /* iOS guideline */
-    min-width: 44px;
-    padding: 12px 16px;
-}
-                                        </code>
-                                    </div>
-                                </div>
-
-                                <div class="practice-item">
-                                    <h5>✅ Hover apenas para Desktop</h5>
-                                    <div class="code-container small">
-                                        <code>
-@media (hover: hover) {
-    .button:hover {
-        background-color: #0056b3;
-    }
-}
-                                        </code>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testing-checklist">
-                        <h3><i class="fas fa-check-double"></i> Checklist de Teste</h3>
-                        <div class="checklist-grid">
-                            <div class="checklist-category">
-                                <h4>📱 Mobile</h4>
-                                <ul>
-                                    <li>✓ Texto legível sem zoom</li>
-                                    <li>✓ Botões fáceis de tocar</li>
-                                    <li>✓ Navegação simplificada</li>
-                                    <li>✓ Conteúdo prioritizado</li>
-                                    <li>✓ Formulários usáveis</li>
-                                </ul>
-                            </div>
-
-                            <div class="checklist-category">
-                                <h4>📲 Tablet</h4>
-                                <ul>
-                                    <li>✓ Layout otimizado para orientação</li>
-                                    <li>✓ Uso eficiente do espaço</li>
-                                    <li>✓ Navegação touch-friendly</li>
-                                    <li>✓ Imagens em boa resolução</li>
-                                </ul>
-                            </div>
-
-                            <div class="checklist-category">
-                                <h4>🖥️ Desktop</h4>
-                                <ul>
-                                    <li>✓ Largura máxima definida</li>
-                                    <li>✓ Hover states funcionais</li>
-                                    <li>✓ Navegação completa</li>
-                                    <li>✓ Uso adequado do espaço</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="common-mistakes">
-                        <h3><i class="fas fa-exclamation-triangle"></i> Erros Comuns a Evitar</h3>
-                        <div class="mistakes-list">
-                            <div class="mistake-item">
-                                <h5>❌ Esquecer a Meta Viewport</h5>
-                                <p>Sempre inclua
-                                    <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
-                                </p>
-                            </div>
-
-                            <div class="mistake-item">
-                                <h5>❌ Usar Pixels Fixos Demais</h5>
-                                <p>Prefira medidas relativas (%, em, rem, vw, vh) sempre que possível</p>
-                            </div>
-
-                            <div class="mistake-item">
-                                <h5>❌ Ignorar Orientação Landscape</h5>
-                                <p>Teste sempre em modo paisagem, especialmente em tablets</p>
-                            </div>
-
-                            <div class="mistake-item">
-                                <h5>❌ Testar Apenas no DevTools</h5>
-                                <p>Teste em dispositivos reais sempre que possível</p>
-                            </div>
-
-                            <div class="mistake-item">
-                                <h5>❌ Media Queries Muito Específicas</h5>
-                                <p>Evite breakpoints baseados em dispositivos específicos</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Continue para Parte B -->
-            <section class="continue-section">
-                <div class="continue-content">
-                    <h2><i class="fas fa-arrow-right"></i> Continue na Parte B</h2>
-                    <p>Na segunda parte do Dia 7, vamos explorar:</p>
-                    <ul>
-                        <li><strong>Medidas Relativas:</strong> %, em, rem, vw, vh em detalhes</li>
-                        <li><strong>Ajustes de Flexbox:</strong> Adaptações para mobile</li>
-                        <li><strong>Exemplo Prático:</strong> Site completo responsivo</li>
-                        <li><strong>Performance:</strong> Otimizações para mobile</li>
-                    </ul>
-                    <div class="continue-actions">
-                        <a href="dia7b.html" class="btn-primary">
-                            <i class="fas fa-arrow-right"></i> Ir para Parte B
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Resumo -->
-            <section class="summary-section">
+            <!-- Resumo da Parte A -->
+            <section id="resumo-a" class="summary-section">
                 <h2><i class="fas fa-check-circle"></i> Resumo da Parte A</h2>
 
                 <div class="summary-content">
@@ -1439,6 +1212,334 @@ button, .button {
                             <li><strong>Min-width:</strong> Use em vez de max-width no mobile-first</li>
                             <li><strong>Breakpoints:</strong> Baseie no conteúdo, não em dispositivos específicos</li>
                             <li><strong>Teste:</strong> Sempre teste em dispositivos reais</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Unidades Relativas -->
+            <section id="unidades" class="concept-section">
+                <h2><i class="fas fa-ruler-combined"></i> Unidades Relativas</h2>
+                <p>As unidades relativas permitem criar layouts flexíveis que se adaptam ao tamanho da tela,
+                    configurações do usuário e fluxo do conteúdo.</p>
+                <div class="units-overview">
+                    <div class="units-grid">
+                        <div class="unit-card">
+                            <h3>%</h3>
+                            <p>Relativa ao elemento pai.</p>
+                            <div class="code-container small"><code>.box { width: 50%; }</code></div>
+                        </div>
+                        <div class="unit-card">
+                            <h3>em</h3>
+                            <p>Relativa ao font-size do pai imediato.</p>
+                            <div class="code-container small"><code>.btn { padding: 1em 2em; }</code></div>
+                        </div>
+                        <div class="unit-card">
+                            <h3>rem</h3>
+                            <p>Relativa ao font-size raiz.</p>
+                            <div class="code-container small"><code>h1 { font-size: 2.5rem }</code></div>
+                        </div>
+                        <div class="unit-card">
+                            <h3>vw / vh</h3>
+                            <p>1vw = 1% da largura do viewport.</p>
+                            <div class="code-container small"><code>.hero { font-size: 5vw; }</code></div>
+                        </div>
+                        <div class="unit-card">
+                            <h3>vmin / vmax</h3>
+                            <p>Baseado no menor/maior lado.</p>
+                            <div class="code-container small"><code>.circle { width: 20vmin; }</code></div>
+                        </div>
+                        <div class="unit-card">
+                            <h3>clamp()</h3>
+                            <p>Valor fluido com limites.</p>
+                            <div class="code-container small"><code>clamp(1rem,4vw,2rem)</code></div>
+                        </div>
+                    </div>
+                    <div class="unit-warning">
+                        <h4><i class="fas fa-exclamation-circle"></i> em vs rem</h4>
+                        <ul>
+                            <li><strong>em</strong> acumula.</li>
+                            <li><strong>rem</strong> previsível.</li>
+                            <li>Use rem para tipografia global.</li>
+                            <li>Use em para espaçamentos relativos locais.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="comparacao" class="concept-section">
+                <h2><i class="fas fa-balance-scale"></i> Comparação Prática</h2>
+                <p>Diferenças visuais entre escalas relativas.</p>
+                <div class="units-demo-wrapper">
+                    <div class="units-settings">
+                        <div class="setting-group">
+                            <h4>Tamanho Base</h4>
+                            <div class="base-size-options"><button class="size-btn active">16px</button><button
+                                    class="size-btn">18px</button></div>
+                        </div>
+                        <p class="hint">Simulação conceitual</p>
+                    </div>
+                    <div class="units-columns">
+                        <div class="units-column">
+                            <h4>em</h4>
+                            <div class="scale-list">
+                                <div class="scale-item">0.75em</div>
+                                <div class="scale-item">1em</div>
+                                <div class="scale-item">1.5em</div>
+                            </div>
+                        </div>
+                        <div class="units-column">
+                            <h4>rem</h4>
+                            <div class="scale-list">
+                                <div class="scale-item">0.75rem</div>
+                                <div class="scale-item">1rem</div>
+                                <div class="scale-item">1.5rem</div>
+                            </div>
+                        </div>
+                        <div class="units-column">
+                            <h4>vw</h4>
+                            <div class="scale-list">
+                                <div class="scale-item">3vw</div>
+                                <div class="scale-item">5vw</div>
+                                <div class="scale-item">7vw</div>
+                            </div>
+                        </div>
+                        <div class="units-column">
+                            <h4>clamp()</h4>
+                            <div class="scale-list">
+                                <div class="scale-item">clamp(1rem,2vw,1.5rem)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="tipografia" class="concept-section">
+                <h2><i class="fas fa-font"></i> Tipografia Fluida</h2>
+                <div class="typography-examples">
+                    <div class="fluid-type-card">
+                        <h3>Fixa</h3>
+                        <div class="code-container small"><code>h1 { font-size:48px }</code></div>
+                        <p>Quebra em telas pequenas.</p>
+                    </div>
+                    <div class="fluid-type-card">
+                        <h3>rem</h3>
+                        <div class="code-container small"><code>h1 { font-size:2.5rem }</code></div>
+                        <p>Escalável via raiz.</p>
+                    </div>
+                    <div class="fluid-type-card highlight">
+                        <h3>clamp()</h3>
+                        <div class="code-container small"><code>h1 { font-size:clamp(1.8rem,5vw,3rem) }</code></div>
+                        <p>Fluido entre limites.</p>
+                    </div>
+                </div>
+                <div class="demo-fluid-text">
+                    <h1 class="fluid-heading">Título Responsivo</h1>
+                    <p class="fluid-paragraph">Escala controlada com clamp() para garantir legibilidade.</p>
+                </div>
+            </section>
+            <section id="flex-ajustes" class="concept-section">
+                <h2><i class="fas fa-th-large"></i> Ajustes Flexbox Mobile</h2>
+                <div class="flex-adjust-demo">
+                    <div class="flex-stage">
+                        <h4>Desktop</h4>
+                        <div class="flex-row-demo">
+                            <div class="flex-box">Menu</div>
+                            <div class="flex-box">Conteúdo</div>
+                            <div class="flex-box">Lateral</div>
+                        </div>
+                    </div>
+                    <div class="flex-stage">
+                        <h4>Mobile</h4>
+                        <div class="flex-column-demo">
+                            <div class="flex-box">Menu</div>
+                            <div class="flex-box">Conteúdo</div>
+                            <div class="flex-box">Footer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-container"><code>.layout { display:flex; flex-direction:column; }
+@media (min-width:1024px){ .layout{flex-direction:row;} }</code></div>
+            </section>
+            <section id="imagens" class="concept-section">
+                <h2><i class="fas fa-image"></i> Imagens Responsivas</h2>
+                <div class="image-responsive-grid">
+                    <div class="image-technique">
+                        <h4>Flexível</h4>
+                        <div class="code-container small"><code>img{max-width:100%;height:auto}</code></div>
+                    </div>
+                    <div class="image-technique">
+                        <h4>Srcset</h4>
+                        <div class="code-container small">
+                            <code>&lt;img src="img-800.jpg" srcset="img-400.jpg 400w, img-800.jpg 800w" alt&gt;</code>
+                        </div>
+                    </div>
+                    <div class="image-technique">
+                        <h4>picture</h4>
+                        <div class="code-container small"><code>&lt;picture&gt;...&lt;/picture&gt;</code></div>
+                    </div>
+                    <div class="image-technique">
+                        <h4>Lazy</h4>
+                        <div class="code-container small"><code>&lt;img loading="lazy" ...&gt;</code></div>
+                    </div>
+                </div>
+            </section>
+            <section id="projeto" class="concept-section">
+                <h2><i class="fas fa-project-diagram"></i> Projeto: Landing Page</h2>
+                <div class="project-steps">
+                    <div class="project-step">
+                        <h4>HTML</h4>
+                        <div class="code-container small"><code>&lt;header&gt;...&lt;/header&gt;</code></div>
+                    </div>
+                    <div class="project-step">
+                        <h4>Base</h4>
+                        <div class="code-container small"><code>.hero{padding:2rem 1rem}</code></div>
+                    </div>
+                    <div class="project-step">
+                        <h4>Tablet</h4>
+                        <div class="code-container small">
+                            <code>@media (min-width:768px){ .features{flex-direction:row} }</code></div>
+                    </div>
+                    <div class="project-step">
+                        <h4>Desktop</h4>
+                        <div class="code-container small"><code>@media (min-width:1024px){ .hero{display:flex} }</code>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="performance" class="concept-section">
+                <h2><i class="fas fa-rocket"></i> Performance</h2>
+                <div class="performance-grid">
+                    <div class="perf-card">
+                        <h4>CSS</h4>
+                        <ul>
+                            <li>Group media queries</li>
+                            <li>Remover unused</li>
+                            <li>Seletores simples</li>
+                        </ul>
+                    </div>
+                    <div class="perf-card">
+                        <h4>Carregamento</h4>
+                        <ul>
+                            <li>font-display: swap</li>
+                            <li>Preload crítico</li>
+                            <li>Lazy imagens</li>
+                        </ul>
+                    </div>
+                    <div class="perf-card">
+                        <h4>Layout</h4>
+                        <ul>
+                            <li>Definir dimensões</li>
+                            <li>Evitar reflows</li>
+                            <li>Transform/opacity</li>
+                        </ul>
+                    </div>
+                    <div class="perf-card">
+                        <h4>Medir</h4>
+                        <ul>
+                            <li>Lighthouse</li>
+                            <li>PageSpeed</li>
+                            <li>WebPageTest</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="checklist" class="concept-section">
+                <h2><i class="fas fa-clipboard-check"></i> Checklist Final</h2>
+                <div class="checklist-final-grid">
+                    <div class="checklist-block">
+                        <h4>Layout</h4>
+                        <ul>
+                            <li>✓ Mobile-first</li>
+                            <li>✓ Breakpoints</li>
+                            <li>✓ Fluidez</li>
+                        </ul>
+                    </div>
+                    <div class="checklist-block">
+                        <h4>Tipografia</h4>
+                        <ul>
+                            <li>✓ Legível</li>
+                            <li>✓ clamp()</li>
+                            <li>✓ Contraste</li>
+                        </ul>
+                    </div>
+                    <div class="checklist-block">
+                        <h4>Imagens</h4>
+                        <ul>
+                            <li>✓ srcset</li>
+                            <li>✓ lazy</li>
+                            <li>✓ formatos</li>
+                        </ul>
+                    </div>
+                    <div class="checklist-block">
+                        <h4>Performance</h4>
+                        <ul>
+                            <li>✓ CSS enxuto</li>
+                            <li>✓ Sem shifts</li>
+                            <li>✓ <3s< /li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="exercicios" class="concept-section">
+                <h2><i class="fas fa-dumbbell"></i> Exercícios</h2>
+                <div class="exercises-grid">
+                    <div class="exercise-card">
+                        <h4>1. Tipografia</h4>
+                        <p>Escala com clamp</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>2. Galeria</h4>
+                        <p>1→2→4 colunas</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>3. Navbar</h4>
+                        <p>Menu hamburger</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>4. Imagens</h4>
+                        <p>picture + WebP</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>5. Landing</h4>
+                        <p>Implementar layout completo</p>
+                    </div>
+                </div>
+            </section>
+            <section id="conclusao-b" class="summary-section">
+                <h2><i class="fas fa-flag-checkered"></i> Conclusão da Parte B</h2>
+                <div class="summary-content">
+                    <div class="learned-concepts">
+                        <h3>Novos Conceitos</h3>
+                        <div class="concept-grid">
+                            <div class="concept-item"><i class="fas fa-ruler-combined"></i>
+                                <h5>Unidades</h5>
+                                <p>% em rem vw</p>
+                            </div>
+                            <div class="concept-item"><i class="fas fa-font"></i>
+                                <h5>Clamp</h5>
+                                <p>Escala fluida</p>
+                            </div>
+                            <div class="concept-item"><i class="fas fa-image"></i>
+                                <h5>Imagens</h5>
+                                <p>srcset/picture</p>
+                            </div>
+                            <div class="concept-item"><i class="fas fa-th-large"></i>
+                                <h5>Flex</h5>
+                                <p>Ajustes</p>
+                            </div>
+                            <div class="concept-item"><i class="fas fa-rocket"></i>
+                                <h5>Perf</h5>
+                                <p>Otimização</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-takeaways">
+                        <h3>Pontos</h3>
+                        <ul>
+                            <li>Unidades relativas = flexibilidade</li>
+                            <li>clamp() reduz media queries</li>
+                            <li>Mobile-first + min-width</li>
+                            <li>Imagens otimizadas impactam muito</li>
+                            <li>Medir sempre</li>
                         </ul>
                     </div>
                 </div>
